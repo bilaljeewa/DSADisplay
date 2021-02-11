@@ -1,0 +1,142 @@
+
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .width {
+    width: 100%;
+  }
+
+  .modal-content{
+    background: none!important;
+    }
+    .view-all-event{
+        color: #fff;
+        font-weight: 600;
+    font-size: 18px;
+    }
+    .heading{
+        font-weight: 600;
+        font-size: 37px!important;
+    }
+    .headings{
+      font-weight: bold;
+      font-size: 37px;
+    }
+    
+    .view-modal{
+        background: #000;
+        opacity: .8!important;
+        color: #fff
+    }
+    .border-none {
+        border-bottom: none!important;
+    }  
+.modal-dialogs{
+  max-width: 800px!important;
+} 
+.btn-primary {
+    color: #fff;
+    background: #ed1c24!important;
+    border: #ed1c24!important;
+    border-radius: 20px!important;
+    padding: 5px 60px!important;
+    margin: 1rem!important;
+}   
+.container{
+  max-width: 500px;
+}
+.mat-form-field-infix {
+  border: 1px solid #000!important;
+}
+.autocomplete-container.mat-focused .mat-form-field-outline .mat-form-field-outline-start,
+.autocomplete-container.mat-focused .mat-form-field-outline .mat-form-field-outline-gap,
+.autocomplete-container.mat-focused .mat-form-field-outline .mat-form-field-outline-end
+{
+    border-bottom: none;
+    border-radius: 20px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.city-bold{
+  font-weight: bold;
+}
+.pointer-cursor{
+  cursor: pointer;
+}
+.first-heading{
+    font-size: 13px;
+    margin-bottom: 0;
+}
+.day-heading{
+    font-size: 45px;
+    font-weight: bold;
+    border: none!important;
+}
+.second-heading{
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.event-inform-heading{
+    font-size: 37px;
+    font-weight: bold;
+}
+.event-inform-detail{
+    font-size: 18px;
+    width: 460px;
+    margin: 0 auto;
+}
+.padding-body{
+  padding: 4rem;
+  color: #fff!important;
+}
+.after_modal_appended
+{  
+  position:relative;
+}
+.modal, .modal-backdrop {
+    position: absolute !important;
+}
+
+.blue
+{
+ 
+  position: relative;
+}
+.red{
+    background-color: red;
+}
+.block{
+    width: 100%;
+    min-height: calc(100vh - 20px);
+
+}  
+ .modal-backdrop{
+    position: absolute!important;
+}
+.diabetes .modal-backdrop {
+    position: absolute!important;
+    /* position: fixed; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+.eventDetails-container{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.73)), url(https://www.imisconsulting.com.au//iMIS0/images/Site_Info/DSAGroup172.png);
+   
+    background-size: cover;
+}
+

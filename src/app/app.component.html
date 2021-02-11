@@ -1,0 +1,23 @@
+<div class="diabetes">
+	<div>
+		
+		<app-risk-test></app-risk-test>
+		
+	</div>
+	<div  class="eventDetails-container" *ngIf="DSAType == 0">
+		<app-date-location [settings]="settings"></app-date-location>
+	</div>  
+	<div class="eventDetails-container" *ngIf="DSAType == 1">
+		<app-event-detail [settings]="settings"></app-event-detail>
+	</div> 
+	<div *ngIf="DSAType == 2">
+		<app-event-search [settings]="settings"></app-event-search>
+	</div> 
+	<div class="eventDetails-container" *ngIf="DSAType == 3">
+		<app-upcoming-event [settings]="settings"></app-upcoming-event>
+	</div> 
+	<div *ngIf="DSAType == 4">
+		<app-view-all-event [settings]="settings"></app-view-all-event>
+	</div>
+
+</div>

@@ -1,0 +1,17 @@
+
+<div  class="eventDetails-container">
+   
+    <div class="text-center padding-body" *ngIf="sharedData && sharedData[0]">
+      <p class="first-heading">THE EVENT IS IN</p>
+      <h2 class="day-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{sharedData[0].dayLeft | daysLeft}} Days</h2>
+      <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].address">{{sharedData[0].address}}</p>
+      <button class="btn btn-primary" (click)="openViewModal();do($event)">Find a Event</button>
+      <div>
+        <a class="view-all-event ViewAllLocation" href="#" (click)="openViewModal();do($event)"  >view all location</a>
+      </div>
+      
+      <h3 class="event-inform-heading">Event Information</h3>
+      <div class="event-inform-detail" *ngIf="sharedData && sharedData[0] && sharedData[0].desc" [innerHTML]="sharedData[0].desc | sanitizeHtml">
+
+      </div>
+    </div>  

@@ -1,0 +1,190 @@
+
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+
+.content-1{
+    background-image:  url(https://www.imisconsulting.com.au//iMIS0/images/Site_Info/iStock-1135943635.png);
+   /* // height: calc(100vh - 20px); */
+    background-size: cover;
+    border: 2px solid red;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+} 
+.content-2{
+    /* background-image: linear-gradient( rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.73)), url(https://www.imisconsulting.com.au//iMIS0/images/Site_Info/iStock-1135943635.png); */
+   /* // height: calc(100vh - 20px); */
+    background-size: cover;
+    border: 2px solid blue;
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 125px;
+    z-index: 9;
+}  
+.content {
+    position: relative;
+    top: -362px;
+}
+.content img{
+    width: 1000px;
+    height: 1000px;
+}
+
+
+.parent-content{
+    max-width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    border: 3px solid yellow;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.child-content{
+    float: left;
+    width: 45%;
+
+    /* border: 2px solid black; */
+    margin: 10px 5px;
+}
+.child-content img {
+    width: 1050px;
+    height: 1052px;
+    position: relative;
+    top: -150px;
+}
+.child-content-2{
+    /* //border: 2px solid blue; */
+    text-align: center;
+    position: absolute;
+    /* width: calc(80vw - 20px); */
+    background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.7));
+    height: 700px;
+    max-width: 1000px;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+.card_box {
+    min-height: calc(100vh);
+    overflow: hidden;
+    width: 100%;
+
+}
+.bg_gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    background-image: linear-gradient(to right, black , #000000b8);
+}
+
+.imm {
+    position: absolute;
+    top: 242px;
+    right: -600px;
+    width: 597px;
+    object-fit: cover;
+    transform: translate(-50%,-50%) scale(1.2);
+    /* object-position: right; */
+}
+.imm1 {
+    position: absolute;
+    top: 242px;
+    /* right: -600px; */
+    width: 597px;
+    object-fit: cover;
+    transform: translate(-50%,-50%) scale(1.6);
+    /* object-position: right; */
+}
+.imm3 {
+    position: absolute;
+    top: 302px;
+    right: -130px;
+    width: 597px;
+    object-fit: cover;
+    transform: translate(-50%,-50%) scale(1.6);
+    /* object-position: right; */
+}
+.imm4 {
+    position: absolute;
+    top: 350px;
+    right: -640px;
+    width: 597px;
+    object-fit: cover;
+    transform: translate(-50%,-50%) scale(2.2);
+}
+.bg_gradient1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    background-image: linear-gradient(to left, black , #000000b8);
+}
+::ng-deep .diabetes .mat-stepper-horizontal .mat-horizontal-stepper-header-container{
+    display: none!important;
+}
+.hint-waist{
+    font-style: italic;
+
+}
+.range-heading{
+   
+
+}
+.range-heading2{
+    background-color: red;
+    border-top-right-radius:  20px;
+  border-top-left-radius: 20px;
+  padding: 10px 0
+}
+.range-heading3{
+    background-color: #ffffff;
+    border-bottom-right-radius:  20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px 0
+}
+.waist-headings{
+    color:black;
+    font-size: 12px;
+    margin-bottom: .7rem;
+}
+.waist-value{
+    color: #000;
+    font-weight: 700;
+    margin-bottom: .7rem;
+}
+.content-dsa{
+    max-width: 1000px;
+    margin: 0 auto;
+    margin: 100px auto 0 auto;
+}
+.modal-dialog {
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0!important;
+    padding: 0!important;
+  }
+  
+  .modal-content {
+    height: auto!important;
+    min-height: 100%!important;
+    border-radius: 0!important;
+    min-width: calc(100vw - 20px)!important;
+  }

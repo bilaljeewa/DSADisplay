@@ -1,0 +1,25 @@
+
+<div class="container pt-5">
+    <h2 class="heading">Find an event</h2>
+    
+    
+  
+    <form class="form mt-3" >
+      <mat-form-field appearance="outline"  class="example-full-width autocomplete-container">
+        <mat-label>Search Town or Zip</mat-label>
+        <input matInput  aria-label="Country" [matAutocomplete]="auto" [formControl]="countryCtrl" required matTooltip="Type to filter the City list"
+            matTooltipPosition="after">
+           
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option (click)="sendTo(country.eventCode)" *ngFor="let country of zipState" [value]="country.Name">
+            <span>{{ country.Name }} </span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      
+     
+    </form>
+    <a class="view-all-event ViewAllLocation" href="#" (click)="openViewModal();do($event)"  >view all location</a>
+    
+  </div>

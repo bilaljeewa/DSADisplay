@@ -1,0 +1,17 @@
+
+<div  class="eventDetails-container">
+    <div class=" padding-body" *ngIf="sharedData && sharedData[0]">
+        <div class="row">
+            <div class="col-1 pr-0">
+                <img class="map-image1"  src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Ellipse 108.png">
+                <img class="map-image" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/map-marker-light.png">
+            </div>
+            <div class="col pl-0 cityy" >
+                <span class="city-name">{{sharedData[0].city | titlecase}}</span>
+            </div>
+        </div>
+        <h2 class="day-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{sharedData[0].dayLeft | date: 'EEEE d MMMM y'}}</h2>
+        <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].address">{{sharedData[0].address}}</p>
+        <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{ dateFormate(sharedData[0].dayLeft)}} - {{dateFormate(sharedData[0].endDate)}}</p>
+    </div>  
+</div>
