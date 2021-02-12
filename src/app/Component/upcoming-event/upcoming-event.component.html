@@ -7,7 +7,7 @@
       <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].address">{{sharedData[0].address}}</p>
       <button class="btn btn-primary ViewAllLocation" (click)="openViewModal();do($event)">Find a Event</button>
       <div>
-        <a class="view-all-event ViewAllLocation" href="#" (click)="openViewModal();do($event)"  >view all location</a>
+        <p class="view-all-event ViewAllLocation" href="#" (click)="openViewModal();do($event)"  >view all location</p>
       </div>
       <h3 class="event-inform-heading">Event Information</h3>
       <div class="event-inform-detail" *ngIf="sharedData && sharedData[0] && sharedData[0].desc" [innerHTML]="sharedData[0].desc | sanitizeHtml">

@@ -108,8 +108,11 @@ eventCODEValue = element.Value
     
   }
   openViewModal(){
-    console.log("open modal ")
-    jQuery("#viewAllEventModal").modal('show')
+    console.log("open modal upcoming ")
+    setTimeout(() => {
+      jQuery('#viewAllEventModal').modal('show');
+       }, 500);
+    // jQuery("#viewAllEventModal").modal('show')
   }
   do(event) {
 		event.preventDefault();

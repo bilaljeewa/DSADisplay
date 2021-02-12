@@ -36,8 +36,8 @@ export class ViewAllEventComponent implements OnInit {
             } );
         }
       }, 100);
-    if(this.settings && this.settings.IQA){
-      this.settingsService.getEventDatas(this.settings.IQA).subscribe(values=>{
+    
+      this.settingsService.getEventDatas("$/DSA/FTF/All FTF Events").subscribe(values=>{
         console.log(values)
         this.eventData= values
     // console.log(this.eventData)
@@ -67,7 +67,7 @@ export class ViewAllEventComponent implements OnInit {
         this.sharedData.push({city,address1,BeginDate,eventcode})
       })
       })
-    }
+    
   }
   sendTo(event){
     this.settingsService.getEventDetails(event)

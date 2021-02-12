@@ -69,16 +69,17 @@
 }
 
 
-
-
-
+::ng-deep .mat-horizontal-content-container {
+    overflow: hidden;
+   padding: 0!important;
+}
 
 
 
 
 
 .card_box {
-    min-height: calc(100vh);
+    min-height: 600px;
     overflow: hidden;
     width: 100%;
 
@@ -100,6 +101,15 @@
     width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.2);
+    /* object-position: right; */
+}
+.imm1 {
+    position: absolute;
+    top: 242px;
+    /* right: -600px; */
+    width: 597px;
+    object-fit: cover;
+    transform: translate(-50%,-50%) scale(1.6);
     /* object-position: right; */
 }
 .imm1 {
@@ -187,4 +197,27 @@
     min-height: 100%!important;
     border-radius: 0!important;
     min-width: calc(100vw - 20px)!important;
+  }
+  .exampleModal1234{
+display: none;
+position: fixed;
+    top: 85px;
+    left: 0px;
+width: 100%;
+z-index: 999;
+
+  }
+  .details-box{
+    background-color: #ffffff;
+    color: black;
+  }
+  .col-3{
+    /* flex: 0 0 25%!important;
+    max-width: 21%!important; */
+  }
+  .view-final-btn{
+    color: #fff;
+    background: red;
+    width: 100%;
+    padding: 10px!important;
   }

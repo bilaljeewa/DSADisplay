@@ -545,447 +545,520 @@
 
 
 
-<div class="modal fade" id="exampleModal1234" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal1234" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 	  <div class="modal-content">
 	
 		<div class="modal-body">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<mat-horizontal-stepper #stepper >
-				<mat-step [stepControl]="firstFormGroup">
-				<div class="card_box position-relative">
-					<form [formGroup]="firstFormGroup">
-						<img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943635.png" class="imm" >
-						<div class="bg_gradient"></div>
-						<div class="text-center text-white card_text position-relative content-dsa">
-						<label class="m-5">Your Demographic</label>
-						<p>Q1. What is your gender?</p>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" formControlName="gender" type="radio" name="gender" id="gender1" value="option1">
-						<label class="form-check-label" for="gender1">Female</label>
-						</div>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" formControlName="gender" type="radio" name="gender" id="gender2" value="option2">
-						<label class="form-check-label" for="gender2">Male</label>
-						</div>
-						<p class="mt-5">Q2. How old you are?</p>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="ageOptions" id="age1" value="option1">
-						<label class="form-check-label" for="age1">Under 35 years</label>
-						</div>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="ageOptions" id="age2" value="option2">
-						<label class="form-check-label" for="age2">35-44 years</label>
-						</div>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="ageOptions" id="age3" value="option1">
-						<label class="form-check-label" for="age3">45-54 years</label>
-						</div>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="ageOptions" id="age4" value="option2">
-						<label class="form-check-label" for="age4">54-64 years</label>
-						</div>
-						<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="ageOptions" id="age5" value="option2">
-						<label class="form-check-label" for="age5">65 years or older</label>
-						</div>
-						<div class=" mt-5">
-							<div class="form-check form-check-inline" matStepperPrevious>
-								<span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
-							</div>
-							<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
-								</div>
-							<div class="form-check form-check-inline"mat-button matStepperNext>
-								<button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
-							</div>
-						</div>
-						
-						
-					</div>
-					</form> 
-					
-				</div>
-					
-				
-				</mat-step>
-				<mat-step [stepControl]="secondFormGroup">
-					<div class="card_box position-relative">
-						<form [formGroup]="secondFormGroup">
-							<img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Layer 0.png" class="imm1" >
-							<div class="bg_gradient1"></div>
-							<div class="text-center text-white card_text position-relative content-dsa">
-							<label class="m-5">Your Demographic</label>
-							<p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori Descent</p>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="aboriginal" type="radio" name="aboriginal" id="aboriginal1" value="1">
-							<label class="form-check-label" for="aboriginal1">Yes</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="aboriginal" type="radio" name="aboriginal" id="aboriginal2" value="0">
-							<label class="form-check-label" for="aboriginal2">No</label>
-							</div>
-							<p class="mt-5">Q3B. Where were you born?</p>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="bornOptions" id="born1" value="0">
-							<label class="form-check-label" for="born1">Australia</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="bornOptions" id="born2" value="1">
-							<label class="form-check-label" for="born2">Aisa</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="bornOptions" id="born3" value="3">
-							<label class="form-check-label" for="born3">Middle East</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="bornOptions" id="born4" value="4">
-							<label class="form-check-label" for="born4">North America</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="bornOptions" id="born5" value="4">
-							<label class="form-check-label" for="born5">South European</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="bornOptions" id="born6" value="5">
-								<label class="form-check-label" for="born6">other</label>
-								</div>
-							
-							<div class=" mt-5">
-								<div class="form-check form-check-inline" matStepperPrevious>
-									<span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
-								</div>
-								<div class="form-check form-check-inline"mat-button matStepperNext>
-									<button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
-								</div>
-							</div>
-							
-							
-						</div>
-						</form> 
-						
-					</div>
-				</mat-step>
-				<mat-step [stepControl]="thirdFormGroup">
-					<div class="card_box position-relative">
-						<form [formGroup]="thirdFormGroup">
-							<img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Rectangle 1533.png" class="imm3" >
-							<div class="bg_gradient"></div>
-							<div class="text-center text-white card_text position-relative content-dsa">
-							<label class="m-5">Tell us bit about your health and lifestyle</label>
-							<p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes(Type 1 or 2)? </p>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="typeDiabetes" type="radio" name="typeDiabetes" id="typeDiabetes1" value="1">
-							<label class="form-check-label" for="typeDiabetes1">Yes</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="typeDiabetes" type="radio" name="typeDiabetes" id="typeDiabetes2" value="0">
-							<label class="form-check-label" for="typeDiabetes2">No</label>
-							</div>
-							<p class="mt-5">
-								Q5. Have you ever been  found to have High Blood Glucose(Sugar),eg in a health examination,during an illness or during pregnancy?
-								</p>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" formControlName="highBP" type="radio" name="highBP" id="highBP1" value="1">
-								<label class="form-check-label" for="highBP1">Yes</label>
-								</div>
-								<div class="form-check form-check-inline">
-								<input class="form-check-input" formControlName="highBP" type="radio" name="highBP" id="highBP2" value="0">
-								<label class="form-check-label" for="highBP2">No</label>
-								</div>
-							<div class=" mt-5">
-								<div class="form-check form-check-inline" matStepperPrevious>
-									<span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
-								</div>
-								<div class="form-check form-check-inline"mat-button matStepperNext>
-									<button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
-								</div>
-							</div>
-							
-							
-						</div>
-						</form> 
-						
-					</div>
-				</mat-step>
-				<mat-step [stepControl]="fourthFormGroup">
-					<div class="card_box position-relative">
-						<form [formGroup]="fourthFormGroup">
-							<img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-476291300.png" class="imm1" >
-							<div class="bg_gradient1"></div>
-							<div class="text-center text-white card_text position-relative content-dsa">
-							<label class="m-5">Tell us bit about your health and lifestyle</label>
-							<p>Q6. Are you currently taking medication for high blood pressure? </p>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="hBP" type="radio" name="hBP" id="hBP1" value="1">
-							<label class="form-check-label" for="hBP1">Yes</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="hBP" type="radio" name="hBP" id="hBP2" value="0">
-							<label class="form-check-label" for="hBP2">No </label>
-							</div>
-							<p class="mt-5">Q7.Do you smoke tobacco every day?</p>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" formControlName="tobacco" type="radio" name="tobacco" id="tobacco1" value="1">
-								<label class="form-check-label" for="tobacco1">Yes</label>
-								</div>
-								<div class="form-check form-check-inline">
-								<input class="form-check-input" formControlName="tobacco" type="radio" name="tobacco" id="tobacco2" value="0">
-								<label class="form-check-label" for="tobacco2">No</label>
-								</div>
-							<div class=" mt-5">
-								<div class="form-check form-check-inline" matStepperPrevious>
-									<span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
-								</div>
-								<div class="form-check form-check-inline"mat-button matStepperNext>
-									<button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
-								</div>
-							</div>
-							
-							
-						</div>
-						</form> 
-						
-					</div>
-				</mat-step>
-				<mat-step [stepControl]="fifthFormGroup">
-					<div class="card_box position-relative">
-						<form [formGroup]="fifthFormGroup">
-							<img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
-							<div class="bg_gradient"></div>
-							<div class="text-center text-white card_text position-relative content-dsa">
-							<label class="m-5">Tell us bit about your health and lifestyle</label>
-							<p>Q6. How often do you eat vegetable or fruit? </p>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="vegetable" type="radio" name="vegetable" id="vegetable1" value="1">
-							<label class="form-check-label" for="vegetable1">Every Day</label>
-							</div>
-							<div class="form-check form-check-inline">
-							<input class="form-check-input" formControlName="vegetable" type="radio" name="vegetable" id="vegetable2" value="0">
-							<label class="form-check-label" for="vegetable2">Not Every Day</label>
-							</div>
-							<p class="mt-5">Q7.On average, would you do atleast 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" formControlName="exercise" type="radio" name="exercise" id="exercise1" value="1">
-								<label class="form-check-label" for="exercise1">Yes</label>
-								</div>
-								<div class="form-check form-check-inline">
-								<input class="form-check-input" formControlName="exercise" type="radio" name="exercise" id="exercise2" value="0">
-								<label class="form-check-label" for="exercise2">No</label>
-								</div>
-							<div class=" mt-5">
-								<div class="form-check form-check-inline" matStepperPrevious>
-									<span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
-								</div>
-								<div class="form-check form-check-inline"mat-button matStepperNext>
-									<button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
-								</div>
-							</div>
-							
-							
-						</div>
-						</form> 
-						
-					</div>
-				</mat-step>
-				<mat-step [stepControl]="sixthFormGroup">
-					<div class="card_box position-relative">
-						<form [formGroup]="sixthFormGroup">
-							<img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135081673.png" class="imm1" >
-							<div class="bg_gradient1"></div>
-							<div class="text-center text-white card_text position-relative content-dsa">
-							<label class="m-5">Tell us bit about your health and lifestyle</label>
-							<p>Q6. What is your waist measurement? </p>
-								<p class="hint-waist">Hint: Measure your waist below the ribs while standing (usually around the belly button).
-									If you don't have a tape measure refer to the clothing sizes in the table.</p>
-								
-								<p>Which range does your waist measurement fall under?</p>	
-								<div>
-									<div class="row">
-										<div class="col-4 p-0">
-											<div class="mx-3 range-heading">
-												<div class="range-heading2">Range 1</div>
-												<div class=" range-heading3">
-													<p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-													<p class="waist-value">Less than 88cm</p>
-													<p class="waist-headings">CLOTH SIZING</p>
-													<p class="waist-value">8 / 10 / 12</p>
-												</div>
-											</div>
-											<div class="form-check form-check-inline mt-4">
-												<input class="form-check-input" formControlName="waist" type="radio" name="waist" id="waist1" value="1">
-												<label class="form-check-label" for="waist1">Range 1</label>
-											</div>
-										</div>
-										<div class="col-4 p-0">
-											<div class="mx-3 range-heading">
-												<div class="range-heading2">Range 2</div>
-												<div class=" range-heading3">
-													<p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-													<p class="waist-value">Between 88-100cm</p>
-													<p class="waist-headings">CLOTH SIZING</p>
-													<p class="waist-value">14 / 16</p>
-												</div>
-											</div>
-											<div class="form-check form-check-inline mt-4">
-												<input class="form-check-input" formControlName="waist" type="radio" name="waist" id="waist1" value="1">
-												<label class="form-check-label" for="waist1">Range 2</label>
-											</div>	
-										</div>
-										<div class="col-4 p-0">
-											<div class="mx-3 range-heading">
-												<div class="range-heading2">Range 3</div>
-												<div class=" range-heading3">
-													<p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-													<p class="waist-value">More than 100cm</p>
-													<p class="waist-headings">CLOTH SIZING</p>
-													<p class="waist-value">18 / 20 / 22 / 24</p>
-												</div>
-											</div>
-											<div class="form-check form-check-inline mt-4">
-												<input class="form-check-input" formControlName="waist" type="radio" name="waist" id="waist1" value="1">
-												<label class="form-check-label" for="waist1">Range 3</label>
-											</div>
-										</div>
-									</div>
-								</div>
-									
-							
-							
-							
-							<div class=" mt-5">
-								<div class="form-check form-check-inline" matStepperPrevious>
-									<span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
-								</div>
-								<div class="form-check form-check-inline"mat-button (click)="finish()">
-									<button mat-button >Finish</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
-								</div>
-							</div>
-							
-							
-						</div>
-						</form> 
-						
-					</div>
-				</mat-step>
-				
-				
-				<mat-step>
-				
-				<p>You are now done.</p>
-				<div>
-					<button mat-button matStepperPrevious>Back</button>
-					<button mat-button (click)="stepper.reset()">Reset</button>
-				</div>
-				</mat-step>
-			</mat-horizontal-stepper>
-		</div>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+			<div class="exampleModal1234">
+                <mat-horizontal-stepper #stepper >
+                    <mat-step [stepControl]="firstFormGroup">
+                    <div class="card_box position-relative">
+                        <form [formGroup]="firstFormGroup">
+                            <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943635.png" class="imm" >
+                            <div class="bg_gradient"></div>
+                            <div class="text-center text-white card_text position-relative content-dsa">
+                            <label class="m-5">Your Demographic</label>
+                            <p>Q1. What is your gender?</p>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="gender1" value="option1">
+                            <label class="form-check-label" for="gender1">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="gender2" value="option2">
+                            <label class="form-check-label" for="gender2">Male</label>
+                            </div>
+                            <p class="mt-5">Q2. How old you are?</p>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ageOptions" id="age1" value="option1">
+                            <label class="form-check-label" for="age1">Under 35 years</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ageOptions" id="age2" value="option2">
+                            <label class="form-check-label" for="age2">35-44 years</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ageOptions" id="age3" value="option1">
+                            <label class="form-check-label" for="age3">45-54 years</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ageOptions" id="age4" value="option2">
+                            <label class="form-check-label" for="age4">54-64 years</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ageOptions" id="age5" value="option2">
+                            <label class="form-check-label" for="age5">65 years or older</label>
+                            </div>
+                            <div class=" mt-5">
+                                <div class="form-check form-check-inline" matStepperPrevious>
+                                    <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
+                                    </div>
+                                <div class="form-check form-check-inline"mat-button matStepperNext>
+                                    <button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        </form> 
+                        
+                    </div>
+                        
+                    
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="secondFormGroup">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Layer 0.png" class="imm1" >
+                                <div class="bg_gradient1"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="m-5">Your Demographic</label>
+                                <p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori Descent</p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="aboriginal" type="radio" name="aboriginal" id="aboriginal1" value="1">
+                                <label class="form-check-label" for="aboriginal1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="aboriginal" type="radio" name="aboriginal" id="aboriginal2" value="0">
+                                <label class="form-check-label" for="aboriginal2">No</label>
+                                </div>
+                                <p class="mt-5">Q3B. Where were you born?</p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bornOptions" id="born1" value="0">
+                                <label class="form-check-label" for="born1">Australia</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bornOptions" id="born2" value="1">
+                                <label class="form-check-label" for="born2">Aisa</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bornOptions" id="born3" value="3">
+                                <label class="form-check-label" for="born3">Middle East</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bornOptions" id="born4" value="4">
+                                <label class="form-check-label" for="born4">North America</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bornOptions" id="born5" value="4">
+                                <label class="form-check-label" for="born5">South European</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bornOptions" id="born6" value="5">
+                                    <label class="form-check-label" for="born6">other</label>
+                                    </div>
+                                
+                                <div class=" mt-5">
+                                    <div class="form-check form-check-inline" matStepperPrevious>
+                                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
+                                    </div>
+                                    <div class="form-check form-check-inline"mat-button matStepperNext>
+                                        <button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="thirdFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="thirdFormGroup">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Rectangle 1533.png" class="imm3" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes(Type 1 or 2)? </p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="typeDiabetes" type="radio" name="typeDiabetes" id="typeDiabetes1" value="1">
+                                <label class="form-check-label" for="typeDiabetes1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="typeDiabetes" type="radio" name="typeDiabetes" id="typeDiabetes2" value="0">
+                                <label class="form-check-label" for="typeDiabetes2">No</label>
+                                </div>
+                                <p class="mt-5">
+                                    Q5. Have you ever been  found to have High Blood Glucose(Sugar),eg in a health examination,during an illness or during pregnancy?
+                                    </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" formControlName="highBP" type="radio" name="highBP" id="highBP1" value="1">
+                                    <label class="form-check-label" for="highBP1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input" formControlName="highBP" type="radio" name="highBP" id="highBP2" value="0">
+                                    <label class="form-check-label" for="highBP2">No</label>
+                                    </div>
+                                <div class=" mt-5">
+                                    <div class="form-check form-check-inline" matStepperPrevious>
+                                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
+                                    </div>
+                                    <div class="form-check form-check-inline"mat-button matStepperNext>
+                                        <button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="fourthFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="fourthFormGroup">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-476291300.png" class="imm1" >
+                                <div class="bg_gradient1"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q6. Are you currently taking medication for high blood pressure? </p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="hBP" type="radio" name="hBP" id="hBP1" value="1">
+                                <label class="form-check-label" for="hBP1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="hBP" type="radio" name="hBP" id="hBP2" value="0">
+                                <label class="form-check-label" for="hBP2">No </label>
+                                </div>
+                                <p class="mt-5">Q7.Do you smoke tobacco every day?</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" formControlName="tobacco" type="radio" name="tobacco" id="tobacco1" value="1">
+                                    <label class="form-check-label" for="tobacco1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input" formControlName="tobacco" type="radio" name="tobacco" id="tobacco2" value="0">
+                                    <label class="form-check-label" for="tobacco2">No</label>
+                                    </div>
+                                <div class=" mt-5">
+                                    <div class="form-check form-check-inline" matStepperPrevious>
+                                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
+                                    </div>
+                                    <div class="form-check form-check-inline"mat-button matStepperNext>
+                                        <button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="fifthFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="fifthFormGroup">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q6. How often do you eat vegetable or fruit? </p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="vegetable" type="radio" name="vegetable" id="vegetable1" value="1">
+                                <label class="form-check-label" for="vegetable1">Every Day</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" formControlName="vegetable" type="radio" name="vegetable" id="vegetable2" value="0">
+                                <label class="form-check-label" for="vegetable2">Not Every Day</label>
+                                </div>
+                                <p class="mt-5">Q7.On average, would you do atleast 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" formControlName="exercise" type="radio" name="exercise" id="exercise1" value="1">
+                                    <label class="form-check-label" for="exercise1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input" formControlName="exercise" type="radio" name="exercise" id="exercise2" value="0">
+                                    <label class="form-check-label" for="exercise2">No</label>
+                                    </div>
+                                <div class=" mt-5">
+                                    <div class="form-check form-check-inline" matStepperPrevious>
+                                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
+                                    </div>
+                                    <div class="form-check form-check-inline"mat-button matStepperNext>
+                                        <button mat-button matStepperNext>Next</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="sixthFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="sixthFormGroup">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135081673.png" class="imm1" >
+                                <div class="bg_gradient1"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q6. What is your waist measurement? </p>
+                                    <p class="hint-waist">Hint: Measure your waist below the ribs while standing (usually around the belly button).
+                                        If you don't have a tape measure refer to the clothing sizes in the table.</p>
+                                    
+                                    <p>Which range does your waist measurement fall under?</p>	
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-4 p-0">
+                                                <div class="mx-3 range-heading">
+                                                    <div class="range-heading2">Range 1</div>
+                                                    <div class=" range-heading3">
+                                                        <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
+                                                        <p class="waist-value">Less than 88cm</p>
+                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p class="waist-value">8 / 10 / 12</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check form-check-inline mt-4">
+                                                    <input class="form-check-input" formControlName="waist" type="radio" name="waist" id="waist1" value="1">
+                                                    <label class="form-check-label" for="waist1">Range 1</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 p-0">
+                                                <div class="mx-3 range-heading">
+                                                    <div class="range-heading2">Range 2</div>
+                                                    <div class=" range-heading3">
+                                                        <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
+                                                        <p class="waist-value">Between 88-100cm</p>
+                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p class="waist-value">14 / 16</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check form-check-inline mt-4">
+                                                    <input class="form-check-input" formControlName="waist" type="radio" name="waist" id="waist1" value="1">
+                                                    <label class="form-check-label" for="waist1">Range 2</label>
+                                                </div>	
+                                            </div>
+                                            <div class="col-4 p-0">
+                                                <div class="mx-3 range-heading">
+                                                    <div class="range-heading2">Range 3</div>
+                                                    <div class=" range-heading3">
+                                                        <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
+                                                        <p class="waist-value">More than 100cm</p>
+                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p class="waist-value">18 / 20 / 22 / 24</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check form-check-inline mt-4">
+                                                    <input class="form-check-input" formControlName="waist" type="radio" name="waist" id="waist1" value="1">
+                                                    <label class="form-check-label" for="waist1">Range 3</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                
+                                
+                                
+                                <div class=" mt-5">
+                                    <div class="form-check form-check-inline" matStepperPrevious>
+                                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination1" value="0">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination2" value="1">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination3" value="2">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination4" value="3">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination5" value="4">
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"  formControlName="pagination"  type="radio" name="pagination" id="pagination6" value="5">
+                                    </div>
+                                    <div class="form-check form-check-inline"mat-button matStepperNext (click)="finish()">
+                                        <button mat-button matStepperNext >Finish</button> <span class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="finalFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="finalFormGroup">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943688.png" class="imm" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="m-5">Your Result</label>
+                                <p>1 person is diagnosed with diabetes in every 5 minutes </p>
+                                    
+                                    
+                                
+                                    <div class="p-5 details-box">
+                                        <p class="text-left m-0">Please enter your Details</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-3">
+                                                
+                                                <mat-form-field >
+                                                    <mat-label>First Name*</mat-label>
+                                                    <input matInput placeholder="First Name*" formControlName="fName">
+                                                  </mat-form-field>
+                                                
+                                            </div>
+                                            <div class="col-3">
+                                                
+                                                
+                                                  <mat-form-field >
+                                                    <mat-label>Last Name*</mat-label>
+                                                    <input matInput placeholder="Last Name*" formControlName="lName">
+                                                  </mat-form-field>
+                                            </div>
+                                            <div class="col-3 ">
+                                                
+                                                <mat-form-field >
+                                                    <mat-label>Email*</mat-label>
+                                                    <input matInput placeholder="Email*" formControlName="email">
+                                                  </mat-form-field>
+                                                
+                                                 
+                                            </div>
+                                            <div class="col-3 ">
+                                                
+                                                <mat-form-field >
+                                                    <mat-label>Contact Numner*</mat-label>
+                                                    <input matInput placeholder="Contact Numner*" formControlName="phone">
+                                                  </mat-form-field>
+                                                
+                                                 
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col text-left">
+                                                <mat-checkbox class="example-margin">I accept the term and conditions</mat-checkbox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 details-box1">
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class=" view-final-btn">VIEW RESULTS</button>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                        
+                                
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    
+                   
+                </mat-horizontal-stepper>
+            </div>
+            
+		<!-- </div>
 		
 	  </div>
 	</div>
-  </div>
+  </div> -->

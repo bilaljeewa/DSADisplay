@@ -18,6 +18,7 @@ export class RiskTestComponent implements OnInit {
   fourthFormGroup!: FormGroup;
   fifthFormGroup!: FormGroup;
   sixthFormGroup!: FormGroup;
+  finalFormGroup!: FormGroup;
   constructor( public _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -30,7 +31,27 @@ export class RiskTestComponent implements OnInit {
         for (var i = 0; i < elements.length; i++) {
             elements[i].addEventListener('click',()=>{
               console.log("BUTOON CLICK",i)
+console.log(elements)
+console.log(elements[i])
 
+// const elmd = document.querySelector<HTMLElement>('.exampleModal1234')
+const elmd = document.querySelectorAll<HTMLElement>('.exampleModal1234')!;
+console.log(elmd.length)
+if(elmd && elmd[elmd.length - 1] ){
+  console.log("inside if : ")
+  elmd[elmd.length-1].style.display ='block';
+}else{
+  console.log("inside else : ")
+  //elmd[3].style.display ='block';
+}
+
+              const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
+              console.log(elm.parentElement)
+              const elemp = <HTMLElement>elm.parentElement;
+              console.log(elemp.style.minHeight)
+             elemp.style.height = '600px';
+              // elm.parentElement?.style.
+              elm.style.display = 'none';
               jQuery("#exampleModal1234").modal('show')
             } );
         }
@@ -66,11 +87,24 @@ export class RiskTestComponent implements OnInit {
       waist: [''],
       pagination:['5']
     });
+    this.sixthFormGroup = this._formBuilder.group({
+      waist: [''],
+      pagination:['5']
+    });
+    this.finalFormGroup = this._formBuilder.group({
+      waist: [''],
+      fName: [''],
+      lName: [''],
+      email: [''],
+      phone: [''],
+      pagination:['6']
+    });
     
 
     this.firstFormGroup.get('pagination')?.valueChanges.subscribe(value=>{
       if(value){
-        let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[value])
+        let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[value])!
+        console.log(buttons)
         buttons.click()
         if(value == 1){
           this.secondFormGroup.get('pagination')?.setValue('1')  
@@ -88,7 +122,8 @@ export class RiskTestComponent implements OnInit {
     this.secondFormGroup.get('pagination')?.valueChanges.subscribe(value=>{
       if(value){
         let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[value])
-        buttons.click()
+        console.log(buttons)
+        buttons!.click()
         if(value == 0){
           this.firstFormGroup.get('pagination')?.setValue('0')  
         }else if(value == 2){
@@ -104,8 +139,9 @@ export class RiskTestComponent implements OnInit {
     })
     this.thirdFormGroup.get('pagination')?.valueChanges.subscribe(value=>{
       if(value){
-        let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[value])
-        buttons.click()
+        let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[value])!
+        console.log(buttons)
+        buttons.click
         if(value == 1){
           this.secondFormGroup.get('pagination')?.setValue('1')  
         }else if(value == 0){
@@ -122,6 +158,7 @@ export class RiskTestComponent implements OnInit {
     this.fourthFormGroup.get('pagination')?.valueChanges.subscribe(value=>{
       if(value){
         let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[value])
+        console.log(buttons)
         buttons.click()
         if(value == 1){
           this.secondFormGroup.get('pagination')?.setValue('1')  
@@ -178,7 +215,9 @@ export class RiskTestComponent implements OnInit {
 
   finish(){
     console.log("finish")
-    this.resultStatus=true;
+    let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[6])
+    buttons.click()
+    // this.resultStatus=true;
   }
 
  

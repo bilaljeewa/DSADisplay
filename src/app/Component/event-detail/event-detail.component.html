@@ -5,9 +5,9 @@
       <p class="first-heading">THE EVENT IS IN</p>
       <h2 class="day-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{sharedData[0].dayLeft | daysLeft}} Days</h2>
       <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].address">{{sharedData[0].address}}</p>
-      <button class="btn btn-primary" (click)="openViewModal();do($event)">Find a Event</button>
+      <button class="btn btn-primary ViewAllLocation" (click)="openViewModal();do($event)">Find a Event</button>
       <div>
-        <a class="view-all-event ViewAllLocation" href="#" (click)="openViewModal();do($event)"  >view all location</a>
+        <p class="view-all-event ViewAllLocation" href="#" (click)="openViewModal();do($event)"  >view all location</p>
       </div>
       
       <h3 class="event-inform-heading">Event Information</h3>

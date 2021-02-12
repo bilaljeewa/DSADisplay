@@ -41,7 +41,10 @@ export class UpcomingEventComponent implements OnInit {
   }
   openViewModal(){
     console.log("open modal upcoming ")
-    jQuery("#viewAllEventModal").modal('show')
+    setTimeout(() => {
+      jQuery('#viewAllEventModal').modal('show');
+       }, 500);
+    // jQuery("#viewAllEventModal").modal('show')
   }
   do(event) {
 		event.preventDefault();

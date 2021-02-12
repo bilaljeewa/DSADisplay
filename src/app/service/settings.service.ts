@@ -194,7 +194,7 @@ export class SettingsService extends ServiceBase {
       let base = this.getUrl('')
       console.log("BASE >>>>>>>  ",base)
 
-      let url = this.getWebSiteRoot('')
+      let url = this.getBase('')
       url = url+'event.aspx?EventKey='+event
       console.log(url,"URLLLLLLLLLLLLLLLLLLLLL")
       window.open(url)
