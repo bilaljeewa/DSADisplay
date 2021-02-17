@@ -26,11 +26,11 @@ export class ViewAllEventComponent implements OnInit {
     setTimeout(() => {
       var elements = document.querySelectorAll(".ViewAllLocation");
 
-        console.log("qeury sectory alll ",elements)
+        // console.log("qeury sectory alll ",elements)
 
         for (var i = 0; i < elements.length; i++) {
             elements[i].addEventListener('click',()=>{
-              console.log("View All location CLICK",i)
+              // console.log("View All location CLICK",i)
 
               jQuery("#viewAllEventModal").modal('show')
             } );
@@ -38,11 +38,11 @@ export class ViewAllEventComponent implements OnInit {
       }, 100);
     
       this.settingsService.getEventDatas("$/DSA/FTF/All FTF Events").subscribe(values=>{
-        console.log(values)
+        // console.log(values)
         this.eventData= values
     // console.log(this.eventData)
       this.eventData.forEach(resp=>{
-        console.log(resp.Properties.$values)
+        // console.log(resp.Properties.$values)
         let city='';
         let  address1='';
         let BeginDate='';
@@ -63,7 +63,7 @@ export class ViewAllEventComponent implements OnInit {
           
         
         });
-        console.log(city,address1,BeginDate)
+        // console.log(city,address1,BeginDate)
         this.sharedData.push({city,address1,BeginDate,eventcode})
       })
       })

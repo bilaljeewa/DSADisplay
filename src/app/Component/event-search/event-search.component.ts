@@ -33,14 +33,14 @@ export class EventSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.settings)
+  
     if(this.settings && this.settings.IQA){
       this.settingsService.getEventDatas(this.settings.IQA).subscribe(values=>{
-        console.log(values)
+    
         this.eventData= values
     // console.log(this.eventData)
       this.eventData.forEach(resp=>{
-        console.log(resp.Properties.$values)
+        
         let city='';
         let  address1='';
         let BeginDate='';
@@ -61,7 +61,7 @@ export class EventSearchComponent implements OnInit {
           
         
         });
-        console.log(city,address1,BeginDate)
+       
         this.sharedData.push({city,address1,BeginDate,eventcode})
       })
       })
@@ -74,17 +74,17 @@ export class EventSearchComponent implements OnInit {
    this.eventData.filter(country => {
       let eventCODEValue = '';
       country['Properties']['$values'].forEach(element => {
-       console.log(element.Name)
+      
         if(element.Name == "EventId"){
 eventCODEValue = element.Value
         }
         if(element.Name == "ZipLocality"){
          
           if(element.Value.toLowerCase().includes(name.toLowerCase())) {
-            console.log("value inserted")
+          
             this.zipState.push({'eventCode':eventCODEValue,'Name': element.Value})
           }
-         console.log(this.zipState)
+        
         }
       });
       

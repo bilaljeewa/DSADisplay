@@ -15,7 +15,7 @@ import { promise } from 'protractor';
 export class SettingsService extends ServiceBase {
   sharedData=Array()
   contentItmeKeyCounter: any=0;
-
+  contentItemKeyID: any;
   
 	baseUrl: string;
 	token: string;
@@ -31,36 +31,30 @@ export class SettingsService extends ServiceBase {
   }
 
 
-
+  getCONtentKey(){
+   // console.log("content key >>>>>>>>>>>>",this.contentKeysService)
+    const params = new HttpParams()   
+    .set('contentKey', this.contentKeysService.contentKey)
+    .set('contentItemKey',String(this.contentKeysService.contentItemKey));
+    // console.log('url: '+url);
+    // console.log("params >>>>>>",params)
+    return params
+  }
   
   public GetSettings (): Observable<SectionsSettings>
   {
 
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
+    // this.contentItemKeyID = String(this.contentKeysService.contentItemKey)
+    // console.log("content >>>>>>>>>>>",this.contentItemKeyID)
     let headers = this.getHeaders();
     let url = this.getUrl('ContentItem');
     
     const params = new HttpParams()   
     .set('contentKey', this.contentKeysService.contentKey)
     .set('contentItemKey',String(this.contentKeysService.contentItemKey));
-    console.log('url: '+url);
+    // console.log('url: '+url);
+     console.log("params >>>>>>",params)
     return this.http.get(url,{params,headers}).pipe(map((res:any)=>res.Settings)).pipe(catchError(this.handleError));
   }
   // public GetSettings (): Observable<SectionsSettings>
@@ -107,20 +101,19 @@ export class SettingsService extends ServiceBase {
           const url = this.getUrl('ContentItem');
           //return this.http.get(url,{params,headers}).pipe(map((res: ClientSideContentItem)=>res.Settings)).pipe(catchError(this.handleError));
           console.log("stepppppp 2 + ",i)
-          return this.http.get(url,{params,headers}).pipe(map((res: any)=>res.Settings)).pipe(catchError(this.handleError));
+          return this.http.get(url,{params,headers}).pipe(map((res: any)=>res)).pipe(catchError(this.handleError));
         }else{
           console.log("return null")
         }
       }
-    
-    params = new HttpParams()
+      params = new HttpParams()
         .set('contentKey', this.contentKeysService.contentKey)  
         .set('contentItemKey',this.contentKeysService.contentItemKey[0]);
         this.contentItmeKeyCounter++;
         const headers = this.getHeaders();  
         const url = this.getUrl('ContentItem');
         console.log("stepppppp  1")
-    return  this.http.get(url,{params,headers}).pipe(map((res: any)=>res.Settings)).pipe(catchError(this.handleError));
+    return  this.http.get(url,{params,headers}).pipe(map((res: any)=>res)).pipe(catchError(this.handleError));
   }
 
   GetSettingss(): Observable<any[]> {

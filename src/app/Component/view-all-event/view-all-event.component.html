@@ -1,27 +1,58 @@
 <!-- <button type="" id="viewAllEventButtons" class="viewAllEventButton" data-toggle="modal" data-target="#viewAllEventModal">
 	
   </button> -->
-  
-<div class="modal fade view-modal" id="viewAllEventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialogs" role="document">
-      <div class="modal-content mt-5 pt-5 backgound-none">
-        <div class="modal-header border-none">
-          <h5 class="modal-title headings" id="exampleModalLabel">All event locations</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="row" >
-            <div class="col-5 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
-                <div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
-                <div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, 6:00AM - 8:00PM</div> 
-            </div>
-            
-  
+  <div>
+    <div class="modal fade view-modal" id="viewAllEventModals" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialogs" role="document">
+        <div class="modal-content mt-5 pt-5 backgound-none">
+          <div class="modal-header border-none">
+            <h5 class="modal-title headings" id="exampleModalLabel">All event locations</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
+          <div class="modal-body">
+            <div class="row" >
+              <div class="col-5 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
+                  <div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
+                  <div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, 6:00AM - 8:00PM</div> 
+              </div>
+              
+    
+            </div>
+          </div>
+          
         </div>
-        
       </div>
     </div>
+    <div class="modal fade view-modal" id="viewAllEventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-dialogs" role="document">
+        <div class="modal-content mt-5 pt-5 backgound-none">
+          <div class="modal-header border-none">
+            <h5 class="modal-title headings" id="exampleModalLabel1">Let's Talk</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" >
+              <div class="col-6">
+                <input type="text">
+              </div>
+              <div class="col-6">
+                <input type="text">
+              </div>
+              <!-- <div class="col-5 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
+                  <div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
+                  <div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, 6:00AM - 8:00PM</div> 
+              </div> -->
+              
+    
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div> 
   </div>
+ 

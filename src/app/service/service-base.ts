@@ -15,22 +15,22 @@ export class ServiceBase {
     
     }
     getUrl(request:string):string{
-        console.log(request)
-        console.log(this.contextService)
+        // console.log(request)
+        // console.log(this.contextService)
         if(this.contextService.proxy)
             return 'api/'+request;
         return this.contextService.baseUrl+'api/'+request;
     }
     getBase(request:string):string{
-        console.log(request,window.location.origin)
-        console.log(this.contextService)
+        // console.log(request,window.location.origin)
+        // console.log(this.contextService)
         if(this.contextService.proxy)
             return ''+request;
-console.log( window.location.origin+this.contextService.baseUrl)
+// console.log( window.location.origin+this.contextService.baseUrl)
         return window.location.origin+this.contextService.baseUrl;
     }
     getWebSiteRoot(request:string):string{
-        console.log(request)
+        // console.log(request)
         if(this.contextService.proxy)
             return 'api/'+request;
         return this.contextService.webSiteRoot+request;

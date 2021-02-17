@@ -26,8 +26,8 @@
     }
     
     .view-modal{
-        background: #000;
-        opacity: .8!important;
+        background: #000000ed;
+        /* opacity: .8!important; */
         color: #fff
     }
     .border-none {

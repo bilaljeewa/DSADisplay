@@ -26,7 +26,7 @@ export class DaysLeft implements PipeTransform {
   
   transform(value: any): any {
    
-     console.log(value)
+    //  console.log(value)
      let todayDate:any= new Date()
      let eDate:any = new Date(value)
      const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds

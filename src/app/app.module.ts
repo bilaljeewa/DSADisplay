@@ -41,7 +41,7 @@ import { ViewAllEventComponent } from './Component/view-all-event/view-all-event
 })
 export class AppModule {  constructor(private injector: Injector) {
     const appElement = createCustomElement(AppComponent, { injector });
-    console.log(customElements.get('app-root'))
+   
     if (!customElements.get('app-root')){
       customElements.define('app-root', appElement);
     } 

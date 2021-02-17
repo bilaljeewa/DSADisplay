@@ -16,10 +16,10 @@ export class UpcomingEventComponent implements OnInit {
   constructor( public settingsService: SettingsService) { }
 
   ngOnInit(): void {
-    console.log("event data ", this.settings)
+    // console.log("event data ", this.settings)
     if(this.settings && this.settings.IQA){
       this.settingsService.getEventDatas(this.settings.IQA).subscribe(values=>{
-         console.log(values)
+        //  console.log(values)
          this.eventData= values[0].Properties.$values
          let desc;
          let dayLeft;
@@ -35,12 +35,12 @@ export class UpcomingEventComponent implements OnInit {
          
          })
          this.sharedData.push({desc,dayLeft,address})
-         console.log(this.sharedData)
+        //  console.log(this.sharedData)
       })
     }
   }
   openViewModal(){
-    console.log("open modal upcoming ")
+    // console.log("open modal upcoming ")
     setTimeout(() => {
       jQuery('#viewAllEventModal').modal('show');
        }, 500);

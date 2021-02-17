@@ -69,10 +69,9 @@
 }
 
 
-::ng-deep .mat-horizontal-content-container {
-    overflow: hidden;
-   padding: 0!important;
-}
+
+
+
 
 
 
@@ -112,13 +111,13 @@
     transform: translate(-50%,-50%) scale(1.6);
     /* object-position: right; */
 }
-.imm1 {
+.imm11 {
     position: absolute;
-    top: 242px;
+    top: 340px;
     /* right: -600px; */
     width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(1.6);
+    transform: translate(-50%,-50%) scale(2.2);
     /* object-position: right; */
 }
 .imm3 {
@@ -186,38 +185,102 @@
     margin: 100px auto 0 auto;
 }
 .modal-dialog {
-    width: 100%!important;
-    height: 100%!important;
-    margin: 0!important;
-    padding: 0!important;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .modal-content {
-    height: auto!important;
-    min-height: 100%!important;
-    border-radius: 0!important;
-    min-width: calc(100vw - 20px)!important;
-  }
-  .exampleModal1234{
-display: none;
-position: fixed;
-    top: 85px;
-    left: 0px;
-width: 100%;
-z-index: 999;
-
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+    min-width: calc(100vw - 20px);
   }
   .details-box{
     background-color: #ffffff;
     color: black;
   }
-  .col-3{
-    /* flex: 0 0 25%!important;
-    max-width: 21%!important; */
-  }
+  
   .view-final-btn{
     color: #fff;
     background: red;
     width: 100%;
-    padding: 10px!important;
+    padding: 5px;
+    border-radius: unset!important;
   }
+  .riskDiabetes{
+      color: red;
+     
+  }
+  .resutlTest{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .bar-chartMin {
+    width: 33.33%;
+    min-height: 20px!important;
+    background: #404141;
+    max-height: 20px!important;
+    color: #fff;
+    position: relative;
+    top: 50px;
+}
+.bar-chartMed {
+    width: 33.33%;
+    min-height: 40px!important;
+    background: #404141;
+    max-height: 40px!important;
+    color: #fff;
+    position: relative;
+    top: 30px;
+}
+.bar-chartMax {
+    width: 33.33%;
+    min-height: 70px!important;
+    background: red;
+    max-height: 70px!important;
+    color: #fff;
+    font-size: 50px;
+    padding-top: 10px;
+}
+.chart{
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.bar-chart{
+    width: 33.33%;
+    margin: 45px 0 10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+.bar-chart-range{
+    width: 33.33%;
+    margin: 5px 0 10px 0;
+    text-align: center;
+    font-size: 18px;
+
+}
+.glucose{
+    font-size: 20px;
+    margin: 10px 0 30px 0!important;
+}
+.glucoseB{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px!important;
+}
+::ng-deep .diabetes .mat-stepper-horizontal .mat-horizontal-stepper-header-container{
+    display: none!important;
+}
+.exampleModal1234{
+    display: none;
+    position: absolute;
+        /* top: 85px; */
+        left: 0px;
+    width: 100%;
+    z-index: 999;
+    
+      }

@@ -24,16 +24,16 @@ export class EventDetailComponent implements OnInit {
       let keys = KeyEvents[1]
       let keys2 = keys.split('&').length
       let keys3;
-      console.log(keys,'checking' ,keys2)
+     
        if(keys2 > 1){
          keys3 = keys.split('&')[0]
        }else{
          keys3 = keys
        }
-        console.log("event data ", this.settings)
+        
         if(this.settings && this.settings.IQA){
           this.settingsService.getEventData(this.settings.IQA,keys3).subscribe(values=>{
-             console.log(values)
+          
              this.eventData= values[0].Properties.$values
              let desc;
              let dayLeft;
@@ -49,7 +49,7 @@ export class EventDetailComponent implements OnInit {
              
              })
              this.sharedData.push({desc,dayLeft,address})
-             console.log(this.sharedData)
+             
           })
         }
     }
@@ -67,7 +67,7 @@ export class EventDetailComponent implements OnInit {
 	// 	event.preventDefault();
 	// }
   openViewModal(){
-    console.log("open modal upcoming ")
+    
     setTimeout(() => {
       jQuery('#viewAllEventModal').modal('show');
        }, 500);
