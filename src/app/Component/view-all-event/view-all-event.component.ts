@@ -35,6 +35,21 @@ export class ViewAllEventComponent implements OnInit {
               jQuery("#viewAllEventModal").modal('show')
             } );
         }
+        var elements = document.querySelectorAll(".LetsTalk");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click',()=>{
+              console.log("clicklet taklk >>>>>>>>",i)
+              jQuery("#viewAllEventModals").modal('show')
+            } );
+        }
+        var elements = document.querySelectorAll(".StayInformed");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click',()=>{
+              console.log("clicklet informed >>>>>>>>",i)
+              jQuery("#viewAllEventModalss").modal('show')
+            } );
+        }
+        
       }, 100);
     
       this.settingsService.getEventDatas("$/DSA/FTF/All FTF Events").subscribe(values=>{

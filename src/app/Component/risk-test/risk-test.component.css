@@ -182,7 +182,6 @@
 .content-dsa{
     max-width: 1000px;
     margin: 0 auto;
-    margin: 100px auto 0 auto;
 }
 .modal-dialog {
     width: 100%;
@@ -284,3 +283,40 @@
     z-index: 999;
     
       }
+
+      
+
+
+@media only screen and (max-width: 600px) {
+    .form-check-inline {
+        width: 100%;
+        position: relative;
+        left: 30%;
+        margin: 5px 0;
+    }
+    .range-media{
+        max-width: 100%;
+        flex: auto;
+        padding: 15px!important;
+    }
+    .page-media-btn{
+        width: auto;
+        position: initial;
+    }
+    .result-media{
+        max-width: 100%;
+    flex: unset;
+    }
+    .details-box{
+        padding: 20px!important;
+        margin: 0 20px 20px 20px!important;
+    }
+}
+
+    
+    
+    
+    
+    
+    
+    

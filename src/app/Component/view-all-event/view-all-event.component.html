@@ -2,7 +2,7 @@
 	
   </button> -->
   <div>
-    <div class="modal fade view-modal" id="viewAllEventModals" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade view-modal" id="viewAllEventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialogs" role="document">
         <div class="modal-content mt-5 pt-5 backgound-none">
           <div class="modal-header border-none">
@@ -13,7 +13,7 @@
           </div>
           <div class="modal-body">
             <div class="row" >
-              <div class="col-5 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
+              <div class="col-6 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
                   <div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
                   <div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, 6:00AM - 8:00PM</div> 
               </div>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="modal fade view-modal" id="viewAllEventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal fade view-modal" id="viewAllEventModals" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
       <div class="modal-dialog modal-dialogs" role="document">
         <div class="modal-content mt-5 pt-5 backgound-none">
           <div class="modal-header border-none">
@@ -34,22 +34,95 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          
           <div class="modal-body">
-            <div class="row" >
-              <div class="col-6">
-                <input type="text">
-              </div>
-              <div class="col-6">
-                <input type="text">
-              </div>
-              <!-- <div class="col-5 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
-                  <div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
-                  <div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, 6:00AM - 8:00PM</div> 
-              </div> -->
-              
-    
+            <div class="row my-4" >
+                <div class="col-6">
+                <input class="input-box full-width" type="text" placeholder="First Name*">
+                </div>
+                <div class="col-6">
+                    <input class="input-box full-width" type="text" placeholder="Last Name*">
+                </div>
             </div>
+            <div class="row my-4" >
+                <div class="col-12">
+                    <input class="input-box full-width" type="text" placeholder="Email*">
+                </div>
+                
+            </div>
+            <div class="row my-4" >
+                <div class="col-12">
+                    <input class="input-box full-width" type="text" placeholder="Mobile*">
+                </div>
+                
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <textarea class="input-box full-width text-boxDSA" placeholder="How can we help you"> </textarea>
+                </div>
+            </div>
+            <div class="row my-4">
+              <div class="col text-left text-white">
+                  <mat-checkbox  class="example-margin">I accept the term and conditions</mat-checkbox>
+              </div>
           </div>
+          <div class="row my-4">
+            <div class="col text-center">
+              <button class=" btn-primarys ViewAllLocation" >Send</button>
+            </div>
+          </div>  
+        </div>
+          
+        </div>
+      </div>
+    </div> 
+    <div class="modal fade view-modal" id="viewAllEventModalss" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-dialogs" role="document">
+        <div class="modal-content mt-5 pt-5 backgound-none">
+          <div class="modal-header border-none">
+            <h5 class="modal-title headings" id="exampleModalLabel1">Stay Informed</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div class="row my-4" >
+                <div class="col-6">
+                <input class="input-box full-width" type="text" placeholder="First Name*">
+                </div>
+                <div class="col-6">
+                    <input class="input-box full-width" type="text" placeholder="Last Name*">
+                </div>
+            </div>
+            <div class="row my-4" >
+                <div class="col-12">
+                    <input class="input-box full-width" type="text" placeholder="Email*">
+                </div>
+                
+            </div>
+            <div class="row my-4" >
+                <div class="col-12">
+                    <input class="input-box full-width" type="text" placeholder="Mobile*">
+                </div>
+                
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <textarea class="input-box full-width text-boxDSA" placeholder="How can we help you"> </textarea>
+                </div>
+            </div>
+            <div class="row my-4">
+              <div class="col text-left text-white">
+                  <mat-checkbox  class="example-margin">I accept the term and conditions</mat-checkbox>
+              </div>
+          </div>
+          <div class="row my-4">
+            <div class="col text-center">
+              <button class=" btn-primarys ViewAllLocation" >Send</button>
+            </div>
+          </div>  
+        </div>
           
         </div>
       </div>

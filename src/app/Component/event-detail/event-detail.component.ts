@@ -18,40 +18,46 @@ export class EventDetailComponent implements OnInit {
 
   ngOnInit(): void {
     let url = window.location.search
+    console.log("url >>>>>>",url)
     if(url && url.split && url.split("EventKey=")){
       let KeyEvents = url.split('EventKey=')
- 
+ console.log("KeyEvents >>>>>>>>",KeyEvents)
       let keys = KeyEvents[1]
-      let keys2 = keys.split('&').length
-      let keys3;
-     
-       if(keys2 > 1){
-         keys3 = keys.split('&')[0]
-       }else{
-         keys3 = keys
-       }
+      if(keys){
+        console.log("KeyEvents if >>>>>>>>",keys)
         
-        if(this.settings && this.settings.IQA){
-          this.settingsService.getEventData(this.settings.IQA,keys3).subscribe(values=>{
+        let keys2 = keys.split('&').length
+        let keys3;
+       
+         if(keys2 > 1){
+           keys3 = keys.split('&')[0]
+         }else{
+           keys3 = keys
+         }
           
-             this.eventData= values[0].Properties.$values
-             let desc;
-             let dayLeft;
-             let address;
-             this.eventData.forEach(resp=>{
-              if(resp.Name == 'AdditionalDescription'){
-                desc = resp.Value
-              }else if(resp.Name == 'StartDateTime'){
-                dayLeft = resp.Value
-              }else if(resp.Name == 'Address1'){
-                address = resp.Value
-              }
-             
-             })
-             this.sharedData.push({desc,dayLeft,address})
-             
-          })
-        }
+          if(this.settings && this.settings.IQA){
+            this.settingsService.getEventData(this.settings.IQA,keys3).subscribe(values=>{
+            
+               this.eventData= values[0].Properties.$values
+               let desc;
+               let dayLeft;
+               let address;
+               this.eventData.forEach(resp=>{
+                if(resp.Name == 'AdditionalDescription'){
+                  desc = resp.Value
+                }else if(resp.Name == 'StartDateTime'){
+                  dayLeft = resp.Value
+                }else if(resp.Name == 'Address1'){
+                  address = resp.Value
+                }
+               
+               })
+               this.sharedData.push({desc,dayLeft,address})
+               
+            })
+          }
+      }
+     
     }
     
     

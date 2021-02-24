@@ -23,6 +23,8 @@
     .headings{
       font-weight: bold;
       font-size: 37px;
+      width: 100%;
+      text-align: center;
     }
     
     .view-modal{
@@ -72,5 +74,28 @@
 .pointer-cursor:hover{
     color:#ed1c24
 }
+.btn-primarys{
+  color: #fff;
+  background: #ed1c24!important;
+  border: #ed1c24!important;
+  border-radius: 20px!important;
+  padding: 5px 60px!important;
+  margin: 1rem!important;
+} 
+.input-box{
+  border-radius: 20px;
 
-  
+}
+.full-width{
+  width: 100%;
+}
+::ng-deep .mat-checkbox-inner-container {
+  border: 1px solid white!important;
+}
+.text-boxDSA{
+  height: 200px;
+}
+::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+  line-height: 24px;
+  color: #fff!important;
+}

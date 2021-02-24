@@ -103,7 +103,7 @@ export class RiskTestComponent implements OnInit {
 
         for (var i = 0; i < elements.length; i++) {
             elements[i].addEventListener('click',()=>{
-              
+              console.log("hello >>>>>>> testing")
             const elmd = document.querySelectorAll<HTMLElement>('.exampleModal1234')!;
            
             if(elmd && elmd[elmd.length - 1] ){
@@ -116,7 +116,8 @@ export class RiskTestComponent implements OnInit {
               const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
               // console.log(elm.parentElement)
               const elemp = <HTMLElement>elm.parentElement;
-             
+              this.interval = setInterval(()=>{
+                this.doStuff()}, 50); // 2000 ms = start after 2sec 
               elm.style.display = 'none';
               jQuery("#exampleModal1234").modal('show')
             } );
@@ -131,8 +132,7 @@ export class RiskTestComponent implements OnInit {
       
       
       
-      this.interval = setInterval(()=>{
-        this.doStuff()}, 1000); // 2000 ms = start after 2sec 
+     
       
       
     
