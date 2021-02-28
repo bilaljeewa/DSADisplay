@@ -13,6 +13,7 @@ import { EventSearchComponent } from './Component/event-search/event-search.comp
 import { MaterialModule } from './material.module';
 import { UpcomingEventComponent } from './Component/upcoming-event/upcoming-event.component';
 import { ViewAllEventComponent } from './Component/view-all-event/view-all-event.component';
+import { CheckInComponent } from './Component/check-in/check-in.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ViewAllEventComponent } from './Component/view-all-event/view-all-event
     EventSearchComponent,
     UpcomingEventComponent,
     ViewAllEventComponent,
+    CheckInComponent,
   ],
   imports: [
     BrowserModule,

@@ -95,7 +95,10 @@
 .text-boxDSA{
   height: 200px;
 }
-::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+.accptcondition .mat-checkbox-layout .mat-checkbox-label {
   line-height: 24px;
+  color: #fff!important;
+}
+ label, .Label, .PanelFieldLabelFont {
   color: #fff!important;
 }

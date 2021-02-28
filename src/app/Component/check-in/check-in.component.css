@@ -1,0 +1,131 @@
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .width {
+    width: 100%;
+  }
+
+  .modal-content{
+    background: none!important;
+    }
+    .view-all-event{
+        color: #404141;
+        font-weight: 600;
+    font-size: 18px;
+    }
+    .heading{
+        font-weight: 600;
+        font-size: 37px!important;
+    }
+    .headings{
+      font-weight: bold;
+      font-size: 37px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .view-modal{
+        background: #000000ed;
+        /* opacity: .8!important; */
+        color: #fff
+    }
+    .border-none {
+        border-bottom: none!important;
+    }  
+
+.btn-primary {
+  color: #fff;
+  background-color: #ed1c24;
+  border-color: #ed1c24;
+  border-radius: 20px;
+  padding: 5px 25px;
+}   
+.container{
+  max-width: 500px;
+}
+.mat-form-field-infix {
+  border: 1px solid #000!important;
+}
+.autocomplete-container.mat-focused .mat-form-field-outline .mat-form-field-outline-start,
+.autocomplete-container.mat-focused .mat-form-field-outline .mat-form-field-outline-gap,
+.autocomplete-container.mat-focused .mat-form-field-outline .mat-form-field-outline-end
+{
+    border-bottom: none;
+    border-radius: 20px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.city-bold{
+  font-weight: bold;
+}
+.pointer-cursor{
+  cursor: pointer;
+}
+.pointer-cursor:hover{
+    color:#ed1c24
+}
+.btn-primarys{
+  color: #fff;
+  background: #ed1c24!important;
+  border: #ed1c24!important;
+  border-radius: 20px!important;
+  padding: 5px 60px!important;
+  margin: 1rem!important;
+} 
+.input-box{
+  border-radius: 20px;
+
+}
+.full-width{
+  width: 100%;
+}
+::ng-deep .mat-checkbox-inner-container {
+  border: 1px solid white!important;
+}
+.text-boxDSA{
+  height: 200px;
+}
+.accptcondition .mat-checkbox-layout .mat-checkbox-label {
+  line-height: 24px;
+  color: #fff!important;
+}
+ label, .Label, .PanelFieldLabelFont {
+  color: #fff!important;
+}
+.select_style{
+    height: 37px!important;
+    border-radius: 20px!important;
+    font-size: 100%!important;
+    line-height: 1.8!important;
+     color: #555555!important;
+}
+.dsams_event .leftcol .eventDetails-container:before {
+    z-index: 0!important;
+}
+.checkIns{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 0;
+    z-index: 9999!important;
+    position: relative;
+}
+.select_data{
+    font-size: 15px;
+}
+.headings{
+    color: #fff!Important;
+    font-weight: bold;
+    font-size: 37px;
+    width: 100%;
+    text-align: center;
+  }

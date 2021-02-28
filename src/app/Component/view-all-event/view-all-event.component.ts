@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SettingsService } from 'src/app/service/settings.service';
 declare var jQuery:any;
@@ -17,10 +17,24 @@ export class ViewAllEventComponent implements OnInit {
   countryCtrl: FormControl;
 
   filteredCountry: Observable<any[]>;
-  
+  letInform: FormGroup;
   
   zipState=Array()
-  constructor(public settingsService: SettingsService) { }
+  constructor(public settingsService: SettingsService,public fb: FormBuilder) {
+    this.createTable()
+   }
+   createTable(){
+     this.letInform=this.fb.group({
+      fName: ['',Validators.required],
+      lName: ['',Validators.required],
+      mobile: ['',Validators.required],
+      message: ['',Validators.required],
+      email: ['',Validators.required],
+      acceptCondtion: ['',Validators.required]
+     })
+     
+       
+   }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -89,5 +103,34 @@ export class ViewAllEventComponent implements OnInit {
     
     
   }
+  sendStayInformed(){
+    console.log(this.letInform)
+    if(this.letInform.status == 'VALID'){
+      let data = this.letInform.getRawValue()
+      console.log(data)
+      this.settingsService.postGPdata(data,'FaceTheFactsStayInformed').subscribe(resp=>{
+        console.log(resp)
+      })
+    }else{
+
+    }
+    
+  }
+  sendLoginInformed(){
+    console.log(this.letInform)
+    if(this.letInform.status == 'VALID'){
+      let data = this.letInform.getRawValue()
+      console.log(data)
+      this.settingsService.postGPdata(data,'FaceTheFactsLetsTalk').subscribe(resp=>{
+        console.log(resp)
+      })
+    }else{
+      
+    }
+    
+  }
+  do(event) {
+		event.preventDefault();
+	}
 
 }

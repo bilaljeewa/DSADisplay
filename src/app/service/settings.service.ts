@@ -176,6 +176,22 @@ export class SettingsService extends ServiceBase {
         return res.Items.$values;
         }));
       }
+
+      getGIData (value,event):Observable<any[]> {
+        const httpOptions = {
+          headers: this.getHeaders()
+        }
+        let url = this.getUrl('iqa')
+        
+        url = url+'?QueryName='+value+'&parameter='+event
+        console.log(url);
+       
+        return this.http.get(url, httpOptions)
+          .pipe(map((res: any) => {
+            console.log(res)
+          return res.Items.$values;
+          }));
+        }
     
     // private getContext() {
     //   var clientContextStr = (document.querySelector('#__ClientContext') as HTMLInputElement).value;
@@ -236,6 +252,25 @@ export class SettingsService extends ServiceBase {
 
     //use baseUrl gathered earlier from ClientContent to get relative path of restful operation.
     let url = this.baseURL+'api/QueryDefinition/_execute';
+   
+    return this.http.post(url, findBypath, httpOptions).pipe(map((res: any) => { 
+     
+      return res; }));
+    //{console.log(res); return res}));
+
+  }
+   postGPdata(dataJson,urls): Observable<any> {
+   
+    const httpOptions = {
+      headers:this.getHeaders()
+    };
+    //this is the POST request body for getting a (IQA) QueryDefinition.
+    let findBypath = dataJson
+
+    //use baseUrl gathered earlier from ClientContent to get relative path of restful operation.
+              
+    let url = 'https://www.imisconsulting.com.au/DSAWebApi/api/'+urls+'/'+this.getSelectedID();
+    console.log(url)
    
     return this.http.post(url, findBypath, httpOptions).pipe(map((res: any) => { 
      

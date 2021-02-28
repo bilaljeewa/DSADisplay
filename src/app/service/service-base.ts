@@ -39,5 +39,8 @@ export class ServiceBase {
         console.log('Error with http request: ',error);
         return throwError(error);
       }
+      getSelectedID(){
+          return this.contextService.selectedPartyId
+      }
     
 }

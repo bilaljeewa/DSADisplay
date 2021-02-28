@@ -35,40 +35,40 @@
             </button>
           </div>
           
-          <div class="modal-body">
+          <div class="modal-body" [formGroup]="letInform">
             <div class="row my-4" >
                 <div class="col-6">
-                <input class="input-box full-width" type="text" placeholder="First Name*">
+                <input class="input-box full-width" formControlName="fName" type="text" placeholder="First Name*">
                 </div>
                 <div class="col-6">
-                    <input class="input-box full-width" type="text" placeholder="Last Name*">
+                    <input class="input-box full-width" formControlName="lName" type="text" placeholder="Last Name*">
                 </div>
             </div>
             <div class="row my-4" >
                 <div class="col-12">
-                    <input class="input-box full-width" type="text" placeholder="Email*">
+                    <input class="input-box full-width" formControlName="email" type="text" placeholder="Email*">
                 </div>
                 
             </div>
             <div class="row my-4" >
                 <div class="col-12">
-                    <input class="input-box full-width" type="text" placeholder="Mobile*">
+                    <input class="input-box full-width" formControlName="mobile" type="text" placeholder="Mobile*">
                 </div>
                 
             </div>
             <div class="row my-4">
                 <div class="col">
-                    <textarea class="input-box full-width text-boxDSA" placeholder="How can we help you"> </textarea>
+                    <textarea class="input-box full-width text-boxDSA" formControlName="message" placeholder="How can we help you"> </textarea>
                 </div>
             </div>
             <div class="row my-4">
               <div class="col text-left text-white">
-                  <mat-checkbox  class="example-margin">I accept the term and conditions</mat-checkbox>
+                  <mat-checkbox formControlName="acceptCondtion" class="example-margin">I accept the term and conditions</mat-checkbox>
               </div>
           </div>
           <div class="row my-4">
             <div class="col text-center">
-              <button class=" btn-primarys ViewAllLocation" >Send</button>
+              <button class=" btn-primarys " (click)="sendLoginInformed();do($event)" >Send</button>
             </div>
           </div>  
         </div>
@@ -86,40 +86,40 @@
             </button>
           </div>
           
-          <div class="modal-body">
+          <div class="modal-body" [formGroup]="letInform">
             <div class="row my-4" >
                 <div class="col-6">
-                <input class="input-box full-width" type="text" placeholder="First Name*">
+                <input class="input-box full-width" formControlName="fName" type="text" placeholder="First Name*">
                 </div>
                 <div class="col-6">
-                    <input class="input-box full-width" type="text" placeholder="Last Name*">
+                    <input class="input-box full-width" formControlName="lName" type="text" placeholder="Last Name*">
                 </div>
             </div>
             <div class="row my-4" >
                 <div class="col-12">
-                    <input class="input-box full-width" type="text" placeholder="Email*">
+                    <input class="input-box full-width" formControlName="email" type="text" placeholder="Email*">
                 </div>
                 
             </div>
             <div class="row my-4" >
                 <div class="col-12">
-                    <input class="input-box full-width" type="text" placeholder="Mobile*">
+                    <input class="input-box full-width" formControlName="mobile" type="text" placeholder="Mobile*">
                 </div>
                 
             </div>
             <div class="row my-4">
                 <div class="col">
-                    <textarea class="input-box full-width text-boxDSA" placeholder="How can we help you"> </textarea>
+                    <textarea class="input-box full-width text-boxDSA" formControlName="message" placeholder="How can we help you"> </textarea>
                 </div>
             </div>
             <div class="row my-4">
               <div class="col text-left text-white">
-                  <mat-checkbox  class="example-margin">I accept the term and conditions</mat-checkbox>
+                  <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition">I accept the term and conditions</mat-checkbox>
               </div>
           </div>
           <div class="row my-4">
             <div class="col text-center">
-              <button class=" btn-primarys ViewAllLocation" >Send</button>
+              <button class=" btn-primarys " (click)="sendStayInformed();do($event)" >Send</button>
             </div>
           </div>  
         </div>

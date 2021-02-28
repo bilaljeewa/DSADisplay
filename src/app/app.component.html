@@ -1,7 +1,7 @@
 <div class="diabetes">
 	<div >
 		
-		<app-risk-test></app-risk-test>
+		<app-risk-test class="risktestMain"></app-risk-test>
 		
 	</div>
 	<div  class="eventDetails-container" *ngIf="DSAType == 0">
@@ -15,6 +15,9 @@
 	</div> 
 	<div class="eventDetails-container" *ngIf="DSAType == 3">
 		<app-upcoming-event [settings]="settings"></app-upcoming-event>
+	</div> 
+	<div class="eventDetails-container" *ngIf="DSAType == 4">
+		<app-check-in></app-check-in>
 	</div> 
 	<div>
 		<app-view-all-event></app-view-all-event>
