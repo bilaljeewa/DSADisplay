@@ -1,24 +1,28 @@
 
-<div class="container pt-5">
+<div class="container pt-5 search-events">
+  <div class="my-3">
+    <img   src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/DSApin.png">
+  </div>
     <h2 class="heading">Find an event</h2>
-    
-    
-  
     <form class="form mt-3" >
-      <mat-form-field appearance="outline"  class="example-full-width autocomplete-container">
+      <div class="dropdown sep-event">
+        <input type="text" [formControl]="countryCtrl"   placeholder="Search City or Town"  class="dropdownMenuButtonsSCT" data-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown-menu dropdownMenuBtnSCTs" aria-labelledby="dropdownMenuButtonsSCT">
+          <span class="dropdown-item list-result-data"  (click)="sendTo(country.eventCode)"  *ngFor="let country of zipState;let i =index">{{country.Name}}</span>
+        </div>
+      </div>
+  
+    
+      <!-- <mat-form-field appearance="outline"  class="example-full-width autocomplete-container">
         <mat-label>Search Town or Zip</mat-label>
-        <input matInput  aria-label="Country" [matAutocomplete]="auto" [formControl]="countryCtrl" required matTooltip="Type to filter the City list"
-            matTooltipPosition="after">
-           
+        <input matInput  aria-label="Country" [matAutocomplete]="auto" [formControl]="countryCtrl" required 
+          matTooltip="Type to filter the City list"  matTooltipPosition="after">
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option (click)="sendTo(country.eventCode)" *ngFor="let country of zipState" [value]="country.Name">
             <span>{{ country.Name }} </span>
           </mat-option>
         </mat-autocomplete>
-      </mat-form-field>
-
-      
-     
+      </mat-form-field> -->
     </form>
     <p class="view-all-event ViewAllLocation"  (click)="openViewModal()"  >view all location</p>
     

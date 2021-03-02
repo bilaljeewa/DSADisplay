@@ -602,14 +602,23 @@
                     
                         <div class="mx-5 p-5 details-box">
                             <p class="text-left m-0">Please enter your Details</p>
-                            
-                            <div class="row">
-                                <div class="col-3 result-media">
-                                    
+
+                            <!-- <mat-form-field >
+                                <mat-label>First Name*</mat-label>
+                                <input matInput placeholder="First Name*" formControlName="fName">
+                              </mat-form-field> -->
+                             
+                            <div class="row fourm_field">
+                                <!-- <div class="col-3 result_box_data">
+                                    <input type="text" formControlName="fName" placeholder="First Name">
+
+                                </div> -->
+                                 <div class="col-3 result-media">
                                     <mat-form-field >
-                                        <mat-label>First Name*</mat-label>
-                                        <input matInput placeholder="First Name*" formControlName="fName">
-                                      </mat-form-field>
+                                <mat-label>First Name*</mat-label>
+                                <input matInput placeholder="First Name*" formControlName="fName">
+                              </mat-form-field>
+                                    
                                     
                                 </div>
                                 <div class="col-3 result-media">
@@ -629,7 +638,7 @@
                                     
                                      
                                 </div>
-                                <div class="col-3 result-media ">
+                                 <div class="col-3 result-media ">
                                     
                                     <mat-form-field >
                                         <mat-label>Contact Numner*</mat-label>
@@ -637,7 +646,7 @@
                                       </mat-form-field>
                                     
                                      
-                                </div>
+                                </div> 
                                 
                             </div>
                             <div class="row">
@@ -645,19 +654,13 @@
                                     <mat-checkbox formControlName="termsCondition" class="example-margin accptcond">I accept the term and conditions</mat-checkbox>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                         <div class="mx-5 mt-4 details-box1">
-                            
-                            
                             <div class="row">
                                 <div class="col">
                                     <button [disabled]="viewResultbutton" class="btn primary-btn view-final-btn"(click)="showResultdata()" >VIEW RESULTS</button>
-                                    
                                 </div>
-                                
                             </div>
-                            
-                            
                         </div>
                         <div class=" mx-5 mb-5 p-5 details-box" *ngIf="viewResultData">
                             <p class="text-left m-0 resutlTest">You Have <span class="riskDiabetes">{{riskRangeLabel}}</span>  of developing diabetes</p>
@@ -684,12 +687,18 @@
                             </div>
                             <div class="row">
                                 <div class="col-4" *ngIf="sum >=12">
+                                    <div class="my-3">
+                                        <img (click)="getsupport(0)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 2.png">
+                                      </div>
                                     Book A Point for care test
-                                    <button (click)="getsupport(0)">Mail a GP my result </button>
+                                   
                                 </div>
                                 <div class="col-4">
+                                    <div class="my-3">
+                                        <img (click)="gpResutl(showDrop)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 1.png">
+                                      </div>
                                     Mail a GP my result
-                                    <button (click)="gpResutl(showDrop)">Mail a GP my result </button>
+                                   
                                     <div *ngIf="showDrop">
                                         <div class="dropdown">
                                             <input type="text" formControlName="gpResult" (keyup)="getsupportData($event)" placeholder="Medical Practice"  class="dropdownMenuButtons" data-toggle="dropdown" aria-expanded="false">
@@ -704,8 +713,11 @@
                                     </div>
                                 </div>
                                 <div class="col-4" >
+                                    <div class="my-3">
+                                        <img (click)="getsupport(1)"  src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/B - Get support.png">
+                                      </div>
                                     Get Support
-                                    <button (click)="getsupport(1)">Get support</button>
+                                   
                                 </div>
                                 
                                 
@@ -716,7 +728,7 @@
                                 <div class="col-12 mt-3">Discount apply for memeber</div>
                                 <div class="col-12 mt-3">Call 1300 198 204</div>
                                 <div class="col-12 my-3">
-                                    <button>Become a member</button>
+                                    <button class="btn btnprimaryss">Become a member</button>
                                 </div>
                             </div>
                         </div>

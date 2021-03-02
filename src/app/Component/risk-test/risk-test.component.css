@@ -425,7 +425,11 @@
 .list-result-data{
     font-size: 14px!important;
 }
-.btn-primary {
+.fourm_field{
+    min-height: 88px!important;
+
+}
+.btnprimaryss {
     color: #fff;
     background: #ed1c24!important;
     border: #ed1c24!important;
@@ -433,6 +437,10 @@
     padding: 5px 60px!important;
     margin: 1rem!important;
 } 
+.mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 0!important;
+}
 
     
     

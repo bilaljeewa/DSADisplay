@@ -71,5 +71,25 @@
 .pointer-cursor{
   cursor: pointer;
 }
+.dropdownMenuButtonsSCT {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid;
+  font-size: 14px;
+  height: 25px;
+  max-width: 365px;
+  margin: 13px 0;
+}
+.dropdownMenuBtnSCTs{
+  font-size: 14px!important;
+  width: 100%;
+  max-width: 365px;
+}
+.dropdownMenuBtnSCTs .dropdown-item:hover {
+  color: #ed1c24!important;
+  cursor: pointer;
+}
 
   

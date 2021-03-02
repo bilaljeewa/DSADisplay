@@ -66,6 +66,27 @@ export class EventSearchComponent implements OnInit {
       })
       })
     }
+
+    let clcikc= document.getElementById('MainBody')!
+       console.log(clcikc)
+      //  for(let i =clcikc.length-1; i<=clcikc.length-1;i++){
+        
+       clcikc.onclick = function(e) {
+         if(e.target !=  document.getElementsByClassName('sep-event')[document.getElementsByClassName('sep-event').length -1]) {
+             console.log('You clicked outside');
+             const elmd = document.getElementsByClassName('dropdownMenuBtnSCTs')!as HTMLCollectionOf<HTMLElement>;
+           
+             let nextsb= elmd[elmd.length-1];
+             console.log(nextsb)
+             if(nextsb){
+              nextsb.style.display='none'
+             }
+         } else {
+             console.log('You clicked inside');
+         }
+       }
+     
+
   }
   filtercountry(name: string) {
    
@@ -81,7 +102,13 @@ eventCODEValue = element.Value
         if(element.Name == "ZipLocality"){
          
           if(element.Value.toLowerCase().includes(name.toLowerCase())) {
-          
+            const elmd = document.getElementsByClassName('dropdownMenuBtnSCTs')!as HTMLCollectionOf<HTMLElement>;
+           console.log(elmd)
+            let nextsb= elmd[elmd.length-1];
+            console.log(nextsb)
+            if(nextsb){
+              nextsb.style.display='block'
+            }
             this.zipState.push({'eventCode':eventCODEValue,'Name': element.Value})
           }
         

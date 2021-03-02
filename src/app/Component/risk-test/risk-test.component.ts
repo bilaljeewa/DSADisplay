@@ -73,6 +73,7 @@ export class RiskTestComponent implements OnInit {
    doStuff() {
     let heigtht = document.getElementsByClassName('exampleModal1234') as HTMLCollectionOf<HTMLElement>
     this.newHeight = heigtht[heigtht.length-1].clientHeight
+    console.log(this.newHeight,">>>>>>",this.prevHeight)
     if(this.newHeight == this.prevHeight){
       heigtht[heigtht.length-1].style.position='absolute'
        heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
