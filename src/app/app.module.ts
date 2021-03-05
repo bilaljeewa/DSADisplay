@@ -14,6 +14,7 @@ import { MaterialModule } from './material.module';
 import { UpcomingEventComponent } from './Component/upcoming-event/upcoming-event.component';
 import { ViewAllEventComponent } from './Component/view-all-event/view-all-event.component';
 import { CheckInComponent } from './Component/check-in/check-in.component';
+import { FooterComponent } from './Component/footer/footer.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { CheckInComponent } from './Component/check-in/check-in.component';
     UpcomingEventComponent,
     ViewAllEventComponent,
     CheckInComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

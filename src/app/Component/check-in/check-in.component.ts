@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SettingsService } from 'src/app/service/settings.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { SettingsService } from 'src/app/service/settings.service';
 })
 export class CheckInComponent implements OnInit {
   checkInform: FormGroup
-  constructor(public settingsService: SettingsService,public fb: FormBuilder) {
+  MainKeyValue: any;
+  constructor(public settingsService: SettingsService,
+              private _snackBar: MatSnackBar,
+              public fb: FormBuilder) {
     this.createTable()
    }
    createTable(){
@@ -19,13 +23,11 @@ export class CheckInComponent implements OnInit {
       mobile: ['',Validators.required],
       noOfChildren: ['',Validators.required],
       noOfAdults: ['',Validators.required],
-      email: ['',Validators.required],
+      email: ['', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]],
       acceptCondtion: ['',Validators.required],
-      EventKey: ['',Validators.required]
+      Type: ['CheckIn']
      })
-     
-       
-   }
+    }
   ngOnInit(): void {
     let url = window.location.search
     console.log("url >>>>>>",url)
@@ -45,7 +47,7 @@ export class CheckInComponent implements OnInit {
            keys3 = keys
          }
          console.log("KeyEvents final >>>>>>",keys3)
-         this.checkInform.get('EventKey')?.setValue(keys3)
+        this.MainKeyValue= keys3
         }
     }     
   }
@@ -55,13 +57,20 @@ export class CheckInComponent implements OnInit {
   saveCheckIn(){
     console.log(this.checkInform)
     if(this.checkInform.status == 'VALID'){
-      let data = this.checkInform.getRawValue()
-      console.log(data)
-      this.settingsService.postGPdata(data,'FaceTheFactsCheckIn').subscribe(resp=>{
+      let jsonData = String.raw`{"EventKey":"{\"value\":\"`+this.MainKeyValue+String.raw`\",\"score\":0}","adults":"{\"value\":\"`+this.checkInform.get(`noOfAdults`)?.value+String.raw`\",\"score\":0}","children":"{\"value\":\"`+this.checkInform.get(`noOfChildren`)?.value+String.raw`\",\"score\":0}","mobile":"{\"value\":\"`+this.checkInform.get(`mobile`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.checkInform.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.checkInform.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.checkInform.get(`email`)?.value+String.raw`\",\"score\":0}","Type":"{\"value\":\"CheckIn\"}"}`
+      this.settingsService.postGPdata(jsonData,'FaceTheFactsCheckIn').subscribe(resp=>{
         console.log(resp)
+        this.checkInform.reset();
+        this.openSnackBar('Information Sent Successfully','')
       })
-    }else{
-      
     }
+  }
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 3000,
+    });
+  }
+  openNew(){
+    window.open('https://www.diabetessa.com.au/Web/Terms_and_Conditions/Terms_and_Conditions.aspx')
   }
 }

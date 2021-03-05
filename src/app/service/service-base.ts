@@ -10,8 +10,8 @@ export class ServiceBase {
     getHeaders(): HttpHeaders{
         if(this.contextService.proxy)
           return new HttpHeaders().set('Authorization','Bearer '+ this.contextService.authToken).set('Content-Type','application/json');
-        
-        return new HttpHeaders().set('RequestVerificationToken', this.contextService.authToken).set('Content-Type','application/json');
+        return new HttpHeaders().set('RequestVerificationToken', this.contextService.authToken).set('Content-Type','application/json').set('Access-Control-Allow-Origin','*').set('Access-Control-Allow-Methods','OPTIONS, HEAD, DELETE, POST, GET');
+
     
     }
     getUrl(request:string):string{

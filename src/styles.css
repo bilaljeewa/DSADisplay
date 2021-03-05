@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.terms_cond {
+    color: blue;
+    font-weight: 400;
+}
+.error p{
+    color: #ff0000;
+	font-size: 13px;
+}
 .diabetes article, .diabetes aside, .diabetes dialog, .diabetes figcaption, .diabetes figure, .diabetes footer, .diabetes header, .diabetes hgroup, .diabetes main, .diabetes nav, .diabetes section {
 	display: block;
 }

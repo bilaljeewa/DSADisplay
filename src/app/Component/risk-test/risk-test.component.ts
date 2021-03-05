@@ -8,6 +8,7 @@ import { ContentKeysService } from 'src/app/service/content-keys.service';
 import { Input } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { v4 as uuid } from 'uuid';
+import { MatSnackBar } from '@angular/material/snack-bar';
 declare var jQuery:any;
 @Component({
   selector: 'app-risk-test',
@@ -58,18 +59,8 @@ export class RiskTestComponent implements OnInit {
   GPDataResults=Array()
   testID: any;
   resultDataJSON: any;
-  constructor( public _formBuilder: FormBuilder,public contenItem: SettingsService) { 
- 
-    // console.log("contentItem >>>>>>>>>>>>>",this.contenItem.contentItemKey[this.contenItem.contentItemKey.length-1])
-   
-   
+  constructor( public _formBuilder: FormBuilder , private _snackBar: MatSnackBar,public contenItem: SettingsService) { }
 
-    // this.contentID = this.contentIDs.map[1].value[0]
-    // console.log("contentItem 1 >>>>>>>>>>>>>",this.contentID.map[1].value[0])
-    // console.log("contentItem 2 >>>>>>>>>>>>>",this.contentID.map)
-
-
-  }
    doStuff() {
     let heigtht = document.getElementsByClassName('exampleModal1234') as HTMLCollectionOf<HTMLElement>
     this.newHeight = heigtht[heigtht.length-1].clientHeight
@@ -110,22 +101,24 @@ export class RiskTestComponent implements OnInit {
         for (var i = 0; i < elements.length; i++) {
             elements[i].addEventListener('click',()=>{
               console.log("hello >>>>>>> testing")
-            const elmd = document.querySelectorAll<HTMLElement>('.exampleModal1234')!;
+              jQuery("#exampleModal12345").modal('show')
+            // const elmd = document.querySelectorAll<HTMLElement>('.exampleModal1234')!;
            
-            if(elmd && elmd[elmd.length - 1] ){
+            // if(elmd && elmd[elmd.length - 1] ){
               
-              elmd[elmd.length-1].style.display ='block';
-            }else{
+            //   elmd[elmd.length-1].style.display ='block';
+            // }else{
               
-            }
+            // }
 
-              const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-              // console.log(elm.parentElement)
-              const elemp = <HTMLElement>elm.parentElement;
+              // const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
+              // const elemp = <HTMLElement>elm.parentElement;
               this.interval = setInterval(()=>{
-                this.doStuff()}, 50); // 2000 ms = start after 2sec 
-              elm.style.display = 'none';
-              jQuery("#exampleModal1234").modal('show')
+                //  this.doStuff()
+                }
+                 , 50); // 2000 ms = start after 2sec 
+              // elm.style.display = 'none';
+              // jQuery("#exampleModal1234").modal('show')
             } );
         }
       }, 100);
@@ -139,12 +132,27 @@ export class RiskTestComponent implements OnInit {
       
      
        let clcikc= document.getElementsByClassName('risktestMain')! as HTMLCollectionOf<HTMLElement>
-       console.log(clcikc.length)
-       for(let i =clcikc.length-1; i<=clcikc.length-1;i++){
-         console.log("clasdf")
+       console.log("button drop click >>>>>>>>>>>>>>>>>>>>>>>>>>>>",clcikc)
+      //  clcikc[0].onclick = function(e) {
+      //   if(e.target !=  document.getElementsByClassName('dropdown')[document.getElementsByClassName('dropdown').length -1]) {
+      //       console.log('You clicked outside');
+      //       const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
+          
+      //       let nextsb= elmd[elmd.length-1];
+      //       console.log(nextsb)
+      //       if(nextsb){
+      //        nextsb.style.display='none'
+      //       }
+      //   } else {
+      //       console.log('You clicked inside');
+      //   }
+      // }
+       for(let i =0; i<=clcikc.length-1;i++){
+         console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>",i)
        clcikc[i].onclick = function(e) {
-         if(e.target !=  document.getElementsByClassName('dropdown')[document.getElementsByClassName('dropdown').length -1]) {
-             console.log('You clicked outside');
+         console.log("drop down >>>>>>>>>>>>>>>>>>>>>>> ",document.getElementsByClassName('dropdown'))
+         if(e.target !=  document.getElementsByClassName('dropdown')[0]) {
+          console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>> click outside")
              const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
            
              let nextsb= elmd[elmd.length-1];
@@ -153,7 +161,7 @@ export class RiskTestComponent implements OnInit {
               nextsb.style.display='none'
              }
          } else {
-             console.log('You clicked inside');
+          console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>> click indised ")
          }
        }
      }
@@ -197,7 +205,7 @@ export class RiskTestComponent implements OnInit {
       
       fName: ['',Validators.required],
       lName: ['',Validators.required],
-      email: ['',Validators.required],
+      email: ['', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]],
       phone: ['',Validators.required],
       pagination:['6'],
       termsCondition: ['',Validators.required],
@@ -212,21 +220,22 @@ export class RiskTestComponent implements OnInit {
       if(this.firstFormGroup.status == 'VALID'){
         console.log(this.firstFormGroup)
         let elements = document.getElementsByClassName('disable-click')as HTMLCollectionOf<HTMLElement>;
-        
-       
-          var status=jQuery('.disable-click')[elements.length-1].checked;
+        console.log("elements >>>>>>> ",elements)
+        console.log("elements length >>>>>>> ",elements[0])
+          var status=jQuery('.disable-click')[0].checked;
+
           if(status == false){
            
-            elements[elements.length-1].removeAttribute('disabled')
-            elements[elements.length-1].click()
-            elements[elements.length-1].setAttribute('disabled', 'disabled');
+            elements[0].removeAttribute('disabled')
+            elements[0].click()
+            elements[0].setAttribute('disabled', 'disabled');
           }
         // }
         
         
           let butn = document.getElementsByClassName('stepeNext')
-         
-         butn[butn.length-6].children[0].removeAttribute('disabled')
+         console.log(butn)
+         butn[0].children[0].removeAttribute('disabled')
       }
     })
     this.secondFormGroup?.valueChanges.subscribe(value=>{
@@ -234,8 +243,8 @@ export class RiskTestComponent implements OnInit {
        
         let elements = document.getElementsByClassName('disable-click1')as HTMLCollectionOf<HTMLElement>;
     
-
-        for(let i =elements.length-2 ; i <=elements.length-1; i++){
+console.log(elements)
+        for(let i =0 ; i <=1; i++){
           var status=jQuery('.disable-click1')[i].checked;
           if(status == false){
            
@@ -247,15 +256,16 @@ export class RiskTestComponent implements OnInit {
         
         
           let butn = document.getElementsByClassName('stepeNext')
-        butn[butn.length-5].children[0].removeAttribute('disabled')
+          console.log(butn)
+        butn[1].children[0].removeAttribute('disabled')
       }
     })
     this.thirdFormGroup?.valueChanges.subscribe(value=>{
       if(this.thirdFormGroup.status == 'VALID'){
        
         let elements = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
-       
-        for(let i =elements.length-5 ; i <=elements.length -3; i++){
+        console.log(elements)
+        for(let i =0 ; i <=2; i++){
           var status=jQuery('.disable-click2')[i].checked;
           if(status == false){
            
@@ -267,15 +277,16 @@ export class RiskTestComponent implements OnInit {
         
         
           let butn = document.getElementsByClassName('stepeNext')
-        butn[butn.length-4].children[0].removeAttribute('disabled')
+          console.log(butn)
+        butn[2].children[0].removeAttribute('disabled')
       }
     })
     this.fourthFormGroup?.valueChanges.subscribe(value=>{
       if(this.fourthFormGroup.status == 'VALID'){
       
         let elements = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
-       
-        for(let i =elements.length-4 ; i <=elements.length-1; i++){
+        console.log(elements)
+        for(let i =0 ; i <=3; i++){
           var status=jQuery('.disable-click3')[i].checked;
           if(status == false){
            
@@ -287,15 +298,15 @@ export class RiskTestComponent implements OnInit {
         
         
           let butn = document.getElementsByClassName('stepeNext')
-        butn[butn.length-3].children[0].removeAttribute('disabled')
+        butn[3].children[0].removeAttribute('disabled')
       }
     })
     this.fifthFormGroup?.valueChanges.subscribe(value=>{
       if(this.fifthFormGroup.status == 'VALID'){
        
         let elements = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
-       
-        for(let i =elements.length-5 ; i <=elements.length-1; i++){
+        console.log(elements)
+        for(let i =0 ; i <=4; i++){
           var status=jQuery('.disable-click4')[i].checked;
           if(status == false){
            
@@ -307,15 +318,15 @@ export class RiskTestComponent implements OnInit {
         
         
           let butn = document.getElementsByClassName('stepeNext')
-        butn[butn.length-2].children[0].removeAttribute('disabled')
+        butn[4].children[0].removeAttribute('disabled')
       }
     })
     this.sixthFormGroup?.valueChanges.subscribe(value=>{
       if(this.sixthFormGroup.status == 'VALID'){
        
         let elements = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
-       
-        for(let i =elements.length-6 ; i <=elements.length-1; i++){
+        console.log(elements)
+        for(let i =0 ; i <=5; i++){
           var status=jQuery('.disable-click5')[i].checked;
           if(status == false){
            
@@ -327,7 +338,7 @@ export class RiskTestComponent implements OnInit {
         
         
           let butn = document.getElementsByClassName('stepeNext')
-        butn[butn.length-1].children[0].removeAttribute('disabled')
+        butn[5].children[0].removeAttribute('disabled')
       }
     })
     
@@ -341,6 +352,11 @@ export class RiskTestComponent implements OnInit {
     buttons.click()
     // this.resultStatus=true;
   }
+  do(event) {
+		event.preventDefault();
+	}
+
+  
   showResultdata(){
 
     if(this.finalFormGroup.status == 'VALID'){
@@ -417,27 +433,8 @@ export class RiskTestComponent implements OnInit {
         // resultdesc	=	'High Risk';
       }
 
-      this.resultDataJSON ={
-        "q1":{"value":this.firstFormGroup.get('gender')?.value,"score":this.Q1},
-        "q2":{"value":this.firstFormGroup.get('age')?.value,"score":this.Q2},
-        "q3":{"value":this.secondFormGroup.get('aboriginal')?.value,"score":this.Q3a},
-        "q3b":{"value":this.secondFormGroup.get('bornOptions')?.value,"score":this.Q3b},
-        "q4":{"value":this.thirdFormGroup.get('typeDiabetes')?.value,"score":this.Q4},
-        "q5":{"value":this.thirdFormGroup.get('highBP')?.value,"score":this.Q5},
-        "q6":{"value":this.fourthFormGroup.get('hBP')?.value,"score":this.Q6},
-        "q7":{"value":this.fourthFormGroup.get('tobacco')?.value,"score":this.Q7},
-        "q8":{"value":this.fifthFormGroup.get('vegetable')?.value,"score":this.Q8},
-        "q9":{"value":this.fifthFormGroup.get('exercise')?.value,"score":this.Q9},
-        "q10":{"value":this.sixthFormGroup.get('waist')?.value,"score":this.Q10},
-        "sendemail":{"value":this.finalFormGroup.get('sendEmail')?.value,"score":0},
-        "firstname":{"value":this.finalFormGroup.get('fName')?.value,"score":0},
-        "lastname":{"value":this.finalFormGroup.get('lName')?.value,"score":0},
-        "mobile":{"value":this.finalFormGroup.get('phone')?.value,"score":0},
-        "email":{"value":this.finalFormGroup.get('email')?.value,"score":0},
-        "totalscore":{"value":this.sum },
-        "resultrange":{"value": resultrange},
-        "TestID":{"value": this.testID}
-      }
+   
+      this.resultDataJSON =String.raw`{"q1":"{\"value\":\"`+this.firstFormGroup.get('gender')?.value+String.raw`\",\"score\":`+this.Q1+String.raw`}","q2":"{\"value\":\"`+this.firstFormGroup.get(`age`)?.value+String.raw`\",\"score\":`+this.Q2+String.raw`}","q3":"{\"value\":\"`+this.secondFormGroup.get(`aboriginal`)?.value+String.raw`\",\"score\":`+this.Q3a+String.raw`}","q3b":"{\"value\":\"`+this.secondFormGroup.get(`bornOptions`)?.value+String.raw`\",\"score\":`+this.Q3b+String.raw`}","q4":"{\"value\":\"`+this.thirdFormGroup.get(`typeDiabetes`)?.value+String.raw`\",\"score\":`+this.Q4+String.raw`}","q5":"{\"value\":\"`+this.thirdFormGroup.get(`highBP`)?.value+String.raw`\",\"score\":`+this.Q5+String.raw`}","q6":"{\"value\":\"`+this.fourthFormGroup.get(`hBP`)?.value+String.raw`\",\"score\":`+this.Q6+String.raw`}","q7":"{\"value\":\"`+this.fourthFormGroup.get(`tobacco`)?.value+String.raw`\",\"score\":`+this.Q7+String.raw`}","q8":"{\"value\":\"`+this.fifthFormGroup.get(`vegetable`)?.value+String.raw`\",\"score\":`+this.Q8+String.raw`}","q9":"{\"value\":\"`+this.fifthFormGroup.get(`exercise`)?.value+String.raw`\",\"score\":`+this.Q9+String.raw`}","q10":"{\"value\":\"`+this.sixthFormGroup.get(`waist`)?.value+String.raw`\",\"score\":`+this.Q10+String.raw`}","sendemail":"{\"value\":\"yes\",\"score\":0}","mobile":"{\"value\":\"`+this.finalFormGroup.get(`phone`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.finalFormGroup.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.finalFormGroup.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.finalFormGroup.get(`email`)?.value+String.raw`\",\"score\":0}","totalscore":"{\"value\":`+this.sum+String.raw`}","resultrange":"{\"value\":\"`+resultrange+String.raw`\"}","TestID":"{\"value\":\"`+this.testID+String.raw`\"}","Type":"{\"value\":\"AusRiskTest\"}"}`
       console.log(this.resultDataJSON)
       this.contenItem.postGPdata(this.resultDataJSON,'FaceTheFacts').subscribe(resp=>{
         console.log(resp)
@@ -445,21 +442,6 @@ export class RiskTestComponent implements OnInit {
           console.log("success")
         }
       })
-      // setTimeout(() => {
-      //   // this.Q1 = 0;
-      //   // this.Q2 = 0;
-      //   // this.Q3a = 0;
-      //   // this.Q3b = 0;
-      //   // this.Q4 = 0;
-      //   // this.Q5 = 0;
-      //   // this.Q6 = 0;
-      //   // this.Q7 = 0;
-      //   // this.Q8 = 0;
-      //   // this.Q9 = 0;
-      //   // this.Q9 = 0;
-      //   // this.Q10 = 0;
-
-      // }, 20);
     }else{
       console.log("Form valid >>>>>>>",this.finalFormGroup)
       return;
@@ -535,12 +517,13 @@ export class RiskTestComponent implements OnInit {
   }
 
   getsupport(event){
-    if(event == 0){
+    this.contenItem.getSupportRef(event,this.testID)
+    // if(event == 0){
       
-      window.open("https://www.imisconsulting.com.au/imis0/Facts/poc?TestID="+this.testID)
-    }else{
-      window.open("https://www.imisconsulting.com.au/iMIS0/Info/GetSupport")
-    }
+    //   window.open("https://www.imisconsulting.com.au/imis0/Facts/poc?TestID="+this.testID)
+    // }else{
+    //   window.open("https://www.imisconsulting.com.au/iMIS0/Info/GetSupport")
+    // }
     
   
   }
@@ -586,18 +569,120 @@ export class RiskTestComponent implements OnInit {
     this.finalFormGroup.get('sendEmail')?.setValue(this.GPDataResults[i].sendEmail)
   }
   sentToGP(){
-    
-    let jsondata= {
-      'TestId': this.testID,
-      'GPEmail': this.finalFormGroup.get('sendEmail')?.value
-    }
+    // String.raw`{"q1":"{\"value\":\"`+this.firstFormGroup.get('gender')?.value+String.raw`\",\"score\":`+this.Q1+String.raw`}","q2":"{\"value\":\"`+this.firstFormGroup.get(`age`)?.value+String.raw`\",
+    let jsondata= 
+      String.raw`{"TestId":"{\"value\":\"`+this.testID+String.raw`\"}","GPEmail":"{\"value\":\"`+this.finalFormGroup.get('sendEmail')?.value+String.raw`\"}","Type":"{\"value\":\"SendToGP\"}"}`
+      
+     
     console.log(jsondata)
     this.contenItem.postGPdata(jsondata,'FaceTheFactsGP').subscribe(resp=>{
       console.log(resp)
       if(resp){
         console.log("success")
+        this.openSnackBar('Information Sent Successfully','')
+        
       }
     })
+  }
+  restStepper(){
+    console.log(document.getElementById('setpRestID'))
+    if(document.getElementById('setpRestID')){
+      document.getElementById('setpRestID')?.click()
+    }
+    this.finalFormGroup.reset();
+    this.viewResultData=false;
+    this.viewResultbutton=false;
+    this.showDrop=false;
+    let butn = document.getElementsByClassName('stepeNext')
+    console.log(butn)
+    for(let i =0 ; i <=butn.length-1; i++){
+      butn[i].children[0].setAttribute('disabled', 'disabled')
+    }
+    
+    let elements = document.getElementsByClassName('disable-click')as HTMLCollectionOf<HTMLElement>;
+    console.log("elements >>>>>>> ",elements)
+    console.log("elements length >>>>>>> ",elements[0])
+      var status=jQuery('.disable-click')[0].checked;
+
+      if(status == true){
+       
+        elements[0].removeAttribute('disabled')
+        elements[0].click()
+        elements[0].setAttribute('disabled', 'disabled');
+      }
+
+
+
+
+    let elements1 = document.getElementsByClassName('disable-click1')as HTMLCollectionOf<HTMLElement>;
+    
+    console.log(elements1)
+   for(let i =0 ; i <=1; i++){
+     var status=jQuery('.disable-click1')[i].checked;
+     if(status == true){
+      
+       elements1[i].removeAttribute('disabled')
+       elements1[i].click()
+       elements1[i].setAttribute('disabled', 'disabled');
+     }
+   }
+        let elements2 = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
+    
+        console.log(elements2)
+        for(let i =0 ; i <=2; i++){
+          var status=jQuery('.disable-click2')[i].checked;
+          if(status == true){
+           
+            elements2[i].removeAttribute('disabled')
+            elements2[i].click()
+            elements2[i].setAttribute('disabled', 'disabled');
+          }
+        }
+        let elements3 = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
+    
+         console.log(elements3)
+        for(let i =0 ; i <=3; i++){
+          var status=jQuery('.disable-click3')[i].checked;
+          if(status == true){
+           
+            elements3[i].removeAttribute('disabled')
+            elements3[i].click()
+            elements3[i].setAttribute('disabled', 'disabled');
+          }
+        }
+        let elements4 = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
+    
+         console.log(elements4)
+        for(let i =0 ; i <=4; i++){
+          var status=jQuery('.disable-click4')[i].checked;
+          if(status == true){
+           
+            elements4[i].removeAttribute('disabled')
+            elements4[i].click()
+            elements4[i].setAttribute('disabled', 'disabled');
+          }
+        }
+        let elements5 = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
+    
+         console.log(elements5)
+        for(let i =0 ; i <=5; i++){
+          var status=jQuery('.disable-click5')[i].checked;
+          if(status == true){
+           
+            elements5[i].removeAttribute('disabled')
+            elements5[i].click()
+            elements5[i].setAttribute('disabled', 'disabled');
+          }
+        }
+
+  }
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 3000,
+    });
+  }
+  openNew(){
+    window.open('https://www.diabetessa.com.au/Web/Terms_and_Conditions/Terms_and_Conditions.aspx')
   }
 
 }

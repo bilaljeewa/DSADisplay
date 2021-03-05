@@ -1,748 +1,762 @@
-<div class=" exampleModal1234 ">
-    <mat-horizontal-stepper #stepper >
-        <mat-step [stepControl]="firstFormGroup">
-        <div class="card_box position-relative">
-            <form [formGroup]="firstFormGroup" class="my-5">
-                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943635.png" class="imm" >
-                <div class="bg_gradient"></div>
-                <div class="text-center text-white card_text position-relative content-dsa">
-                <label class="text-white m-5">Your Demographic</label>
-                
-                <p>Q1. What is your gender?</p>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs" (change)="QA1($event)" data-score="3" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender1" value="Male">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}gender1">Female</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs"  (change)="QA1($event)" data-score="0" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender2" value="Female">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}gender2">Male</label>
-                </div>
-                <p class="mt-5">Q2. How old you are?</p>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="0" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age1" value="Under 35 years">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}age1">Under 35 years</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="2" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age2" value="35 - 44 years">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}age2">35-44 years</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="4" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age3" value="45 - 54 years">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}age3">45-54 years</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="6" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age4" value="55 - 64 years">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}age4">54-64 years</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="8" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age5" value="65 years or older">
-                <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}age5">65 years or older</label>
-                </div>
-                <div class=" mt-5">
-                    <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
-                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-                    </div>
 
 
 
-                    
-
-
-
-                    <div class="form-check form-check-inline pagemedia-btn" >
-                        <label class="containers">
-                            <input class="disable-click"  disabled type="checkbox" name="radio">
-                            <span class="checkmark"></span>
-                          </label>
-                        
-                    </div>
-                    <div class="form-check form-check-inline pagemedia-btn" >
-                        <label class="containers">
-                            <input class="disable-click1" disabled type="checkbox" name="radio">
-                            <span class="checkmark"></span>
-                          </label>
-                        
-                    </div>
-                    <div class="form-check form-check-inline pagemedia-btn" >
-                        <label class="containers">
-                            <input class="disable-click2" disabled type="checkbox" name="radio">
-                            <span class="checkmark"></span>
-                          </label>
-                        
-                    </div>
-                    <div class="form-check form-check-inline pagemedia-btn" >
-                        <label class="containers">
-                            <input class="disable-click3" disabled type="checkbox" name="radio">
-                            <span class="checkmark"></span>
-                          </label>
-                        
-                    </div>
-                    <div class="form-check form-check-inline pagemedia-btn" >
-                        <label class="containers">
-                            <input class="disable-click4" disabled type="checkbox" name="radio">
-                            <span class="checkmark"></span>
-                          </label> 
-                        
-                    </div>
-                    <div class="form-check form-check-inline pagemedia-btn" >
-                        <label class="containers">
-                            <input class="disable-click5" disabled type="checkbox" name="radio">
-                            <span class="checkmark"></span>
-                          </label>
-                              
-                        </div>
-                    <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
-                        <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-                
-                
-            </div>
-            </form> 
-            
-        </div>
-            
-        
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup" >
-            <div class="card_box position-relative">
-                <form [formGroup]="secondFormGroup" class="my-5">
-                    <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Layer 0.png" class="imm11" >
-                    <div class="bg_gradient1"></div>
-                    <div class="text-center text-white card_text position-relative content-dsa">
-                    <label class="text-white m-5">Your Demographic</label>
-                    <p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori Descent</p>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="2" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal1" value="Yes">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal1">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="0" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal2" value="No">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal2">No</label>
-                    </div>
-                    <p class="mt-5">Q3B. Where were you born?</p>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio"  name="bornOptions" attr.id="{{contentID}}born1" value="Australia">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}born1">Australia</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born2" value="Aisa">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}born2">Aisa</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born3" value="Middle East">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}born3">Middle East</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born4" value="North America">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}born4">North America</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born5" value="South European">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}born5">South European</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born6" value="Other">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}born6">Other</label>
-                        </div>
-                    
-                        <div class=" mt-5">
-                            <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
-                                <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-                            </div>
-
-
-
-                            
-
-
-
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input   disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
+<div class="modal fade view-modal" id="exampleModal12345" style="z-index: 9999999!important; padding: 0!important;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialogs" role="document">
+        <div class="modal-content" style="background: none!important;">
+           
+            <div class="modal-body" style="padding: 0!important;">
+                <button type="button" (click)="restStepper()" class="close close-btn-cross" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <mat-horizontal-stepper #stepper class="my-5 step-containers">
+                    <mat-step [stepControl]="firstFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="firstFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943635.png" class="imm" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Your Demographic</label>
                                 
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled class="disable-click1" type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled class="disable-click2" type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click3" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click4" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label> 
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click5" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                      
+                                <p>Q1. What is your gender?</p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA1($event)" data-score="3" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender1" value="Female">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}gender1">Female</label>
                                 </div>
-                            <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
-                                <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    
-                    
-                </div>
-                </form> 
-                
-            </div>
-        </mat-step>
-        <mat-step [stepControl]="thirdFormGroup">
-            <div class="card_box position-relative">
-                <form [formGroup]="thirdFormGroup" class="my-5">
-                    <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Rectangle 1533.png" class="imm3" >
-                    <div class="bg_gradient"></div>
-                    <div class="text-center text-white card_text position-relative content-dsa">
-                    <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
-                    <p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes(Type 1 or 2)? </p>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="3" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes1" value="Yes">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes1">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="0" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes2" value="No">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes2">No</label>
-                    </div>
-                    <p class="mt-5">
-                        Q5. Have you ever been  found to have High Blood Glucose(Sugar),eg in a health examination,during an illness or during pregnancy?
-                        </p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="6" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP1" value="Yes">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}highBP1">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="0" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP2" value="No">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}highBP2">No</label>
-                        </div>
-                        <div class=" mt-5">
-                            <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
-                                <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-                            </div>
-
-
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input   disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled checked="checked" type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click2" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click3" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click4" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label> 
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click5" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                      
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs"  (change)="QA1($event)" data-score="0" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender2" value="Male">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}gender2">Male</label>
                                 </div>
-                            <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
-                                <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    
-                    
-                </div>
-                </form> 
-                
-            </div>
-        </mat-step>
-        <mat-step [stepControl]="fourthFormGroup">
-            <div class="card_box position-relative">
-                <form [formGroup]="fourthFormGroup" class="my-5">
-                    <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-476291300.png" class="imm1" >
-                    <div class="bg_gradient1"></div>
-                    <div class="text-center text-white card_text position-relative content-dsa">
-                    <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
-                    <p>Q6. Are you currently taking medication for high blood pressure? </p>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA6($event)" data-score="2" formControlName="hBP" type="radio" name="hBP" attr.id="{{contentID}}hBP1" value="Yes">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}hBP1">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA6($event)" data-score="0" formControlName="hBP" type="radio" name="hBP" attr.id="{{contentID}}hBP2" value="No">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}hBP2">No </label>
-                    </div>
-                    <p class="mt-5">Q7.Do you smoke tobacco every day?</p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="2" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco1" value="Yes">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}tobacco1">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="0" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco2" value="No">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}tobacco2">No</label>
-                        </div>
-                        <div class=" mt-5">
-                            <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
-                                <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-                            </div>
-
-
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input   disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled checked="checked" type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input  checked="checked" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    
-                                    <input class="disable-click3" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"> </span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click4" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label> 
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click5" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                      
+                                <p class="mt-5">Q2. How old you are?</p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="0" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age1" value="Under 35 years">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age1">Under 35 years</label>
                                 </div>
-                            <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
-                                <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    
-                    
-                </div>
-                </form> 
-                
-            </div>
-        </mat-step>
-        <mat-step [stepControl]="fifthFormGroup">
-            <div class="card_box position-relative">
-                <form [formGroup]="fifthFormGroup" class="my-5">
-                    <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
-                    <div class="bg_gradient"></div>
-                    <div class="text-center text-white card_text position-relative content-dsa">
-                    <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
-                    <p>Q8. How often do you eat vegetable or fruit? </p>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="0" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable1" value="Every Day">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}vegetable1">Every Day</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                    <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="1" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable2" value="Not Every Day">
-                    <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}vegetable2">Not Every Day</label>
-                    </div>
-                    <p class="mt-5">Q9.On average, would you do atleast 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="0" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise1" value="yes">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}exercise1">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                        <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="2" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise2" value="No">
-                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}exercise2">No</label>
-                        </div>
-                        <div class=" mt-5">
-                            <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
-                                <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-                            </div>
-
-
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input   disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled checked="checked" type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click2" checked="checked" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click4" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label> 
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click5" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                      
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="2" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age2" value="35 - 44 years">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age2">35-44 years</label>
                                 </div>
-                            <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
-                                <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    
-                    
-                </div>
-                </form> 
-                
-            </div>
-        </mat-step>
-        <mat-step [stepControl]="sixthFormGroup">
-            <div class="card_box position-relative">
-                <form [formGroup]="sixthFormGroup" class="my-5">
-                    <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135081673.png" class="imm1" >
-                    <div class="bg_gradient1"></div>
-                    <div class="text-center text-white card_text position-relative content-dsa">
-                    <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
-                    <p>Q10. What is your waist measurement? </p>
-                        <p class="hint-waist">Hint: Measure your waist below the ribs while standing (usually around the belly button).
-                            If you don't have a tape measure refer to the clothing sizes in the table.</p>
-                        
-                        <p>Which range does your waist measurement fall under?</p>	
-                        <div>
-                            <div class="row">
-                                <div class="col-4 p-0 range-media">
-                                    <div class="mx-3 range-heading">
-                                        <div class="range-heading2">Range 1</div>
-                                        <div class=" range-heading3">
-                                            <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-                                            <p class="waist-value">Less than 88cm</p>
-                                            <p class="waist-headings">CLOTH SIZING</p>
-                                            <p class="waist-value">8 / 10 / 12</p>
-                                        </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="4" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age3" value="45 - 54 years">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age3">45-54 years</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="6" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age4" value="55 - 64 years">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age4">54-64 years</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="8" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age5" value="65 years or older">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age5">65 years or older</label>
+                                </div>
+                                <div class=" mt-5">
+                                    <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
+                                        <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                     </div>
-                                    <div class="form-check form-check-inline mt-4">
-                                        <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="0" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist1" value="Range 1">
-                                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}waist1">Range 1</label>
-                                    </div>
-                                </div>
-                                <div class="col-4 p-0 range-media">
-                                    <div class="mx-3 range-heading">
-                                        <div class="range-heading2">Range 2</div>
-                                        <div class=" range-heading3">
-                                            <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-                                            <p class="waist-value">Between 88-100cm</p>
-                                            <p class="waist-headings">CLOTH SIZING</p>
-                                            <p class="waist-value">14 / 16</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-check form-check-inline mt-4">
-                                        <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="4" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist2" value="Range 2">
-                                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}waist2">Range 2</label>
-                                    </div>	
-                                </div>
-                                <div class="col-4 p-0 range-media">
-                                    <div class="mx-3 range-heading">
-                                        <div class="range-heading2">Range 3</div>
-                                        <div class=" range-heading3">
-                                            <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-                                            <p class="waist-value">More than 100cm</p>
-                                            <p class="waist-headings">CLOTH SIZING</p>
-                                            <p class="waist-value">18 / 20 / 22 / 24</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-check form-check-inline mt-4">
-                                        <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="7" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist3" value="Range 3">
-                                        <label class="text-white form-check-label" (click)="radioClick($event)" attr.for="{{contentID}}waist3">Range 3</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            
-                    
-                    
-                    
-                        <div class=" mt-5">
-                            <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
-                                <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
-                            </div>
-
-
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input   disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled checked="checked" type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click2" checked="checked" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input disabled type="checkbox" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label> 
-                                
-                            </div>
-                            <div class="form-check form-check-inline pagemedia-btn" >
-                                <label class="containers">
-                                    <input class="disable-click5" disabled type="checkbox" name="radio">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                      
-                                </div>
-                            <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
-                                <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    
-                    
-                </div>
-                </form> 
                 
-            </div>
-        </mat-step>
-        <mat-step [stepControl]="finalFormGroup">
-            <div class="card_box position-relative">
-                <form [formGroup]="finalFormGroup" class="my-5">
-                    <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943688.png" class="imm" >
-                    <div class="bg_gradient"></div>
-                    <div class="text-center text-white card_text position-relative content-dsa">
-                    <label class="text-white m-5">Your Result</label>
-                    <p>1 person is diagnosed with diabetes in every 5 minutes </p>
-                        
-                        
-                    
-                        <div class="mx-5 p-5 details-box">
-                            <p class="text-left m-0">Please enter your Details</p>
-
-                            <!-- <mat-form-field >
-                                <mat-label>First Name*</mat-label>
-                                <input matInput placeholder="First Name*" formControlName="fName">
-                              </mat-form-field> -->
-                             
-                            <div class="row fourm_field">
-                                <!-- <div class="col-3 result_box_data">
-                                    <input type="text" formControlName="fName" placeholder="First Name">
-
-                                </div> -->
-                                 <div class="col-3 result-media">
-                                    <mat-form-field >
-                                <mat-label>First Name*</mat-label>
-                                <input matInput placeholder="First Name*" formControlName="fName">
-                              </mat-form-field>
+                
+                
                                     
-                                    
-                                </div>
-                                <div class="col-3 result-media">
-                                    
-                                    
-                                      <mat-form-field >
-                                        <mat-label>Last Name*</mat-label>
-                                        <input matInput placeholder="Last Name*" formControlName="lName">
-                                      </mat-form-field>
-                                </div>
-                                <div class="col-3 result-media ">
-                                    
-                                    <mat-form-field >
-                                        <mat-label>Email*</mat-label>
-                                        <input matInput placeholder="Email*" formControlName="email">
-                                      </mat-form-field>
-                                    
-                                     
-                                </div>
-                                 <div class="col-3 result-media ">
-                                    
-                                    <mat-form-field >
-                                        <mat-label>Contact Numner*</mat-label>
-                                        <input matInput placeholder="Contact Numner*" formControlName="phone">
-                                      </mat-form-field>
-                                    
-                                     
-                                </div> 
-                                
-                            </div>
-                            <div class="row">
-                                <div class="col text-left">
-                                    <mat-checkbox formControlName="termsCondition" class="example-margin accptcond">I accept the term and conditions</mat-checkbox>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="mx-5 mt-4 details-box1">
-                            <div class="row">
-                                <div class="col">
-                                    <button [disabled]="viewResultbutton" class="btn primary-btn view-final-btn"(click)="showResultdata()" >VIEW RESULTS</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" mx-5 mb-5 p-5 details-box" *ngIf="viewResultData">
-                            <p class="text-left m-0 resutlTest">You Have <span class="riskDiabetes">{{riskRangeLabel}}</span>  of developing diabetes</p>
-                            <div class="chart">
-                               
-                                <div  class=" bar-chart text-center"><span *ngIf="isRiskRange == 0">Your Score {{riskScore}}</span></div>
-                                <div  class="bar-chart"><span *ngIf="isRiskRange == 1">Your Score {{riskScore}}</span></div>
-                                <div  class="bar-chart"><span *ngIf="isRiskRange == 2">Your Score {{riskScore}}</span></div>
-                            </div>
-                            <div class="chart">
-                                <div  class=" bar-chartMin"></div>
-                                <div  class="bar-chartMed"></div>
-                                <div  class="bar-chartMax"></div>
-                            </div>
-                            <div class="chart">
-                                <div class=" bar-chart-range ">LOW RISK 0-5</div>
-                                <div class="bar-chart-range">MEDIUM RISK 6-11</div>
-                                <div class="bar-chart-range">HIGH RISK 12+</div>
-                            </div>
-                            <p class="text-left m-0 glucoseB">You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition.</p>
-                            <p class="text-left m-0 glucose">See your doctor about having a fasting blood glucose test.</p>
-                            <div class="next-step mb-4">
-                                Your Next Step
-                            </div>
-                            <div class="row">
-                                <div class="col-4" *ngIf="sum >=12">
-                                    <div class="my-3">
-                                        <img (click)="getsupport(0)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 2.png">
-                                      </div>
-                                    Book A Point for care test
-                                   
-                                </div>
-                                <div class="col-4">
-                                    <div class="my-3">
-                                        <img (click)="gpResutl(showDrop)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 1.png">
-                                      </div>
-                                    Mail a GP my result
-                                   
-                                    <div *ngIf="showDrop">
-                                        <div class="dropdown">
-                                            <input type="text" formControlName="gpResult" (keyup)="getsupportData($event)" placeholder="Medical Practice"  class="dropdownMenuButtons" data-toggle="dropdown" aria-expanded="false">
+                
+                
+                
+                                    <div class="form-check form-check-inline pagemedia-btn" >
+                                        <label class="containers">
+                                            <input class="disable-click"  disabled type="checkbox" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-check form-check-inline pagemedia-btn" >
+                                        <label class="containers">
+                                            <input class="disable-click1" disabled type="checkbox" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-check form-check-inline pagemedia-btn" >
+                                        <label class="containers">
+                                            <input class="disable-click2" disabled type="checkbox" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-check form-check-inline pagemedia-btn" >
+                                        <label class="containers">
+                                            <input class="disable-click3" disabled type="checkbox" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-check form-check-inline pagemedia-btn" >
+                                        <label class="containers">
+                                            <input class="disable-click4" disabled type="checkbox" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label> 
+                                        
+                                    </div>
+                                    <div class="form-check form-check-inline pagemedia-btn" >
+                                        <label class="containers">
+                                            <input class="disable-click5" disabled type="checkbox" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
                                             
-                                            <div class="dropdown-menu dropdownMenuBtn" aria-labelledby="dropdownMenuButtons">
-                                              <span class="dropdown-item list-result-data" (click)="setValueGP(i)"  *ngFor="let data of GPDataResults;let i =index">{{data.descp}}</span>
-                                              
+                                        </div>
+                                    <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                        <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                        <button style="display: none;" id="setpRestID" mat-button (click)="stepper.reset();">Reset</button>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup" >
+                        <div class="card_box position-relative">
+                            <form [formGroup]="secondFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Layer 0.png" class="imm11" >
+                                <div class="bg_gradient1"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Your Demographic</label>
+                                <p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori Descent</p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="2" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal1" value="Yes">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="0" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal2" value="No">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal2">No</label>
+                                </div>
+                                <p class="mt-5">Q3B. Where were you born?</p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio"  name="bornOptions" attr.id="{{contentID}}born1" value="Australia">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born1">Australia</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born2" value="Aisa">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born2">Aisa</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born3" value="Middle East">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born3">Middle East</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born4" value="North America">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born4">North America</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born5" value="South European">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born5">South European</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born6" value="Other">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born6">Other</label>
+                                    </div>
+                                
+                                    <div class=" mt-5">
+                                        <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
+                                            <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                        </div>
+            
+            
+            
+                                        
+            
+            
+            
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input   disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled class="disable-click1" type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled class="disable-click2" type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click3" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click4" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label> 
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click5" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                                  
                                             </div>
-                                            <button class="btn btn-primary" (click)="sentToGP()" >Sent to GP</button>
-                                            
-                                          </div>
+                                        <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                            <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-4" >
-                                    <div class="my-3">
-                                        <img (click)="getsupport(1)"  src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/B - Get support.png">
-                                      </div>
-                                    Get Support
-                                   
-                                </div>
                                 
                                 
                             </div>
-                            <div class="row bottom-result">
-                                <div class="col-12 mt-3">We’re here to give you all the support you need.</div>
-                                <div class="col-12 mt-3">Talk to one of our health professionals or arrange the face to face consultation</div>
-                                <div class="col-12 mt-3">Discount apply for memeber</div>
-                                <div class="col-12 mt-3">Call 1300 198 204</div>
-                                <div class="col-12 my-3">
-                                    <button class="btn btnprimaryss">Become a member</button>
-                                </div>
-                            </div>
-                        </div>
+                            </form> 
                             
-                    
-                    
-                    
-                    
-                </div>
-                </form> 
-                
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="thirdFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="thirdFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Rectangle 1533.png" class="imm3" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes(Type 1 or 2)? </p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="3" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes1" value="Yes">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="0" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes2" value="No">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes2">No</label>
+                                </div>
+                                <p class="mt-5">
+                                    Q5. Have you ever been  found to have High Blood Glucose(Sugar),eg in a health examination,during an illness or during pregnancy?
+                                    </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="6" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP1" value="Yes">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}highBP1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="0" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP2" value="No">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}highBP2">No</label>
+                                    </div>
+                                    <div class=" mt-5">
+                                        <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
+                                            <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                        </div>
+            
+            
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input   disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled checked="checked" type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click2" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click3" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click4" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label> 
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click5" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                                  
+                                            </div>
+                                        <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                            <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="fourthFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="fourthFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-476291300.png" class="imm1" >
+                                <div class="bg_gradient1"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q6. Are you currently taking medication for high blood pressure? </p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA6($event)" data-score="2" formControlName="hBP" type="radio" name="hBP" attr.id="{{contentID}}hBP1" value="Yes">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}hBP1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA6($event)" data-score="0" formControlName="hBP" type="radio" name="hBP" attr.id="{{contentID}}hBP2" value="No">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}hBP2">No </label>
+                                </div>
+                                <p class="mt-5">Q7.Do you smoke tobacco every day?</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="2" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco1" value="Yes">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}tobacco1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="0" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco2" value="No">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}tobacco2">No</label>
+                                    </div>
+                                    <div class=" mt-5">
+                                        <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
+                                            <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                        </div>
+            
+            
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input   disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled checked="checked" type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input  checked="checked" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                
+                                                <input class="disable-click3" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"> </span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click4" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label> 
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click5" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                                  
+                                            </div>
+                                        <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                            <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="fifthFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="fifthFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q8. How often do you eat vegetable or fruit? </p>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="0" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable1" value="Every Day">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}vegetable1">Every Day</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="1" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable2" value="Not Every Day">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}vegetable2">Not Every Day</label>
+                                </div>
+                                <p class="mt-5">Q9.On average, would you do atleast 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="0" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise1" value="yes">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="2" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise2" value="No">
+                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise2">No</label>
+                                    </div>
+                                    <div class=" mt-5">
+                                        <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
+                                            <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                        </div>
+            
+            
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input   disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled checked="checked" type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click2" checked="checked" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click4" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label> 
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click5" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                                  
+                                            </div>
+                                        <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                            <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="sixthFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="sixthFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135081673.png" class="imm1" >
+                                <div class="bg_gradient1"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
+                                <p>Q10. What is your waist measurement? </p>
+                                    <p class="hint-waist">Hint: Measure your waist below the ribs while standing (usually around the belly button).
+                                        If you don't have a tape measure refer to the clothing sizes in the table.</p>
+                                    
+                                    <p>Which range does your waist measurement fall under?</p>	
+                                    <div>
+                                        <div class="row mx-3">
+                                            <div class="col-4 p-0 range-media">
+                                                <div class="mx-3 range-heading">
+                                                    <div class="range-heading2">Range 1</div>
+                                                    <div class=" range-heading3">
+                                                        <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
+                                                        <p class="waist-value">Less than 88cm</p>
+                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p class="waist-value">8 / 10 / 12</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check form-check-inline mt-4">
+                                                    <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="0" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist1" value="Range 1">
+                                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}waist1">Range 1</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 p-0 range-media">
+                                                <div class="mx-3 range-heading">
+                                                    <div class="range-heading2">Range 2</div>
+                                                    <div class=" range-heading3">
+                                                        <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
+                                                        <p class="waist-value">Between 88-100cm</p>
+                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p class="waist-value">14 / 16</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check form-check-inline mt-4">
+                                                    <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="4" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist2" value="Range 2">
+                                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}waist2">Range 2</label>
+                                                </div>	
+                                            </div>
+                                            <div class="col-4 p-0 range-media">
+                                                <div class="mx-3 range-heading">
+                                                    <div class="range-heading2">Range 3</div>
+                                                    <div class=" range-heading3">
+                                                        <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
+                                                        <p class="waist-value">More than 100cm</p>
+                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p class="waist-value">18 / 20 / 22 / 24</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check form-check-inline mt-4">
+                                                    <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="7" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist3" value="Range 3">
+                                                    <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}waist3">Range 3</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                
+                                
+                                
+                                    <div class=" my-5">
+                                        <div class="form-check form-check-inline page-media-btn" matStepperPrevious>
+                                            <span class="mr-3"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
+                                        </div>
+            
+            
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input   disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled checked="checked" type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click2" checked="checked" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input disabled type="checkbox" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label> 
+                                            
+                                        </div>
+                                        <div class="form-check form-check-inline pagemedia-btn" >
+                                            <label class="containers">
+                                                <input class="disable-click5" disabled type="checkbox" name="radio">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                                  
+                                            </div>
+                                        <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                            <button  disabled mat-button matStepperNext>Next</button> <span disabled class="ml-3"><i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="finalFormGroup">
+                        <div class="card_box position-relative">
+                            <form [formGroup]="finalFormGroup" class="my-5">
+                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943688.png" class="imm" >
+                                <div class="bg_gradient"></div>
+                                <div class="text-center text-white card_text position-relative content-dsa">
+                                <label class="text-white m-5">Your Result</label>
+                                <p>1 person is diagnosed with diabetes in every 5 minutes </p>
+                                    
+                                    
+                                
+                                    <div class="mx-5 p-5 details-box">
+                                        <p class="text-left m-0">Please enter your Details</p>
+            
+                                        <!-- <mat-form-field >
+                                            <mat-label>First Name*</mat-label>
+                                            <input matInput placeholder="First Name*" formControlName="fName">
+                                          </mat-form-field> -->
+                                         
+                                        <div class="row fourm_field">
+                                            <!-- <div class="col-3 result_box_data">
+                                                <input type="text" formControlName="fName" placeholder="First Name">
+            
+                                            </div> -->
+                                             <div class="col-3 result-media">
+                                                <mat-form-field >
+                                            <mat-label>First Name*</mat-label>
+                                            <input matInput placeholder="First Name*" formControlName="fName">
+                                          </mat-form-field>
+                                                
+                                                
+                                            </div>
+                                            <div class="col-3 result-media">
+                                                
+                                                
+                                                  <mat-form-field >
+                                                    <mat-label>Last Name*</mat-label>
+                                                    <input matInput placeholder="Last Name*" formControlName="lName">
+                                                  </mat-form-field>
+                                            </div>
+                                            <div class="col-3 result-media ">
+                                                
+                                                <mat-form-field >
+                                                    <mat-label>Email*</mat-label>
+                                                    <input matInput placeholder="Email*" formControlName="email">
+                                                    
+                                                  </mat-form-field>
+                                                  <div class="error" *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.touched">
+                                                    <p *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.errors?.required">Please enter Email</p>
+                                                    <p *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.errors?.pattern">Enter Correct Email</p>
+                                                </div>
+                                                 
+                                            </div>
+                                             <div class="col-3 result-media ">
+                                                
+                                                <mat-form-field >
+                                                    <mat-label>Contact Numner*</mat-label>
+                                                    <input matInput placeholder="Contact Numner*" formControlName="phone">
+                                                  </mat-form-field>
+                                                
+                                                 
+                                            </div> 
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col text-left">
+                                                <mat-checkbox formControlName="termsCondition" class="example-margin accptcond"><span style="font-weight: 100;">I accept the <span class="terms_cond" (click)="openNew();do($event)">term and conditions</span></span></mat-checkbox>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="mx-5 mt-4 details-box1">
+                                        <div class="row">
+                                            <div class="col">
+                                                <button [disabled]="viewResultbutton" class="btn primary-btn view-final-btn"(click)="showResultdata()" >VIEW RESULTS</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" mx-5 mb-5 p-5 details-box" *ngIf="viewResultData">
+                                        <p class="text-left m-0 resutlTest">You Have <span class="riskDiabetes">{{riskRangeLabel}}</span>  of developing diabetes</p>
+                                        <div class="chart">
+                                           
+                                            <div  class=" bar-chart text-center"><span *ngIf="isRiskRange == 0">Your Score {{riskScore}}</span></div>
+                                            <div  class="bar-chart"><span *ngIf="isRiskRange == 1">Your Score {{riskScore}}</span></div>
+                                            <div  class="bar-chart"><span *ngIf="isRiskRange == 2">Your Score {{riskScore}}</span></div>
+                                        </div>
+                                        <div class="chart">
+                                            <div  class=" bar-chartMin"></div>
+                                            <div  class="bar-chartMed"></div>
+                                            <div  class="bar-chartMax"></div>
+                                        </div>
+                                        <div class="chart">
+                                            <div class=" bar-chart-range ">LOW RISK 0-5</div>
+                                            <div class="bar-chart-range">MEDIUM RISK 6-11</div>
+                                            <div class="bar-chart-range">HIGH RISK 12+</div>
+                                        </div>
+                                        <p class="text-left m-0 glucoseB">You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition.</p>
+                                        <p class="text-left m-0 glucose">See your doctor about having a fasting blood glucose test.</p>
+                                        <div class="next-step mb-4">
+                                            Your Next Step
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4" *ngIf="sum >=12">
+                                                <div class="my-3">
+                                                    <img (click)="getsupport(0)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 2.png">
+                                                  </div>
+                                                Book A Point for care test
+                                               
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="my-3">
+                                                    <img (click)="gpResutl(showDrop)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 1.png">
+                                                  </div>
+                                                Mail a GP my result
+                                               
+                                                <div *ngIf="showDrop">
+                                                    <div class="dropdown">
+                                                        <input type="text" formControlName="gpResult" (keyup)="getsupportData($event)" placeholder="Medical Practice"  class="dropdownMenuButtons" data-toggle="dropdown" aria-expanded="false">
+                                                        
+                                                        <div class="dropdown-menu dropdownMenuBtn" aria-labelledby="dropdownMenuButtons">
+                                                          <span class="dropdown-item list-result-data" (click)="setValueGP(i)"  *ngFor="let data of GPDataResults;let i =index">{{data.descp}}</span>
+                                                          
+                                                        </div>
+                                                        <button class="btn btn-primary" (click)="sentToGP()" >Sent to GP</button>
+                                                        
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4" >
+                                                <div class="my-3">
+                                                    <img (click)="getsupport(1)"  src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/B - Get support.png">
+                                                  </div>
+                                                Get Support
+                                               
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        <div class="row bottom-result">
+                                            <div class="col-12 mt-3">We’re here to give you all the support you need.</div>
+                                            <div class="col-12 mt-3">Talk to one of our health professionals or arrange the face to face consultation</div>
+                                            <div class="col-12 mt-3">Discount apply for memeber</div>
+                                            <div class="col-12 mt-3">Call 1300 198 204</div>
+                                            <div class="col-12 my-3">
+                                                <button class="btn btnprimaryss">Become a member</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                
+                                
+                                
+                                
+                            </div>
+                            </form> 
+                            
+                        </div>
+                    </mat-step>
+                  
+                </mat-horizontal-stepper>
             </div>
-        </mat-step>
-        
-        
-    </mat-horizontal-stepper>
-</div>
+        </div>
+    </div>
+</div>            

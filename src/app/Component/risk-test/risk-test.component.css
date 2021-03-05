@@ -96,7 +96,7 @@
     position: absolute;
     top: 200px;
     right: -600px;
-    width: 597px;
+    max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(.9);
     /* object-position: right; */
@@ -104,7 +104,7 @@
 .imm1 {
     position: absolute;
     top: 200px;
-    width: 597px;
+    max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(.8);
    
@@ -112,7 +112,7 @@
 .imm123 {
     position: absolute;
     top: 250px;
-    width: 597px;
+    max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.2);
    
@@ -121,7 +121,7 @@
     position: absolute;
     top: 260px;
     /* right: -600px; */
-    width: 597px;
+    max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.6);
     /* object-position: right; */
@@ -130,7 +130,7 @@
     position: absolute;
     top: 200px;
     right: -250px;
-    width: 597px;
+    max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.2);
     /* object-position: right; */
@@ -139,7 +139,7 @@
     position: absolute;
     top: 250px;
     right: -640px;
-    width: 597px;
+    max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.5);
 }
@@ -195,16 +195,32 @@
     margin: 0;
     padding: 0;
   }
-  
+  .modal-dialogs{
+      max-width: 3000px!important;
+      margin: 0!important;
+      background: #0d0d0d!important;
+  }
+  ::ng-deep .mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 0!important;
+}
+.view-modal{
+    padding-right: 0!important;
+}
   .modal-content {
     height: auto;
     min-height: 100%;
     border-radius: 0;
-    min-width: calc(100vw - 20px);
+    
   }
   .details-box{
     background-color: #ffffff;
     color: black;
+  }
+  .step-containers{
+   
+    max-height: 800px;
+    overflow-y: auto;
   }
   
   .view-final-btn{
@@ -301,21 +317,37 @@
         margin: 5px 0;
     }
     .range-media{
-        max-width: 100%;
-        flex: auto;
+        max-width: 100%!important;
+        flex: auto!important;
         padding: 15px!important;
     }
     .page-media-btn{
         width: auto;
-        position: initial;
+        position: initial!important;
     }
     .result-media{
-        max-width: 100%;
-    flex: unset;
+        max-width: 100%!important;
+        flex: unset!important;
     }
     .details-box{
         padding: 20px!important;
         margin: 0 20px 20px 20px!important;
+    }
+    .bar-chart-range{
+        font-size: 14px!important;
+    }
+    .resutlTest{
+        font-size: 20px!important;
+    }
+    .imm {
+        top: 250px!important;
+    }
+    .imm11[_ngcontent-nym-c88] {
+        position: absolute;
+        top: 310px;
+        max-width: 597px;
+        object-fit: cover;
+        transform: translate(-50%,-50%) scale(1.8);
     }
 }
 
@@ -413,14 +445,15 @@
     color: white;
     padding-top: 2rem;
 }
-.dropdownMenuButtons {
-    padding: 0 10px;
-    margin: 20px 10px 0 10px;
+.dropdownMenuButtons{
+    padding: 0px 10px;
+    margin: 20px 10px 15px 10px;
     border-radius: 20px;
     outline: none;
     border: 1px solid;
     font-size: 14px;
-    height: 25px;
+    height: 30px;
+    width: 100%;
 } 
 .list-result-data{
     font-size: 14px!important;
@@ -440,6 +473,17 @@
 .mat-horizontal-content-container {
     overflow: hidden;
     padding: 0!important;
+}
+.close-btn-cross{
+    position: absolute!important;
+    top: 35px!important;
+    z-index: 999!important;
+    right: 25px!important;
+    font-size: 24px!important;
+    color: #fff!important;
+}
+.font_results{
+    font-weight: 100!important;
 }
 
     

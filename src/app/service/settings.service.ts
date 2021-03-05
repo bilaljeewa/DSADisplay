@@ -8,6 +8,7 @@ import { ContextService } from './context.service';
 import { ServiceBase } from './service-base';
 import { ClientSideContentItem, CriteriaData, QueryDefinitionData } from '../interfaces/asi.interfaces';
 import { promise } from 'protractor';
+declare var jQuery:any; 
 
 @Injectable({
   providedIn: 'root'
@@ -16,103 +17,36 @@ export class SettingsService extends ServiceBase {
   sharedData=Array()
   contentItmeKeyCounter: any=0;
   contentItemKeyID: any;
-  
-	baseUrl: string;
+  baseUrl: string;
 	token: string;
 	tokenGet: string;
 	tokenPost: string;
-
   constructor(private http: HttpClient, private contentKeysService: ContentKeysService, contextService:ContextService)
-   {
-     super(contextService)
-     //this.getContext();	
-    
-    
-  }
-
-
-  getCONtentKey(){
-   // console.log("content key >>>>>>>>>>>>",this.contentKeysService)
-    const params = new HttpParams()   
-    .set('contentKey', this.contentKeysService.contentKey)
-    .set('contentItemKey',String(this.contentKeysService.contentItemKey));
-    // console.log('url: '+url);
-    // console.log("params >>>>>>",params)
-    return params
-  }
-  
-  public GetSettings (): Observable<SectionsSettings>
   {
-
-
-    // this.contentItemKeyID = String(this.contentKeysService.contentItemKey)
-    // console.log("content >>>>>>>>>>>",this.contentItemKeyID)
-    let headers = this.getHeaders();
-    let url = this.getUrl('ContentItem');
-    
-    const params = new HttpParams()   
-    .set('contentKey', this.contentKeysService.contentKey)
-    .set('contentItemKey',String(this.contentKeysService.contentItemKey));
-    // console.log('url: '+url);
-     console.log("params >>>>>>",params)
-    return this.http.get(url,{params,headers}).pipe(map((res:any)=>res.Settings)).pipe(catchError(this.handleError));
+    super(contextService)
   }
-  // public GetSettings (): Observable<SectionsSettings>
-  // {
-  //   let params;
-    
-  //   for(let i =0;i<this.contentKeys.contentItemKey.length; i++){
-  //       if( i == this.contentItmeKeyCounter ){
-  //         params = new HttpParams()
-  //         .set('contentKey', this.contentKeys.contentKey)  
-  //         .set('contentItemKey',this.contentKeys.contentItemKey[i]);
-  //         this.contentItmeKeyCounter++;
-  //         const headers = this.getHeaders();  
-  //         const url = this.getUrl('ContentItem');
-  //         //return this.http.get(url,{params,headers}).pipe(map((res: ClientSideContentItem)=>res.Settings)).pipe(catchError(this.handleError));
-  //         return this.http.get(url,{params,headers}).pipe(map((res: any)=>res.Settings)).pipe(catchError(this.handleError));
-  //       }else{
-  //         console.log("return null")
-  //       }
-  //     }
-    
-  //   params = new HttpParams()
-  //       .set('contentKey', this.contentKeys.contentKey)  
-  //       .set('contentItemKey',this.contentKeys.contentItemKey[0]);
-  //       this.contentItmeKeyCounter++;
-  //       const headers = this.getHeaders();  
-  //       const url = this.getUrl('ContentItem');
-  //   return  this.http.get(url,{params,headers}).pipe(map((res: any)=>res.Settings)).pipe(catchError(this.handleError));
-  // }
-
-
-
   public GetSettingsDSA (): Observable<SectionsSettings>
   {
     let params;
-    
     for(let i =0;i<this.contentKeysService.contentItemKey.length; i++){
         if( i == this.contentItmeKeyCounter ){
           params = new HttpParams()
-          .set('contentKey', this.contentKeysService.contentKey)  
+          .set('contentKey', this.contentKeysService.contentKey[i])  
           .set('contentItemKey',this.contentKeysService.contentItemKey[i]);
           this.contentItmeKeyCounter++;
           const headers = this.getHeaders();  
           const url = this.getUrl('ContentItem');
-          //return this.http.get(url,{params,headers}).pipe(map((res: ClientSideContentItem)=>res.Settings)).pipe(catchError(this.handleError));
-          console.log("stepppppp 2 + ",i)
           return this.http.get(url,{params,headers}).pipe(map((res: any)=>res)).pipe(catchError(this.handleError));
         }else{
           console.log("return null")
         }
       }
       params = new HttpParams()
-        .set('contentKey', this.contentKeysService.contentKey)  
+        .set('contentKey', this.contentKeysService.contentKey[0])  
         .set('contentItemKey',this.contentKeysService.contentItemKey[0]);
         this.contentItmeKeyCounter++;
         const headers = this.getHeaders();  
         const url = this.getUrl('ContentItem');
-        console.log("stepppppp  1")
     return  this.http.get(url,{params,headers}).pipe(map((res: any)=>res)).pipe(catchError(this.handleError));
   }
 
@@ -259,23 +193,41 @@ export class SettingsService extends ServiceBase {
     //{console.log(res); return res}));
 
   }
+
+
+
    postGPdata(dataJson,urls): Observable<any> {
+  //   jQuery.post('https://dasa-imistst.diabetessa.com.au/DSAWebApi/api/facethefacts/'+this.getSelectedID(),dataJson,
+  //   function(data, status){
+  //  console.log(status,">>>>>>>-------asdfl;kasjdf---->>>>adfg>>>>",data)
+  //  return data
+  //   });
+    
    
-    const httpOptions = {
-      headers:this.getHeaders()
-    };
-    //this is the POST request body for getting a (IQA) QueryDefinition.
+    // const httpOptions = {
+    //   headers:this.getHeaders()
+    // };
+   
     let findBypath = dataJson
 
-    //use baseUrl gathered earlier from ClientContent to get relative path of restful operation.
-              
-    let url = 'https://www.imisconsulting.com.au/DSAWebApi/api/'+urls+'/'+this.getSelectedID();
+    
+    let url = 'https://dasa-imistst.diabetessa.com.au/DSAWebApi/api/FaceTheFacts/'+this.getSelectedID();
+    // let url = 'https://www.imisconsulting.com.au/DSAWebApi/api/'+urls+'/'+this.getSelectedID();
     console.log(url)
    
-    return this.http.post(url, findBypath, httpOptions).pipe(map((res: any) => { 
+    return this.http.post(url, findBypath).pipe(map((res: any) => { 
      
       return res; }));
-    //{console.log(res); return res}));
+   
+
+  }
+
+  getSupportRef(event,testId){
+    if(event == 0){
+      window.open(this.getWebSiteRoot('')+'Info/poc?TestId='+testId)
+    }else{
+      window.open(this.getWebSiteRoot('')+'Info/poc')
+    }
 
   }
 

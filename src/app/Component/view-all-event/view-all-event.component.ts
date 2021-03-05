@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SettingsService } from 'src/app/service/settings.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 declare var jQuery:any;
 @Component({
   selector: 'app-view-all-event',
@@ -20,7 +21,9 @@ export class ViewAllEventComponent implements OnInit {
   letInform: FormGroup;
   
   zipState=Array()
-  constructor(public settingsService: SettingsService,public fb: FormBuilder) {
+  constructor(public settingsService: SettingsService,
+              private _snackBar: MatSnackBar,
+              public fb: FormBuilder) {
     this.createTable()
    }
    createTable(){
@@ -29,10 +32,11 @@ export class ViewAllEventComponent implements OnInit {
       lName: ['',Validators.required],
       mobile: ['',Validators.required],
       message: ['',Validators.required],
-      email: ['',Validators.required],
-      acceptCondtion: ['',Validators.required]
+      email: ['', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]],
+      acceptCondtion: ['',Validators.required],
+      
      })
-     
+
        
    }
 
@@ -105,11 +109,16 @@ export class ViewAllEventComponent implements OnInit {
   }
   sendStayInformed(){
     console.log(this.letInform)
+   
     if(this.letInform.status == 'VALID'){
       let data = this.letInform.getRawValue()
-      console.log(data)
-      this.settingsService.postGPdata(data,'FaceTheFactsStayInformed').subscribe(resp=>{
+      let jsonData = String.raw`{"message":"{\"value\":\"`+this.letInform.get(`message`)?.value+String.raw`\",\"score\":0}","mobile":"{\"value\":\"`+this.letInform.get(`phone`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.letInform.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.letInform.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.letInform.get(`email`)?.value+String.raw`\",\"score\":0}","Type":"{\"value\":\"StayInformed\"}"}`
+       
+      console.log(jsonData)
+      this.settingsService.postGPdata(jsonData,'FaceTheFactsStayInformed').subscribe(resp=>{
         console.log(resp)
+        this.letInform.reset()
+        this.openSnackBar('Information Sent Successfully','')
       })
     }else{
 
@@ -118,11 +127,23 @@ export class ViewAllEventComponent implements OnInit {
   }
   sendLoginInformed(){
     console.log(this.letInform)
+    // this.letInform.get('Type')?.setValue('LetsTalk')
     if(this.letInform.status == 'VALID'){
-      let data = this.letInform.getRawValue()
-      console.log(data)
-      this.settingsService.postGPdata(data,'FaceTheFactsLetsTalk').subscribe(resp=>{
+      let jsonData =
+      String.raw`{"message":"{\"value\":\"`+this.letInform.get(`message`)?.value+String.raw`\",\"score\":0}","mobile":"{\"value\":\"`+this.letInform.get(`phone`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.letInform.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.letInform.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.letInform.get(`email`)?.value+String.raw`\",\"score\":0}","Type":"{\"value\":\"LetsTalk\"}"}`
+      // {
+      //   "Type": {"value":"LetsTalk"},
+      //   "firstname":{"value":this.letInform.get('fName')?.value},
+      //   "lastname":{"value":this.letInform.get('lName')?.value},
+      //   "mobile":{"value":this.letInform.get('mobile')?.value},
+      //   "email":{"value":this.letInform.get('email')?.value},
+      //   "message":{"value":this.letInform.get('message')?.value},
+      // }
+     console.log(jsonData)
+      this.settingsService.postGPdata(jsonData,'FaceTheFactsLetsTalk').subscribe(resp=>{
         console.log(resp)
+        this.letInform.reset()
+        this.openSnackBar('Information Sent Successfully','')
       })
     }else{
       
@@ -132,5 +153,13 @@ export class ViewAllEventComponent implements OnInit {
   do(event) {
 		event.preventDefault();
 	}
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 3000,
+    });
+  }
+  openNew(){
+    window.open('https://www.diabetessa.com.au/Web/Terms_and_Conditions/Terms_and_Conditions.aspx')
+  }
 
 }
