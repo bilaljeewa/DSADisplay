@@ -23,38 +23,15 @@ export class AppComponent {
 	counts: number=0;
 	constructor(public settingsService: SettingsService) {
 		this.countryCtrl = new FormControl();
-	
-	
-		
 		this.settingsService.GetSettingsDSA().subscribe(value=>{
-		if(value && value['Settings']){
-			this.settings=value['Settings'];
-			this.contentkeyItems = value['ContentItemKey']
-		
-		
-			
-			if(this.settings && this.settings.DSAType){
-			
-				this.DSAType = this.settings.DSAType
-				
-
+			if(value && value['Settings']){
+				this.settings=value['Settings'];
+				this.contentkeyItems = value['ContentItemKey']
+				console.log(this.contentkeyItems,">>>>>>>>>>content key item>>>>>>>>>>>>>>")
+				if(this.settings && this.settings.DSAType){
+					this.DSAType = this.settings.DSAType
+				}
 			}
-			
-			if(this.settings && this.settings.IQA){
-			
-				
-			}
-		}
-			
-		
 		})
-		
-		
-	}
-	dateFormate(value){
-		var time = new Date(value);
-		let ampm =  time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
-	
-		return ampm
 	}
 }

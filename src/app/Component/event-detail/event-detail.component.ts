@@ -18,26 +18,19 @@ export class EventDetailComponent implements OnInit {
 
   ngOnInit(): void {
     let url = window.location.search
-    console.log("url >>>>>>",url)
     if(url && url.split && url.split("EventKey=")){
       let KeyEvents = url.split('EventKey=')
- console.log("KeyEvents >>>>>>>>",KeyEvents)
       let keys = KeyEvents[1]
       if(keys){
-        console.log("KeyEvents if >>>>>>>>",keys)
-        
         let keys2 = keys.split('&').length
         let keys3;
-       
          if(keys2 > 1){
            keys3 = keys.split('&')[0]
          }else{
            keys3 = keys
          }
-          
           if(this.settings && this.settings.IQA){
             this.settingsService.getEventData(this.settings.IQA,keys3).subscribe(values=>{
-            
                this.eventData= values[0].Properties.$values
                let desc;
                let dayLeft;
@@ -50,38 +43,20 @@ export class EventDetailComponent implements OnInit {
                 }else if(resp.Name == 'Address1'){
                   address = resp.Value
                 }
-               
                })
                this.sharedData.push({desc,dayLeft,address})
-               
             })
           }
       }
      
     }
-    
-    
   }
-  // openViewModal(){
-  //   console.log("open modal ")
-  //   let but = (<HTMLElement>document.querySelectorAll(".viewAllEventButton")[0])
-  //   console.log("evnt ",but)
-  //   but.click()
-  //   jQuery("#viewAllEventModal").modal('show')
-  // }
-  // do(event) {
-	// 	event.preventDefault();
-	// }
   openViewModal(){
-    
     setTimeout(() => {
       jQuery('#viewAllEventModal').modal('show');
-       }, 500);
-    // jQuery("#viewAllEventModal").modal('show')
+    }, 500);
   }
   do(event) {
 		event.preventDefault();
 	}
-
-
 }

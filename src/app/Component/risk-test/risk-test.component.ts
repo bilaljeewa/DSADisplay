@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-import { ContentObserver } from '@angular/cdk/observers';
-import { ThrowStmt } from '@angular/compiler';
 import { SettingsService } from 'src/app/service/settings.service';
-import { ContentKeysService } from 'src/app/service/content-keys.service';
-import { Input } from '@angular/core';
-import { Subscription, Observable } from 'rxjs';
 import { v4 as uuid } from 'uuid';
 import { MatSnackBar } from '@angular/material/snack-bar';
 declare var jQuery:any;
@@ -19,8 +14,6 @@ declare var jQuery:any;
   }]
 })
 export class RiskTestComponent implements OnInit {
-  // @Input() counts
-  
   resultStatus: boolean=false;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -60,36 +53,6 @@ export class RiskTestComponent implements OnInit {
   testID: any;
   resultDataJSON: any;
   constructor( public _formBuilder: FormBuilder , private _snackBar: MatSnackBar,public contenItem: SettingsService) { }
-
-   doStuff() {
-    let heigtht = document.getElementsByClassName('exampleModal1234') as HTMLCollectionOf<HTMLElement>
-    this.newHeight = heigtht[heigtht.length-1].clientHeight
-    console.log(this.newHeight,">>>>>>",this.prevHeight)
-    if(this.newHeight == this.prevHeight){
-      heigtht[heigtht.length-1].style.position='absolute'
-       heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
-       const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-       // console.log(elm.parentElement)
-       const elemp = <HTMLElement>elm.parentElement;
-       // console.log(elemp.style.minHeight)
-      elemp.style.height =  heigtht[heigtht.length-1].clientHeight+"px"
-      this.div2.style.minHeight =  heigtht[heigtht.length-1].clientHeight+"px"
-    }else{
-//        console.log("else",this.newHeight)
-// console.log(-this.newHeight-116)      
-         heigtht[heigtht.length-1].style.position='absolute'
-       heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
-       const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-       // console.log(elm.parentElement)
-       const elemp = <HTMLElement>elm.parentElement;
-       // console.log(elemp.style.minHeight)
-      elemp.style.height =  heigtht[heigtht.length-1].clientHeight+"px"
-      this.div2.style.minHeight =  heigtht[heigtht.length-1].clientHeight+"px"
-      this.prevHeight = this.newHeight
-      
-    }
-    // clearInterval(this.interval);
-  }
  
   ngOnInit(): void {
     let test =document.querySelectorAll(".RiskTestClass")
@@ -122,55 +85,21 @@ export class RiskTestComponent implements OnInit {
             } );
         }
       }, 100);
-      
-      // this.contentID = this.counts
-      // console.log("contentID >>>>>>>>>>>>>  ",this.contentID)
-     
-      // const div1 = document.querySelector("#hd")!;
-       this.div2 = <HTMLElement>document.querySelector(".dsa-body-content")!;
-      
-      
-     
-       let clcikc= document.getElementsByClassName('risktestMain')! as HTMLCollectionOf<HTMLElement>
-       console.log("button drop click >>>>>>>>>>>>>>>>>>>>>>>>>>>>",clcikc)
-      //  clcikc[0].onclick = function(e) {
-      //   if(e.target !=  document.getElementsByClassName('dropdown')[document.getElementsByClassName('dropdown').length -1]) {
-      //       console.log('You clicked outside');
-      //       const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
-          
-      //       let nextsb= elmd[elmd.length-1];
-      //       console.log(nextsb)
-      //       if(nextsb){
-      //        nextsb.style.display='none'
-      //       }
-      //   } else {
-      //       console.log('You clicked inside');
-      //   }
-      // }
-       for(let i =0; i<=clcikc.length-1;i++){
-         console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>",i)
+    this.div2 = <HTMLElement>document.querySelector(".dsa-body-content")!;
+    let clcikc= document.getElementsByClassName('risktestMain')! as HTMLCollectionOf<HTMLElement>
+    for(let i =0; i<=clcikc.length-1;i++){
        clcikc[i].onclick = function(e) {
-         console.log("drop down >>>>>>>>>>>>>>>>>>>>>>> ",document.getElementsByClassName('dropdown'))
          if(e.target !=  document.getElementsByClassName('dropdown')[0]) {
-          console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>> click outside")
              const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
-           
              let nextsb= elmd[elmd.length-1];
              console.log(nextsb)
              if(nextsb){
               nextsb.style.display='none'
              }
-         } else {
-          console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>> click indised ")
          }
        }
      }
-     
-      
-      
     
-  
-  
     this.firstFormGroup = this._formBuilder.group({
       gender: ['', Validators.required],
       age: ['',Validators.required],
@@ -200,9 +129,7 @@ export class RiskTestComponent implements OnInit {
       waist: ['',Validators.required],
       pagination:['5']
     });
-    
     this.finalFormGroup = this._formBuilder.group({
-      
       fName: ['',Validators.required],
       lName: ['',Validators.required],
       email: ['', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]],
@@ -213,37 +140,23 @@ export class RiskTestComponent implements OnInit {
       sendEmail: ['']
     });
     
-
-    
     this.firstFormGroup?.valueChanges.subscribe(value=>{
-      console.log(this.firstFormGroup)
       if(this.firstFormGroup.status == 'VALID'){
-        console.log(this.firstFormGroup)
         let elements = document.getElementsByClassName('disable-click')as HTMLCollectionOf<HTMLElement>;
-        console.log("elements >>>>>>> ",elements)
-        console.log("elements length >>>>>>> ",elements[0])
-          var status=jQuery('.disable-click')[0].checked;
-
-          if(status == false){
-           
+        var status=jQuery('.disable-click')[0].checked;
+        if(status == false){
             elements[0].removeAttribute('disabled')
             elements[0].click()
             elements[0].setAttribute('disabled', 'disabled');
           }
-        // }
-        
-        
-          let butn = document.getElementsByClassName('stepeNext')
-         console.log(butn)
+        let butn = document.getElementsByClassName('stepeNext')
          butn[0].children[0].removeAttribute('disabled')
+         butn[0].children[1].removeAttribute('disabled')
       }
     })
     this.secondFormGroup?.valueChanges.subscribe(value=>{
       if(this.secondFormGroup.status == 'VALID'){
-       
         let elements = document.getElementsByClassName('disable-click1')as HTMLCollectionOf<HTMLElement>;
-    
-console.log(elements)
         for(let i =0 ; i <=1; i++){
           var status=jQuery('.disable-click1')[i].checked;
           if(status == false){
@@ -253,99 +166,99 @@ console.log(elements)
             elements[i].setAttribute('disabled', 'disabled');
           }
         }
-        
-        
-          let butn = document.getElementsByClassName('stepeNext')
-          console.log(butn)
+        let butn = document.getElementsByClassName('stepeNext')
         butn[1].children[0].removeAttribute('disabled')
+        butn[1].children[1].removeAttribute('disabled')
       }
     })
     this.thirdFormGroup?.valueChanges.subscribe(value=>{
       if(this.thirdFormGroup.status == 'VALID'){
-       
         let elements = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
-        console.log(elements)
         for(let i =0 ; i <=2; i++){
           var status=jQuery('.disable-click2')[i].checked;
           if(status == false){
-           
             elements[i].removeAttribute('disabled')
             elements[i].click()
             elements[i].setAttribute('disabled', 'disabled');
           }
         }
-        
-        
-          let butn = document.getElementsByClassName('stepeNext')
-          console.log(butn)
+        let butn = document.getElementsByClassName('stepeNext')
         butn[2].children[0].removeAttribute('disabled')
+        butn[2].children[1].removeAttribute('disabled')
       }
     })
     this.fourthFormGroup?.valueChanges.subscribe(value=>{
       if(this.fourthFormGroup.status == 'VALID'){
-      
         let elements = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
-        console.log(elements)
         for(let i =0 ; i <=3; i++){
           var status=jQuery('.disable-click3')[i].checked;
           if(status == false){
-           
             elements[i].removeAttribute('disabled')
             elements[i].click()
             elements[i].setAttribute('disabled', 'disabled');
           }
         }
-        
-        
-          let butn = document.getElementsByClassName('stepeNext')
+        let butn = document.getElementsByClassName('stepeNext')
         butn[3].children[0].removeAttribute('disabled')
+        butn[3].children[1].removeAttribute('disabled')
       }
     })
     this.fifthFormGroup?.valueChanges.subscribe(value=>{
       if(this.fifthFormGroup.status == 'VALID'){
-       
         let elements = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
-        console.log(elements)
         for(let i =0 ; i <=4; i++){
           var status=jQuery('.disable-click4')[i].checked;
           if(status == false){
-           
             elements[i].removeAttribute('disabled')
             elements[i].click()
             elements[i].setAttribute('disabled', 'disabled');
           }
         }
-        
-        
-          let butn = document.getElementsByClassName('stepeNext')
+        let butn = document.getElementsByClassName('stepeNext')
         butn[4].children[0].removeAttribute('disabled')
+        butn[4].children[1].removeAttribute('disabled')
       }
     })
     this.sixthFormGroup?.valueChanges.subscribe(value=>{
       if(this.sixthFormGroup.status == 'VALID'){
-       
         let elements = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
-        console.log(elements)
         for(let i =0 ; i <=5; i++){
           var status=jQuery('.disable-click5')[i].checked;
           if(status == false){
-           
             elements[i].removeAttribute('disabled')
             elements[i].click()
             elements[i].setAttribute('disabled', 'disabled');
           }
         }
-        
-        
-          let butn = document.getElementsByClassName('stepeNext')
+        let butn = document.getElementsByClassName('stepeNext')
         butn[5].children[0].removeAttribute('disabled')
+        butn[5].children[1].removeAttribute('disabled')
       }
     })
     
-    console.log(this.firstFormGroup)
-  
   }
 
+  doStuff() {
+    let heigtht = document.getElementsByClassName('exampleModal1234') as HTMLCollectionOf<HTMLElement>
+    this.newHeight = heigtht[heigtht.length-1].clientHeight
+    console.log(this.newHeight,">>>>>>",this.prevHeight)
+    if(this.newHeight == this.prevHeight){
+      heigtht[heigtht.length-1].style.position='absolute'
+      heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
+      const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
+      const elemp = <HTMLElement>elm.parentElement;
+      elemp.style.height =  heigtht[heigtht.length-1].clientHeight+"px"
+      this.div2.style.minHeight =  heigtht[heigtht.length-1].clientHeight+"px"
+    }else{
+      heigtht[heigtht.length-1].style.position='absolute'
+      heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
+      const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
+      const elemp = <HTMLElement>elm.parentElement;
+      elemp.style.height =  heigtht[heigtht.length-1].clientHeight+"px"
+      this.div2.style.minHeight =  heigtht[heigtht.length-1].clientHeight+"px"
+      this.prevHeight = this.newHeight
+    }
+  }
   finish(){
     console.log("finish")
     let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[6])
@@ -355,10 +268,7 @@ console.log(elements)
   do(event) {
 		event.preventDefault();
 	}
-
-  
   showResultdata(){
-
     if(this.finalFormGroup.status == 'VALID'){
       this.testID= uuid()
       this.viewResultData=true;
@@ -374,68 +284,35 @@ console.log(elements)
         console.log("Your Result Range  0-5 >>>>>>>>> ")
         this.riskRangeLabel = "Low Risk"
         this.isRiskRange = 0
-       
-       
       }else if(this.sum >= 6 && this.sum <= 11){
         console.log("Your Result Range  6-11 >>>>>>>>> ")
         this.riskRangeLabel = "Intermediate Risk"
         this.isRiskRange = 1
-        
-          this.suggestionTag1 ="Discuss your score with your doctor as you are at risk of developing type 2 diabetes."
-          this.suggestionTag2 = "Improving your lifestyle through healthy eating and regular physical activity can reduce your risk, or delay the onset of type 2 diabetes."
-       
-       
-       
+        this.suggestionTag1 ="Discuss your score with your doctor as you are at risk of developing type 2 diabetes."
+        this.suggestionTag2 = "Improving your lifestyle through healthy eating and regular physical activity can reduce your risk, or delay the onset of type 2 diabetes."
       }else if(this.sum >= 12){
         console.log("Your Result Range  12 >>>>>>>>> ")
         this.riskRangeLabel = "High Risk"
         this.isRiskRange = 2
         this.suggestionTag1= "You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition."
         this.suggestionTag2 ="See your doctor about having a fasting blood glucose test. Act now to prevent type 2 diabetes."
-       
       }
       this.viewResultbutton = true;
       let resultrange
       if(this.sum<=5){
-        // resultcls	=	'.lowrisk';
-        // resultblock	=	'.resultblock.risk1';
         resultrange	=	'0 - 5';
-        // resultdesc	=	'Low Risk';
-      }
-      else if(this.sum>5&&this.sum<=8){
-        // resultcls	=	'.intermediaterisk1';
-        // resultblock	=	'.resultblock.risk1';
-        resultrange	=	'6 - 8';
-        // resultdesc	=	'Low Risk';
-      }
-      else if(this.sum>8&&this.sum<=11){
-        // resultcls	=	'.intermediaterisk2';
-        // resultblock	=	'.resultblock.risk3';
+      }else if(this.sum>5&&this.sum<=8){
+         resultrange	=	'6 - 8';
+      }else if(this.sum>8&&this.sum<=11){
         resultrange	=	'9 - 11';
-        // resultdesc	=	'Medium Risk';
-      }
-      else if(this.sum>11&&this.sum<=15){
-        // resultcls	=	'.highrisk1';
-        // resultblock	=	'.resultblock.risk5';
+      }else if(this.sum>11&&this.sum<=15){
         resultrange	=	'12 - 15';
-        // resultdesc	=	'High Risk';
-      }
-      else if(this.sum>15&&this.sum<=19){
-        // resultcls	=	'.highrisk2';
-        // resultblock	=	'.resultblock.risk5';
+      }else if(this.sum>15&&this.sum<=19){
         resultrange	=	'16 - 19';
-        // resultdesc	=	'High Risk';
-      }
-      else if(this.sum>19){
-        // resultcls	=	'.highrisk3';
-        // resultblock	=	'.resultblock.risk5';
+      }else if(this.sum>19){
         resultrange	=	'20+';
-        // resultdesc	=	'High Risk';
       }
-
-   
       this.resultDataJSON =String.raw`{"q1":"{\"value\":\"`+this.firstFormGroup.get('gender')?.value+String.raw`\",\"score\":`+this.Q1+String.raw`}","q2":"{\"value\":\"`+this.firstFormGroup.get(`age`)?.value+String.raw`\",\"score\":`+this.Q2+String.raw`}","q3":"{\"value\":\"`+this.secondFormGroup.get(`aboriginal`)?.value+String.raw`\",\"score\":`+this.Q3a+String.raw`}","q3b":"{\"value\":\"`+this.secondFormGroup.get(`bornOptions`)?.value+String.raw`\",\"score\":`+this.Q3b+String.raw`}","q4":"{\"value\":\"`+this.thirdFormGroup.get(`typeDiabetes`)?.value+String.raw`\",\"score\":`+this.Q4+String.raw`}","q5":"{\"value\":\"`+this.thirdFormGroup.get(`highBP`)?.value+String.raw`\",\"score\":`+this.Q5+String.raw`}","q6":"{\"value\":\"`+this.fourthFormGroup.get(`hBP`)?.value+String.raw`\",\"score\":`+this.Q6+String.raw`}","q7":"{\"value\":\"`+this.fourthFormGroup.get(`tobacco`)?.value+String.raw`\",\"score\":`+this.Q7+String.raw`}","q8":"{\"value\":\"`+this.fifthFormGroup.get(`vegetable`)?.value+String.raw`\",\"score\":`+this.Q8+String.raw`}","q9":"{\"value\":\"`+this.fifthFormGroup.get(`exercise`)?.value+String.raw`\",\"score\":`+this.Q9+String.raw`}","q10":"{\"value\":\"`+this.sixthFormGroup.get(`waist`)?.value+String.raw`\",\"score\":`+this.Q10+String.raw`}","sendemail":"{\"value\":\"yes\",\"score\":0}","mobile":"{\"value\":\"`+this.finalFormGroup.get(`phone`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.finalFormGroup.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.finalFormGroup.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.finalFormGroup.get(`email`)?.value+String.raw`\",\"score\":0}","totalscore":"{\"value\":`+this.sum+String.raw`}","resultrange":"{\"value\":\"`+resultrange+String.raw`\"}","TestID":"{\"value\":\"`+this.testID+String.raw`\"}","Type":"{\"value\":\"AusRiskTest\"}"}`
-      console.log(this.resultDataJSON)
       this.contenItem.postGPdata(this.resultDataJSON,'FaceTheFacts').subscribe(resp=>{
         console.log(resp)
         if(resp){
@@ -443,98 +320,56 @@ console.log(elements)
         }
       })
     }else{
-      console.log("Form valid >>>>>>>",this.finalFormGroup)
       return;
-     
     }
-    
-
   }
-  hello(){
-    console.log("hello check ")
-  }
- 
-   
   radioClick(event){
-    console.log(event)
     if(event.target.previousSibling){
       event.target.previousSibling.click()
     }
   }
- 
-  viewResult(){
-    console.log(this.finalFormGroup.status)
-    
-   
-    
-  }
   QA1(event){
-    
     this.Q1 = event.target.dataset.score
-   
   }
   QA2(event){
     this.Q2 = event.target.dataset.score
-   
   }
   QA3a(event){
-  
     this.Q3a = event.target.dataset.score
-   
   }
   QA3b(event){
-   
     this.Q3b = event.target.dataset.score
-   
   }
   QA4(event){
     this.Q2 = event.target.dataset.score
-   
   }
   QA5(event){
     this.Q5 = event.target.dataset.score
-   
   }
   QA6(event){
     this.Q6 = event.target.dataset.score
-   
   }
   QA7(event){
     this.Q7 = event.target.dataset.score
-   
   }
   QA8(event){
     this.Q8 = event.target.dataset.score
-   
   }
   QA9(event){
     this.Q9 = event.target.dataset.score
-   
   }
   QA10(event){
     this.Q10 = event.target.dataset.score
-   
   }
 
   getsupport(event){
     this.contenItem.getSupportRef(event,this.testID)
-    // if(event == 0){
-      
-    //   window.open("https://www.imisconsulting.com.au/imis0/Facts/poc?TestID="+this.testID)
-    // }else{
-    //   window.open("https://www.imisconsulting.com.au/iMIS0/Info/GetSupport")
-    // }
-    
-  
   }
   
   gpResutl(showDrop){
     this.showDrop =!showDrop
-    
-
   }
   getsupportData(event){
-    console.log(event.target.value)
     this.contenItem.getGIData('$/DSA/FTF/GP List',event.target.value).subscribe(resp=>{
       console.log(resp)
       this.GPDataResults=[]
@@ -546,37 +381,21 @@ console.log(elements)
         descp= ele.Properties.$values[2].Value
         this.GPDataResults.push({descp,sendEmail})
       })
-      console.log(this.GPDataResults)
-       
-        const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
-           
-           let nextsb= elmd[elmd.length-1];
-           console.log(nextsb)
-           if(nextsb){
-            nextsb.style.display='block'
-           }
-          
-             
-        
-       
+      const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
+      let nextsb= elmd[elmd.length-1];
+      if(nextsb){
+        nextsb.style.display='block'
+      }
     }) 
-
   }
   setValueGP(i){
-    console.log(this.GPDataResults[i])
     this.GPDataResults[i].descp
     this.finalFormGroup.get('gpResult')?.setValue(this.GPDataResults[i].descp)
     this.finalFormGroup.get('sendEmail')?.setValue(this.GPDataResults[i].sendEmail)
   }
   sentToGP(){
-    // String.raw`{"q1":"{\"value\":\"`+this.firstFormGroup.get('gender')?.value+String.raw`\",\"score\":`+this.Q1+String.raw`}","q2":"{\"value\":\"`+this.firstFormGroup.get(`age`)?.value+String.raw`\",
-    let jsondata= 
-      String.raw`{"TestId":"{\"value\":\"`+this.testID+String.raw`\"}","GPEmail":"{\"value\":\"`+this.finalFormGroup.get('sendEmail')?.value+String.raw`\"}","Type":"{\"value\":\"SendToGP\"}"}`
-      
-     
-    console.log(jsondata)
+    let jsondata= String.raw`{"TestId":"{\"value\":\"`+this.testID+String.raw`\"}","GPEmail":"{\"value\":\"`+this.finalFormGroup.get('sendEmail')?.value+String.raw`\"}","Type":"{\"value\":\"SendToGP\"}"}`
     this.contenItem.postGPdata(jsondata,'FaceTheFactsGP').subscribe(resp=>{
-      console.log(resp)
       if(resp){
         console.log("success")
         this.openSnackBar('Information Sent Successfully','')
@@ -584,52 +403,70 @@ console.log(elements)
       }
     })
   }
+  stepperPrev(event){
+    console.log(event.target.parentElement.nextElementSibling)
+    event.target.parentElement.nextElementSibling.click();
+    // event.n
+  }
+  stepperNext(event){
+    console.log(event.target.parentElement.previousElementSibling)
+    event.target.parentElement.previousElementSibling.click()
+
+  }
+  becomeMember(){
+    window.open('https://www.diabetessa.com.au/Web/Get_Involved/Membership/Become_a_Member/Web/Get_Involved/Membership/Become_a_Member.aspx')
+  }
   restStepper(){
-    console.log(document.getElementById('setpRestID'))
     if(document.getElementById('setpRestID')){
       document.getElementById('setpRestID')?.click()
     }
+
+
+
+
+    this.Q1=0;
+  this.Q2=0;
+  this.Q3a=0;
+  this.Q3b=0;
+  this.Q4=0;
+  this.Q5=0;
+  this.Q6=0;
+  this.Q7=0;
+  this.Q8=0;
+  this.Q9=0;
+  this.Q10=0;
+  this.sum=0
+
     this.finalFormGroup.reset();
     this.viewResultData=false;
     this.viewResultbutton=false;
     this.showDrop=false;
     let butn = document.getElementsByClassName('stepeNext')
-    console.log(butn)
     for(let i =0 ; i <=butn.length-1; i++){
       butn[i].children[0].setAttribute('disabled', 'disabled')
+      butn[i].children[1].setAttribute('disabled', 'disabled')
     }
     
     let elements = document.getElementsByClassName('disable-click')as HTMLCollectionOf<HTMLElement>;
-    console.log("elements >>>>>>> ",elements)
-    console.log("elements length >>>>>>> ",elements[0])
-      var status=jQuery('.disable-click')[0].checked;
-
-      if(status == true){
-       
+    var status=jQuery('.disable-click')[0].checked;
+    if(status == true){
         elements[0].removeAttribute('disabled')
         elements[0].click()
         elements[0].setAttribute('disabled', 'disabled');
-      }
-
-
-
-
+    }
     let elements1 = document.getElementsByClassName('disable-click1')as HTMLCollectionOf<HTMLElement>;
-    
     console.log(elements1)
-   for(let i =0 ; i <=1; i++){
-     var status=jQuery('.disable-click1')[i].checked;
-     if(status == true){
-      
-       elements1[i].removeAttribute('disabled')
-       elements1[i].click()
-       elements1[i].setAttribute('disabled', 'disabled');
-     }
-   }
-        let elements2 = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
-    
-        console.log(elements2)
-        for(let i =0 ; i <=2; i++){
+    for(let i =0 ; i <=1; i++){
+      var status=jQuery('.disable-click1')[i].checked;
+      if(status == true){
+        
+        elements1[i].removeAttribute('disabled')
+        elements1[i].click()
+        elements1[i].setAttribute('disabled', 'disabled');
+      }
+    }
+    let elements2 = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
+    for(let i =0 ; i <=2; i++){
           var status=jQuery('.disable-click2')[i].checked;
           if(status == true){
            
@@ -637,11 +474,10 @@ console.log(elements)
             elements2[i].click()
             elements2[i].setAttribute('disabled', 'disabled');
           }
-        }
-        let elements3 = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
-    
-         console.log(elements3)
-        for(let i =0 ; i <=3; i++){
+    }
+    let elements3 = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
+    console.log(elements3)
+    for(let i =0 ; i <=3; i++){
           var status=jQuery('.disable-click3')[i].checked;
           if(status == true){
            
@@ -650,35 +486,34 @@ console.log(elements)
             elements3[i].setAttribute('disabled', 'disabled');
           }
         }
-        let elements4 = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
-    
-         console.log(elements4)
-        for(let i =0 ; i <=4; i++){
-          var status=jQuery('.disable-click4')[i].checked;
-          if(status == true){
-           
-            elements4[i].removeAttribute('disabled')
-            elements4[i].click()
-            elements4[i].setAttribute('disabled', 'disabled');
-          }
-        }
-        let elements5 = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
-    
-         console.log(elements5)
-        for(let i =0 ; i <=5; i++){
-          var status=jQuery('.disable-click5')[i].checked;
-          if(status == true){
-           
-            elements5[i].removeAttribute('disabled')
-            elements5[i].click()
-            elements5[i].setAttribute('disabled', 'disabled');
-          }
-        }
+    let elements4 = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
+
+    for(let i =0 ; i <=4; i++){
+      var status=jQuery('.disable-click4')[i].checked;
+      if(status == true){
+        
+        elements4[i].removeAttribute('disabled')
+        elements4[i].click()
+        elements4[i].setAttribute('disabled', 'disabled');
+      }
+    }
+    let elements5 = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
+
+    for(let i =0 ; i <=5; i++){
+      var status=jQuery('.disable-click5')[i].checked;
+      if(status == true){
+        
+        elements5[i].removeAttribute('disabled')
+        elements5[i].click()
+        elements5[i].setAttribute('disabled', 'disabled');
+      }
+    }
 
   }
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
       duration: 3000,
+      panelClass: ['red-snackbar']
     });
   }
   openNew(){

@@ -1,6 +1,6 @@
 <div class="checkIns" [formGroup]="checkInform">
     <h5 class=" headings" id="exampleModalLabel1">Check in</h5>
-    <div class="row my-4" >
+    <div class="row my-5" >
         <div class="col-6">
         <input class="input-box full-width" formControlName="fName" type="text" placeholder="First Name*">
         </div>
@@ -8,7 +8,7 @@
             <input class="input-box full-width" formControlName="lName" type="text" placeholder="Last Name*">
         </div>
     </div>
-    <div class="row my-4" >
+    <div class="row my-5" >
         <div class="col-12">
             <input class="input-box full-width" formControlName="email" type="text" placeholder="Email*">
             <div class="error" *ngIf="checkInform.get('email')?.errors && checkInform.get('email')?.touched">
@@ -18,13 +18,13 @@
         </div>
         
     </div>
-    <div class="row my-4" >
+    <div class="row my-5" >
         <div class="col-12">
             <input class="input-box full-width" formControlName="mobile" type="text" placeholder="Mobile*">
         </div>
         
     </div>
-    <div class="row my-4">
+    <div class="row my-5">
         <div class="col-6">
             <div class="form-group">
                 <select class="form-control select_style" formControlName="noOfAdults">
@@ -54,13 +54,13 @@
            
         </div>
     </div>
-    <div class="row my-4">
+    <div class="row my-5">
       <div class="col text-left text-white">
-        <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"><span class="text-white">I accept the <span class="terms_cond" (click)="openNew();do($event)">term and conditions</span></span></mat-checkbox>
-          <!-- <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"> <span class="text-white">I accept the term and conditions</span></mat-checkbox> -->
+        <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"><span class="text-white accpted">I accept the <span class="terms_cond" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+          <!-- <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"> <span class="text-white">I accept the terms and conditions</span></mat-checkbox> -->
       </div>
   </div>
-  <div class="row my-4">
+  <div class="row my-5">
     <div class="col text-center">
       <button class=" btn-primarys " (click)="saveCheckIn();do($event)" >Send</button>
     </div>

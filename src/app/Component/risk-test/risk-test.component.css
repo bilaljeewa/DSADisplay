@@ -98,7 +98,7 @@
     right: -600px;
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(.9);
+    transform: translate(-50%,-50%) scale(1.5);
     /* object-position: right; */
 }
 .imm1 {
@@ -106,7 +106,7 @@
     top: 200px;
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(.8);
+    transform: translate(-50%,-50%) scale(1.8);
    
 }
 .imm123 {
@@ -123,25 +123,24 @@
     /* right: -600px; */
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(1.6);
+    transform: translate(-50%,-50%) scale(2.4);
     /* object-position: right; */
 }
 .imm3 {
     position: absolute;
-    top: 200px;
-    right: -250px;
+    top: 300px;
+    right: -169px;
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(1.2);
-    /* object-position: right; */
+    transform: translate(-50%,-50%) scale(1.4);
 }
 .imm4 {
     position: absolute;
-    top: 250px;
+    top: 350px;
     right: -640px;
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(1.5);
+    transform: translate(-50%,-50%) scale(2.2);
 }
 .bg_gradient1 {
     position: absolute;
@@ -232,7 +231,11 @@
   }
   .riskDiabetes{
       color: red;
+
      
+  }
+  .riskDiabetess{
+    background: #ed1c24!important;
   }
   .resutlTest{
     font-size: 40px;
@@ -247,6 +250,13 @@
     position: relative;
     top: 50px;
 }
+.next-btn-cusror{
+    cursor: pointer!important;
+}
+/* .next-btn-cusror:disabled {
+    cursor: not-allowed!important;
+    pointer-events: all !important;
+} */
 .bar-chartMed {
     width: 33.33%;
     min-height: 40px!important;
@@ -259,7 +269,7 @@
 .bar-chartMax {
     width: 33.33%;
     min-height: 70px!important;
-    background: red;
+    background: #404141;
     max-height: 70px!important;
     color: #fff;
     font-size: 50px;
@@ -386,6 +396,7 @@
     width: 10px;
     background-color: #eee;
     border-radius: 50%;
+    cursor: default;
 }
   
   /* On mouse-over, add a grey background color */
@@ -395,7 +406,7 @@
   
   /* When the radio button is checked, add a blue background */
 .containers input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #ed1c24;
 }
   
   /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -430,6 +441,9 @@
 }
 .stepeNext button{
       color: #fff;
+}
+.stepeNext button:disabled{
+    color: #999;
 }    
 .accptcond .mat-checkbox-layout .mat-checkbox-label {
     line-height: 24px;
@@ -469,6 +483,7 @@
     border-radius: 20px!important;
     padding: 5px 60px!important;
     margin: 1rem!important;
+    outline: none;
 } 
 .mat-horizontal-content-container {
     overflow: hidden;
@@ -484,6 +499,13 @@
 }
 .font_results{
     font-weight: 100!important;
+}
+.form_risk{
+    height: calc(100vh - 18px);
+    overflow: scroll;
+}
+.card_text{
+    margin: 50px auto!important;
 }
 
     

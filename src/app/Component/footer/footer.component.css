@@ -1,0 +1,25 @@
+.input-box{
+    border-radius: 20px;
+    border-radius: 20px;
+    background: none;
+    color: #fff!important;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ed1c24;
+   
+  }
+  .full-width{
+    width: 100%;
+  }
+  .btn-primarys{
+    color: #fff;
+    background: #ed1c24!important;
+    border: #ed1c24!important;
+    border-radius: 20px!important;
+    padding: 5px 60px!important;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 900;
+    outline: none!important;
+  } 

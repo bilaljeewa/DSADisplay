@@ -37,7 +37,6 @@ import { FooterComponent } from './Component/footer/footer.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule, 
-    
     HttpClientModule 
   ],
   providers: [],
@@ -45,7 +44,6 @@ import { FooterComponent } from './Component/footer/footer.component';
 })
 export class AppModule {  constructor(private injector: Injector) {
     const appElement = createCustomElement(AppComponent, { injector });
-   
     if (!customElements.get('app-root')){
       customElements.define('app-root', appElement);
     } 

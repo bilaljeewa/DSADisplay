@@ -1,1 +1,26 @@
-<p>footer works!</p>
+<div class="footers-email" [formGroup]="footerGroup">
+    <div class="row my-4" >
+        <div class="col-12">
+            <input class="input-box full-width" formControlName="email" type="text" placeholder="Email address">
+            <div class="error" *ngIf="footerGroup.get('email')?.errors && footerGroup.get('email')?.touched">
+                <p *ngIf="footerGroup.get('email')?.errors && footerGroup.get('email')?.errors?.required">Please enter Email</p>
+                <p *ngIf="footerGroup.get('email')?.errors && footerGroup.get('email')?.errors?.pattern">Enter Correct Email</p>
+            </div>
+        </div>
+    </div>
+    <div class="row my-4" >
+        <div class="col-12">
+            <input class="input-box full-width" formControlName="pEmail" type="text" placeholder="Your email address">
+            <div class="error" *ngIf="footerGroup.get('pEmail')?.errors && footerGroup.get('pEmail')?.touched">
+                <p *ngIf="footerGroup.get('pEmail')?.errors && footerGroup.get('pEmail')?.errors?.required">Please enter Email</p>
+                <p *ngIf="footerGroup.get('pEmail')?.errors && footerGroup.get('pEmail')?.errors?.pattern">Enter Correct Email</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row my-4">
+        <div class="col text-center">
+            <button class=" btn-primarys " (click)="saveFooterEmail();do($event)" >SEND</button>
+        </div>
+    </div>  
+</div>

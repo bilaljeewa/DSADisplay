@@ -81,6 +81,7 @@
   border-radius: 20px!important;
   padding: 5px 60px!important;
   margin: 1rem!important;
+  outline: none!important;
 } 
 .input-box{
   border-radius: 20px;
@@ -115,7 +116,8 @@
 .checkIns{
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px 0;
+    font-size: 12px;
+    padding: 200px 0;
     z-index: 9999!important;
     position: relative;
 }
@@ -128,4 +130,11 @@
     font-size: 37px;
     width: 100%;
     text-align: center;
+  }
+  .terms_cond{
+    color: #fff!important;
+    font-weight: 700!important;
+  }
+  .accpted{
+    font-weight: 400;
   }
