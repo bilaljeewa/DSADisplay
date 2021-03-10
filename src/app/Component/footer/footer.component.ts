@@ -56,10 +56,12 @@ export class FooterComponent implements OnInit {
       this.settingsService.postGPdata(jsonData,'FaceTheFactsCheckIn').subscribe(resp=>{
         console.log(resp)
         this.footerGroup.reset();
-        this.openSnackBar('Information Sent Successfully','')
+        // this.openSnackBar('Information Sent Successfully','')
       })
+      this.openSnackBar('Information Sent Successfully','')
+      this.footerGroup.reset();
     }
-    // this.openSnackBar('Information Sent Successfully','')
+    
   }
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {

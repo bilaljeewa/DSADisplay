@@ -1,4 +1,8 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 .red-snackbar{
-    background: #ed1c24!important;
+    background: #01885bd8!important;
+    z-index: 9999999999!important;
+    top: 50px;
+    position: fixed!important;
+    right: 5px;
 }

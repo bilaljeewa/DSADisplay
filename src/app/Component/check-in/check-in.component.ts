@@ -11,6 +11,7 @@ import { SettingsService } from 'src/app/service/settings.service';
 export class CheckInComponent implements OnInit {
   checkInform: FormGroup
   MainKeyValue: any;
+  eventKey: any;
   constructor(public settingsService: SettingsService,
               private _snackBar: MatSnackBar,
               public fb: FormBuilder) {
@@ -60,9 +61,12 @@ export class CheckInComponent implements OnInit {
       let jsonData = String.raw`{"EventKey":"{\"value\":\"`+this.MainKeyValue+String.raw`\",\"score\":0}","adults":"{\"value\":\"`+this.checkInform.get(`noOfAdults`)?.value+String.raw`\",\"score\":0}","children":"{\"value\":\"`+this.checkInform.get(`noOfChildren`)?.value+String.raw`\",\"score\":0}","mobile":"{\"value\":\"`+this.checkInform.get(`mobile`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.checkInform.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.checkInform.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.checkInform.get(`email`)?.value+String.raw`\",\"score\":0}","Type":"{\"value\":\"CheckIn\"}"}`
       this.settingsService.postGPdata(jsonData,'FaceTheFactsCheckIn').subscribe(resp=>{
         console.log(resp)
-        this.checkInform.reset();
-        this.openSnackBar('Information Sent Successfully','')
+        
+        
       })
+      // this.openSnackBar('Information Sent Successfully','')
+      this.checkInform.reset();
+      window.open('https://www.facethefacts.org.au/Info/NextSteps.aspx?EventKey='+this.MainKeyValue)
     }
   }
   openSnackBar(message: string, action: string) {
@@ -72,6 +76,6 @@ export class CheckInComponent implements OnInit {
     });
   }
   openNew(){
-    window.open('https://www.diabetessa.com.au/Web/Terms_and_Conditions/Terms_and_Conditions.aspx')
+    window.open('https://www.facethefacts.org.au/Info/terms_and_conditions.aspx')
   }
 }

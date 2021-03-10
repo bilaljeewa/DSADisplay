@@ -129,7 +129,7 @@ export class SettingsService extends ServiceBase {
 
   postGPdata(dataJson,urls): Observable<any> {
     let findBypath = dataJson
-    let url = 'https://dasa-imistst.diabetessa.com.au/DSAWebApi/api/FaceTheFacts/'+this.getSelectedID();
+    let url = 'https://api.facethefacts.org.au/DSAWebApi/api/FaceTheFacts/'+this.getSelectedID();
     return this.http.post(url, findBypath).pipe(map((res: any) => { 
       return res; 
     }));

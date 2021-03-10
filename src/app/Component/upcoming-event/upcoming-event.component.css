@@ -96,8 +96,9 @@
 }
 .event-inform-detail{
     font-size: 18px;
-    width: 460px;
+    max-width: 510px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .padding-body{
   padding: 4rem;

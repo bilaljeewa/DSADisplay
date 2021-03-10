@@ -251,6 +251,7 @@
     top: 50px;
 }
 .next-btn-cusror{
+   
     cursor: pointer!important;
 }
 /* .next-btn-cusror:disabled {
@@ -338,6 +339,13 @@
     .result-media{
         max-width: 100%!important;
         flex: unset!important;
+    }
+    .inner_result_media{
+        width: 100%!important;
+    }
+    .gp_result_media{
+        max-width: 100%!important;
+        flex: none!important;
     }
     .details-box{
         padding: 20px!important;

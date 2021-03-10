@@ -2,23 +2,23 @@
     <div class="modal-dialog modal-dialogs" role="document">
         <div class="modal-content" style="background: none!important;">
             <div class="modal-body" style="padding: 0!important;">
-                <button type="button" (click)="restStepper()" class="close close-btn-cross" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                <button type="button" (click)="restStepper()" class="close close-btn-cross" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-size: 65px;">&times;</span>
                 </button>
                 <mat-horizontal-stepper #stepper class="">
                     <mat-step [stepControl]="firstFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="firstFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943635.png" class="imm" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135943635.png" class="imm" >
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                     <label class="text-white m-5">Your Demographic</label>
                                     <p>Q1. What is your gender?</p>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input check-inputs" (change)="QA1($event)" data-score="3" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender1" value="Female">
+                                        <input class="form-check-input check-inputs" (change)="QA1($event)" data-score="0" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender1" value="Female">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}gender1">Female</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input check-inputs"  (change)="QA1($event)" data-score="0" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender2" value="Male">
+                                        <input class="form-check-input check-inputs"  (change)="QA1($event)" data-score="3" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender2" value="Male">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}gender2">Male</label>
                                     </div>
                                     <p class="mt-5">Q2. How old you are?</p>
@@ -36,26 +36,26 @@
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="6" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age4" value="55 - 64 years">
-                                        <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age4">54-64 years</label>
+                                        <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age4">55-64 years</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="8" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age5" value="65 years or older">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age5">65 years or older</label>
                                     </div>
-                                    <div class=" mt-5">
+                                    <div class=" my-5 py-5">
                                         <div class="form-check form-check-inline page-media-btn">
                                             <span class="mr-3 next-btn-cusror" (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input class="disable-click"  disabled type="checkbox" name="radio">
+                                                <input class="disable-click" checked="checked"  disabled type="checkbox" name="radio">
                                                 <span class="checkmark"></span>
                                             </label>
                                             
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input class="disable-click1" disabled type="checkbox" name="radio">
+                                                <input class="disable-click1" disabled  type="checkbox" name="radio">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
@@ -86,7 +86,7 @@
                                             </label>
                                                 
                                         </div>
-                                        <div    class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
+                                        <div class="form-check form-check-inline page-media-btn stepeNext"mat-button matStepperNext>
                                             <button class="next-btn-cusror" disabled mat-button matStepperNext>Next</button> <span class="ml-3 next-btn-cusror" disabled (click)="stepperNext($event)" mat-button matStepperNext ><i class="fas fa-arrow-right"></i></span>
                                             <button style="display: none;" id="setpRestID" mat-button (click)="stepper.reset();">Reset</button>
                                         </div>
@@ -98,7 +98,7 @@
                     <mat-step [stepControl]="secondFormGroup" >
                         <div class="card_box position-relative">
                             <form [formGroup]="secondFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Layer 0.png" class="imm11" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/Layer 0.png" class="imm11" >
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Your Demographic</label>
@@ -117,27 +117,27 @@
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born1">Australia</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born2" value="Aisa">
-                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born2">Aisa</label>
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born2" value="Asia">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born2">Asia</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born3" value="Middle East">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born3">Middle East</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born4" value="North America">
-                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born4">North America</label>
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born4" value="North Africa">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born4">North Africa</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born5" value="South European">
-                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born5">South European</label>
+                                <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born5" value="Southern European">
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born5">Southern European</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born6" value="Other">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born6">Other</label>
                                     </div>
                                 
-                                    <div class=" mt-5">
+                                    <div class=" my-5">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -149,7 +149,7 @@
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input disabled class="disable-click1" type="checkbox" name="radio">
+                                                <input disabled class="disable-click1" checked="checked" type="checkbox" name="radio">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
@@ -189,7 +189,7 @@
                     <mat-step [stepControl]="thirdFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="thirdFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Rectangle 1533.png" class="imm3" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/Rectangle 1533.png" class="imm3" >
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                     <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
@@ -213,7 +213,7 @@
                                     <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="0" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}highBP2">No</label>
                                     </div>
-                                    <div class=" mt-5">
+                                    <div class=" my-5">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -231,7 +231,7 @@
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input class="disable-click2" disabled type="checkbox" name="radio">
+                                                <input class="disable-click2" checked="checked" disabled type="checkbox" name="radio">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
@@ -265,7 +265,7 @@
                     <mat-step [stepControl]="fourthFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="fourthFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-476291300.png" class="imm1" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-476291300.png" class="imm1" >
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
@@ -287,7 +287,7 @@
                                     <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="0" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}tobacco2">No</label>
                                     </div>
-                                    <div class=" mt-5">
+                                    <div class=" my-5">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -311,7 +311,7 @@
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input class="disable-click3" disabled type="checkbox" name="radio">
+                                                <input class="disable-click3" checked="checked" disabled type="checkbox" name="radio">
                                                 <span class="checkmark"> </span>
                                               </label>
                                         </div>
@@ -338,7 +338,7 @@
                     <mat-step [stepControl]="fifthFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="fifthFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
@@ -351,7 +351,7 @@
                                 <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="1" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable2" value="Not Every Day">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}vegetable2">Not Every Day</label>
                                 </div>
-                                <p class="mt-5">Q9.On average, would you do atleast 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
+                                <p class="mt-5">Q9.On average, would you do At least 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="0" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise1" value="yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise1">Yes</label>
@@ -360,7 +360,7 @@
                                     <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="2" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise2">No</label>
                                     </div>
-                                    <div class=" mt-5">
+                                    <div class=" my-5">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -390,7 +390,7 @@
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input class="disable-click4" disabled type="checkbox" name="radio">
+                                                <input class="disable-click4" checked="checked" disabled type="checkbox" name="radio">
                                                 <span class="checkmark"></span>
                                               </label> 
                                         </div>
@@ -411,7 +411,7 @@
                     <mat-step [stepControl]="sixthFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="sixthFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135081673.png" class="imm1" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135081673.png" class="imm1" >
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
@@ -427,8 +427,11 @@
                                                     <div class="range-heading2">Range 1</div>
                                                     <div class=" range-heading3">
                                                         <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-                                                        <p class="waist-value">Less than 88cm</p>
-                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 90cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 80cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 102cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 88cm</p>
+                                                        <p class="waist-headings">’CLOTHING SIZE</p>
                                                         <p class="waist-value">8 / 10 / 12</p>
                                                     </div>
                                                 </div>
@@ -442,8 +445,11 @@
                                                     <div class="range-heading2">Range 2</div>
                                                     <div class=" range-heading3">
                                                         <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-                                                        <p class="waist-value">Between 88-100cm</p>
-                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 90-100cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 80-90cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 102-110cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 88-100cm</p>
+                                                        <p class="waist-headings">’CLOTHING SIZE</p>
                                                         <p class="waist-value">14 / 16</p>
                                                     </div>
                                                 </div>
@@ -457,8 +463,13 @@
                                                     <div class="range-heading2">Range 3</div>
                                                     <div class=" range-heading3">
                                                         <p class="waist-headings mt-3">WAIST MEASUREMENT</p>
-                                                        <p class="waist-value">More than 100cm</p>
-                                                        <p class="waist-headings">CLOTH SIZING</p>
+                                                        <!-- <p class="waist-value">More than 100cm</p> -->
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 100cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 90cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 110cm</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 100cm</p>
+                                                       
+                                                        <p class="waist-headings">’CLOTHING SIZE</p>
                                                         <p class="waist-value">18 / 20 / 22 / 24</p>
                                                     </div>
                                                 </div>
@@ -512,7 +523,7 @@
                                         </div>
                                         <div class="form-check form-check-inline pagemedia-btn" >
                                             <label class="containers">
-                                                <input class="disable-click5" disabled type="checkbox" name="radio">
+                                                <input class="disable-click5" checked="checked" disabled type="checkbox" name="radio">
                                                 <span class="checkmark"></span>
                                               </label>
                                                   
@@ -531,29 +542,22 @@
                     <mat-step [stepControl]="finalFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="finalFormGroup" class="form_risk">
-                                <img src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/iStock-1135943688.png" class="imm" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135943688.png" class="imm" >
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Your Result</label>
-                                <p>1 person is diagnosed with diabetes in every 5 minutes </p>
+                                <p>One person is diagnosed with diabetes every 5 minutes</p>
                                     
                                     
                                 
                                     <div class="mx-5 p-5 details-box">
                                         <p class="text-left m-0">Please enter your Details</p>
             
-                                        <!-- <mat-form-field >
-                                            <mat-label>First Name*</mat-label>
-                                            <input matInput placeholder="First Name*" formControlName="fName">
-                                          </mat-form-field> -->
                                          
                                         <div class="row fourm_field">
-                                            <!-- <div class="col-3 result_box_data">
-                                                <input type="text" formControlName="fName" placeholder="First Name">
-            
-                                            </div> -->
+                                            
                                              <div class="col-3 result-media">
-                                                <mat-form-field >
+                                                <mat-form-field class="inner_result_media">
                                             <mat-label>First Name*</mat-label>
                                             <input matInput placeholder="First Name*" formControlName="fName">
                                           </mat-form-field>
@@ -563,14 +567,14 @@
                                             <div class="col-3 result-media">
                                                 
                                                 
-                                                  <mat-form-field >
+                                                  <mat-form-field class="inner_result_media">
                                                     <mat-label>Last Name*</mat-label>
                                                     <input matInput placeholder="Last Name*" formControlName="lName">
                                                   </mat-form-field>
                                             </div>
                                             <div class="col-3 result-media ">
                                                 
-                                                <mat-form-field >
+                                                <mat-form-field class="inner_result_media">
                                                     <mat-label>Email*</mat-label>
                                                     <input matInput placeholder="Email*" formControlName="email">
                                                     
@@ -583,7 +587,7 @@
                                             </div>
                                              <div class="col-3 result-media ">
                                                 
-                                                <mat-form-field >
+                                                <mat-form-field class="inner_result_media">
                                                     <mat-label>Contact Numner*</mat-label>
                                                     <input matInput placeholder="Contact Numner*" formControlName="phone">
                                                   </mat-form-field>
@@ -595,12 +599,16 @@
                                         <div class="row">
                                             <div class="col text-left">
                                                 <mat-checkbox formControlName="termsCondition" class="example-margin accptcond"><span style="font-weight: 100;">I accept the <span class="terms_cond" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+                                                <div class="error" *ngIf="finalFormGroup.get('termsCondition')?.errors && finalFormGroup.get('termsCondition')?.touched">
+                                                    <p *ngIf="finalFormGroup.get('termsCondition')?.errors && finalFormGroup.get('termsCondition')?.errors?.required">Please tick terms & conditions</p>
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div> 
                                     <div class="mx-5 mt-4 details-box1">
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col mb-4">
                                                 <button [disabled]="viewResultbutton" class="btn primary-btn view-final-btn"(click)="showResultdata()" >VIEW RESULTS</button>
                                             </div>
                                         </div>
@@ -623,22 +631,22 @@
                                             <div class="bar-chart-range">MEDIUM RISK 6-11</div>
                                             <div class="bar-chart-range">HIGH RISK 12+</div>
                                         </div>
-                                        <p class="text-left m-0 glucoseB">You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition.</p>
-                                        <p class="text-left m-0 glucose">See your doctor about having a fasting blood glucose test.</p>
+                                        <p *ngIf="sum >= 6" class="text-left m-0 glucoseB">{{suggestionTag1}}</p>
+                                        <p *ngIf="sum >= 6" class="text-left m-0 glucose">{{suggestionTag2}}</p>
                                         <div class="next-step mb-4">
                                             Your Next Step
                                         </div>
                                         <div class="row">
-                                            <div class="col-4" *ngIf="sum >=12">
+                                            <div class="col-4 gp_result_media" *ngIf="sum >=12">
                                                 <div class="my-3">
-                                                    <img (click)="getsupport(0)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 2.png">
+                                                    <img (click)="getsupport(0)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 2.png">
                                                   </div>
-                                                Book A Point for care test
+                                                Book a Point for care test
                                                
                                             </div>
-                                            <div [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12  }" >
+                                            <div *ngIf="sum >= 6" class="gp_result_media" [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12 && sum >= 6  }" >
                                                 <div class="my-3">
-                                                    <img (click)="gpResutl(showDrop)" src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/Component 108 – 1.png">
+                                                    <img (click)="gpResutl(showDrop)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 1.png">
                                                   </div>
                                                 Mail a GP my result
                                                
@@ -655,9 +663,9 @@
                                                       </div>
                                                 </div>
                                             </div>
-                                            <div [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12  }"  >
+                                            <div class="gp_result_media" [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12  && sum >= 6 , 'col-12' : sum < 6  }"  >
                                                 <div class="my-3">
-                                                    <img (click)="getsupport(1)"  src="https://www.imisconsulting.com.au/iMIS0/images/Site_Info/B - Get support.png">
+                                                    <img (click)="getsupport(1)"  src="https://www.facethefacts.org.au/images/Site_Info/B - Get support.png">
                                                   </div>
                                                 Get Support
                                                
@@ -668,7 +676,7 @@
                                         <div class="row bottom-result">
                                             <div class="col-12 mt-3">We’re here to give you all the support you need.</div>
                                             <div class="col-12 mt-3">Talk to one of our health professionals or arrange a face to face consultation</div>
-                                            <div class="col-12 mt-3">Discounts apply for memeber</div>
+                                            <div class="col-12 mt-3">Discounts apply for members</div>
                                             <div class="col-12 mt-3">Call 1300 198 204</div>
                                             <div class="col-12 my-3">
                                                 <button class="btn btnprimaryss" (click)="becomeMember();do($event)">Become a member</button>
