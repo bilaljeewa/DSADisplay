@@ -1,10 +1,10 @@
 
-.form {
+/* .form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
   }
-  
+   */
   .width {
     width: 100%;
   }
@@ -45,9 +45,9 @@
     padding: 5px 60px!important;
     margin: 1rem!important;
 }   
-.container{
+/* .container{
   max-width: 500px;
-}
+} */
 .mat-form-field-infix {
   border: 1px solid #000!important;
 }
@@ -58,11 +58,11 @@
     border-bottom: none;
     border-radius: 20px;
 }
-.example-form {
+/* .example-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-}
+} */
 
 .example-full-width {
   width: 100%;
@@ -124,24 +124,23 @@
     min-height: calc(100vh - 20px);
 
 }  
- .modal-backdrop{
-    position: absolute!important;
+.modal-backdrop{
+  position: absolute!important;
 }
 .diabetes .modal-backdrop {
-    position: absolute!important;
-    /* position: fixed; */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    background-color: #000;
+  position: absolute!important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
 }
-.eventDetails-container{
+.event-contes{
   background: #ed1c24;
-   
-    background-size: cover;
+  background-size: cover;
 }
+
 .map-image{
   position: absolute;
   top: 7px;
@@ -149,15 +148,15 @@
   min-width: 22px!important;
   min-height: 29px!important;
 }
+
 .map-image1{
   min-width: 40px!important;
   min-height: 40px!important;
 }
+
 .city-name{
   font-size: 35px;
   font-weight: bold;
+  margin-left: 0!important;
 }
-.cityy{
-  position:absolute!important;
-  left: 150px;
-}
+

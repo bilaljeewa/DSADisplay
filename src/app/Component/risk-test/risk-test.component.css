@@ -254,6 +254,9 @@
    
     cursor: pointer!important;
 }
+.common_cursor{
+    cursor: pointer!important;
+}
 /* .next-btn-cusror:disabled {
     cursor: not-allowed!important;
     pointer-events: all !important;
@@ -321,10 +324,14 @@
 
 
 @media only screen and (max-width: 600px) {
+    .answer_check {
+      
+        padding-left: 75px!important;
+    }
     .form-check-inline {
         width: 100%;
         position: relative;
-        left: 30%;
+       
         margin: 5px 0;
     }
     .range-media{
@@ -368,7 +375,10 @@
         transform: translate(-50%,-50%) scale(1.8);
     }
 }
-
+.padding-container{
+    padding-top: 3rem!important;
+    padding-bottom: 50rem!important;
+}
 /* The container */
 .containers {
     display: block;

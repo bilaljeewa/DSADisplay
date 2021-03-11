@@ -1,18 +1,19 @@
 <div>
     <div class="modal fade view-modal" id="viewAllEventModal" style="z-index: 9999!important;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialogs" role="document">
-			<div class="modal-content mt-5 pt-5 backgound-none">
+			<div class="modal-content mt-5 pt-5 backgound-none event-heights">
 				<div class="modal-header border-none">
 					<h5 class="modal-title headings" id="exampleModalLabel">All event locations</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
+						<span aria-hidden="true" style="font-size: 65px;color:#fff;">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="row" >
 						<div class="col-6 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
+							
 							<div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
-							<div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, 6:00AM - 8:00PM</div> 
+							<div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, {{ dateFormate(event.BeginDate)}} - {{dateFormate(event.endDate)}}</div> 
 						</div>
 					</div>
 				</div>
@@ -25,7 +26,7 @@
 					<div class="modal-header border-none">
 						<h5 class="modal-title headings" id="exampleModalLabel1">Let's Talk</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
+							<span aria-hidden="true" style="font-size: 65px;color:#fff;">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body" [formGroup]="letInform">
@@ -78,7 +79,7 @@
 					<div class="modal-header border-none">
 						<h5 class="modal-title headings" id="exampleModalLabel1">Stay Informed</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
+						<span aria-hidden="true" style="font-size: 65px;color:#fff;">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body" [formGroup]="letInform">

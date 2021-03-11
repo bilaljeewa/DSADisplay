@@ -13,36 +13,36 @@
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                     <label class="text-white m-5">Your Demographic</label>
                                     <p>Q1. What is your gender?</p>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs" (change)="QA1($event)" data-score="0" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender1" value="Female">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}gender1">Female</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs"  (change)="QA1($event)" data-score="3" formControlName="gender" type="radio" name="gender" attr.id="{{contentID}}gender2" value="Male">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}gender2">Male</label>
                                     </div>
                                     <p class="mt-5">Q2. How old you are?</p>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="0" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age1" value="Under 35 years">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age1">Under 35 years</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="2" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age2" value="35 - 44 years">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age2">35-44 years</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="4" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age3" value="45 - 54 years">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age3">45-54 years</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="6" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age4" value="55 - 64 years">
                                         <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age4">55-64 years</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                         <input class="form-check-input check-inputs" (change)="QA2($event)" data-score="8" type="radio" name="age" formControlName="age" attr.id="{{contentID}}age5" value="65 years or older">
-                                        <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age5">65 years or older</label>
+                                        <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}age5">65 years or over</label>
                                     </div>
-                                    <div class=" my-5 py-5">
+                                    <div class=" my-5 padding-container">
                                         <div class="form-check form-check-inline page-media-btn">
                                             <span class="mr-3 next-btn-cusror" (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -103,41 +103,41 @@
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Your Demographic</label>
                                 <p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori Descent</p>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="2" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal1" value="Yes">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal1">Yes</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="0" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal2" value="No">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal2">No</label>
                                 </div>
                                 <p class="mt-5">Q3B. Where were you born?</p>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio"  name="bornOptions" attr.id="{{contentID}}born1" value="Australia">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born1">Australia</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born2" value="Asia">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born2">Asia</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born3" value="Middle East">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born3">Middle East</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born4" value="North Africa">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born4">North Africa</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born5" value="Southern European">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born5">Southern European</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born6" value="Other">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born6">Other</label>
                                     </div>
                                 
-                                    <div class=" my-5">
+                                    <div class=" my-5 padding-container">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -192,28 +192,28 @@
                                 <img src="https://www.facethefacts.org.au/images/Site_Info/Rectangle 1533.png" class="imm3" >
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
-                                    <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
-                                    <p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes(Type 1 or 2)? </p>
-                                    <div class="form-check form-check-inline">
+                                    <label class="text-white m-5">Your Demographic</label>
+                                    <p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes (type 1 or 2)? </p>
+                                    <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="3" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes1" value="Yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes1">Yes</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="0" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes2">No</label>
                                     </div>
                                     <p class="mt-5">
-                                        Q5. Have you ever been  found to have High Blood Glucose(Sugar),eg in a health examination,during an illness or during pregnancy?
+                                        Q5. Have you ever been found to have High Blood Glucose (sugar) e.g. in a health examination, during an illness or during pregnancy?
                                         </p>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="6" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP1" value="Yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}highBP1">Yes</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="0" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}highBP2">No</label>
                                     </div>
-                                    <div class=" my-5">
+                                    <div class=" my-5 padding-container">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -268,26 +268,26 @@
                                 <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-476291300.png" class="imm1" >
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
-                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
+                                <label class="text-white m-5">Tell us a bit about your health and lifestyle</label>
                                 <p>Q6. Are you currently taking medication for high blood pressure? </p>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA6($event)" data-score="2" formControlName="hBP" type="radio" name="hBP" attr.id="{{contentID}}hBP1" value="Yes">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}hBP1">Yes</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA6($event)" data-score="0" formControlName="hBP" type="radio" name="hBP" attr.id="{{contentID}}hBP2" value="No">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}hBP2">No </label>
                                 </div>
-                                <p class="mt-5">Q7.Do you smoke tobacco every day?</p>
-                                <div class="form-check form-check-inline">
+                                <p class="mt-5">Q7. Do you smoke tobacco every day?</p>
+                                <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="2" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco1" value="Yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}tobacco1">Yes</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA7($event)" data-score="0" formControlName="tobacco" type="radio" name="tobacco" attr.id="{{contentID}}tobacco2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}tobacco2">No</label>
                                     </div>
-                                    <div class=" my-5">
+                                    <div class=" my-5 padding-container">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -341,26 +341,26 @@
                                 <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
-                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
-                                <p>Q8. How often do you eat vegetable or fruit? </p>
-                                <div class="form-check form-check-inline">
+                                <label class="text-white m-5">Tell us a bit about your health and lifestyle</label>
+                                <p>Q8. How often do you eat vegetables or fruit? </p>
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="0" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable1" value="Every Day">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}vegetable1">Every Day</label>
                                 </div>
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="1" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable2" value="Not Every Day">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}vegetable2">Not Every Day</label>
                                 </div>
-                                <p class="mt-5">Q9.On average, would you do At least 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
-                                <div class="form-check form-check-inline">
+                                <p class="mt-5">Q9. On average, would you do at least 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
+                                <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="0" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise1" value="yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise1">Yes</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="2" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise2">No</label>
                                     </div>
-                                    <div class=" my-5">
+                                    <div class=" my-5 padding-container">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -414,7 +414,7 @@
                                 <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135081673.png" class="imm1" >
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
-                                <label class="text-white m-5">Tell us bit about your health and lifestyle</label>
+                                <label class="text-white m-5">Tell us a bit about your health and lifestyle</label>
                                 <p>Q10. What is your waist measurement? </p>
                                     <p class="hint-waist">Hint: Measure your waist below the ribs while standing (usually around the belly button).
                                         If you don't have a tape measure refer to the clothing sizes in the table.</p>
@@ -431,7 +431,7 @@
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 80cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 102cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 88cm</p>
-                                                        <p class="waist-headings">’CLOTHING SIZE</p>
+                                                        <p class="waist-headings">CLOTHING SIZE</p>
                                                         <p class="waist-value">8 / 10 / 12</p>
                                                     </div>
                                                 </div>
@@ -449,7 +449,7 @@
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && (secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 80-90cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 102-110cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 88-100cm</p>
-                                                        <p class="waist-headings">’CLOTHING SIZE</p>
+                                                        <p class="waist-headings">CLOTHING SIZE</p>
                                                         <p class="waist-value">14 / 16</p>
                                                     </div>
                                                 </div>
@@ -469,7 +469,7 @@
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 110cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 100cm</p>
                                                        
-                                                        <p class="waist-headings">’CLOTHING SIZE</p>
+                                                        <p class="waist-headings">CLOTHING SIZE</p>
                                                         <p class="waist-value">18 / 20 / 22 / 24</p>
                                                     </div>
                                                 </div>
@@ -480,7 +480,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=" my-5">
+                                    <div class=" my-5 padding-container">
                                         <div class="form-check form-check-inline page-media-btn" >
                                             <span class="mr-3 next-btn-cusror" matStepperPrevious (click)="stepperPrev($event)"><i class="fas fa-arrow-left"></i></span><button mat-button matStepperPrevious>Back</button>
                                         </div>
@@ -551,7 +551,7 @@
                                     
                                 
                                     <div class="mx-5 p-5 details-box">
-                                        <p class="text-left m-0">Please enter your Details</p>
+                                        <p class="text-left m-0">Please enter your details</p>
             
                                          
                                         <div class="row fourm_field">
@@ -588,8 +588,8 @@
                                              <div class="col-3 result-media ">
                                                 
                                                 <mat-form-field class="inner_result_media">
-                                                    <mat-label>Contact Numner*</mat-label>
-                                                    <input matInput placeholder="Contact Numner*" formControlName="phone">
+                                                    <mat-label>Contact Number*</mat-label>
+                                                    <input matInput placeholder="Contact Number*" formControlName="phone">
                                                   </mat-form-field>
                                                 
                                                  
@@ -608,13 +608,13 @@
                                     </div> 
                                     <div class="mx-5 mt-4 details-box1">
                                         <div class="row">
-                                            <div class="col mb-4">
+                                            <div  class="col mb-5 " [ngClass]="{'pb-5': !viewResultData}">
                                                 <button [disabled]="viewResultbutton" class="btn primary-btn view-final-btn"(click)="showResultdata()" >VIEW RESULTS</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class=" mx-5 mb-5 p-5 details-box" *ngIf="viewResultData">
-                                        <p class="text-left m-0 resutlTest">You Have <span [ngClass]="{'riskDiabetes': sum >= 12 }">{{riskRangeLabel}}</span>  of developing diabetes</p>
+                                        <p class="text-left m-0 resutlTest">You Have a <span [ngClass]="{'riskDiabetes': sum >= 12 }">{{riskRangeLabel}}</span>  of developing diabetes</p>
                                         <div class="chart">
                                            
                                             <div  class=" bar-chart text-center"><span *ngIf="isRiskRange == 0">Your Score {{riskScore}}</span></div>
@@ -628,24 +628,25 @@
                                         </div>
                                         <div class="chart">
                                             <div class=" bar-chart-range ">LOW RISK 0-5</div>
-                                            <div class="bar-chart-range">MEDIUM RISK 6-11</div>
+                                            <div class="bar-chart-range">INTERMEDIATE RISK 6-11</div>
                                             <div class="bar-chart-range">HIGH RISK 12+</div>
                                         </div>
                                         <p *ngIf="sum >= 6" class="text-left m-0 glucoseB">{{suggestionTag1}}</p>
                                         <p *ngIf="sum >= 6" class="text-left m-0 glucose">{{suggestionTag2}}</p>
                                         <div class="next-step mb-4">
                                             Your Next Step
+                                            <p *ngIf="sum < 6">Recheck your risk every three years if you have low risk</p>
                                         </div>
                                         <div class="row">
                                             <div class="col-4 gp_result_media" *ngIf="sum >=12">
-                                                <div class="my-3">
+                                                <div class="my-3 common_cursor" >
                                                     <img (click)="getsupport(0)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 2.png">
                                                   </div>
-                                                Book a Point for care test
+                                                Book a point for care test
                                                
                                             </div>
                                             <div *ngIf="sum >= 6" class="gp_result_media" [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12 && sum >= 6  }" >
-                                                <div class="my-3">
+                                                <div class="my-3 common_cursor">
                                                     <img (click)="gpResutl(showDrop)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 1.png">
                                                   </div>
                                                 Mail a GP my result
@@ -664,7 +665,7 @@
                                                 </div>
                                             </div>
                                             <div class="gp_result_media" [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12  && sum >= 6 , 'col-12' : sum < 6  }"  >
-                                                <div class="my-3">
+                                                <div class="my-3 common_cursor">
                                                     <img (click)="getsupport(1)"  src="https://www.facethefacts.org.au/images/Site_Info/B - Get support.png">
                                                   </div>
                                                 Get Support

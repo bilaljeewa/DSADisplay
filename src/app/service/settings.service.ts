@@ -139,7 +139,8 @@ export class SettingsService extends ServiceBase {
     if(event == 0){
       window.open(this.getWebSiteRoot('')+'Info/poc?TestId='+testId)
     }else{
-      window.open(this.getWebSiteRoot('')+'Info/poc')
+     
+      window.open('https://www.facethefacts.org.au/Info/Get_Support/Info/Contact_and_Support.aspx')
     }
   }
 }

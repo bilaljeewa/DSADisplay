@@ -63,19 +63,24 @@ export class ViewAllEventComponent implements OnInit {
 				let city='';
 				let  address1='';
 				let BeginDate='';
-				let eventcode=''
+				let eventcode='';
+				let endDate=''
+				
 				resp.Properties.$values.forEach(element => {
+					
 					if(element.Name == 'City'){
 						city = element.Value
 					}else if(element.Name == 'Address1'){
 						address1 = element.Value
 					}else if(element.Name == 'StartDateTime'){
 						BeginDate = element.Value
-					}else if(element.Name == 'EventId'){
+					}else if(element.Name == 'EndDateTime'){
+						endDate = element.Value
+					  }else if(element.Name == 'EventId'){
 						eventcode= element.Value
 					}
 				});
-				this.sharedData.push({city,address1,BeginDate,eventcode})
+				this.sharedData.push({city,address1,BeginDate,eventcode,endDate})
 			})
 		})
 	}
@@ -126,5 +131,13 @@ export class ViewAllEventComponent implements OnInit {
 	openNew(){
 		window.open('https://www.facethefacts.org.au/Info/terms_and_conditions.aspx')
 	}
+	dateFormate(value){
+		console.log(value)
+		var time = new Date(value);
+
+		let ampm =  time.toLocaleString('en-US', { hour: 'numeric',minute: 'numeric', hour12: true })
+	   
+	return ampm
+	  }
 
 }

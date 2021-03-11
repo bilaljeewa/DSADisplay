@@ -318,7 +318,7 @@ export class RiskTestComponent implements OnInit {
         this.riskRangeLabel = "High Risk"
         this.isRiskRange = 2
         this.suggestionTag1= "You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition."
-        this.suggestionTag2 ="See your doctor about having a fasting blood glucose test. Act now to prevent type 2 diabetes."
+        this.suggestionTag2 ="See your doctor about having a blood test. Act now to prevent type 2 diabetes."
       }
       this.viewResultbutton = true;
       let resultrange
