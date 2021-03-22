@@ -14,6 +14,6 @@
         </div>
         <h2 class="day-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{sharedData[0].dayLeft | date: 'EEEE d MMMM y'}}</h2>
         <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].address">{{sharedData[0].address}}</p>
-        <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{ dateFormate(sharedData[0].dayLeft)}} - {{dateFormate(sharedData[0].endDate)}}</p>
+        <p class="first-heading" *ngIf="sharedData && sharedData[0] && sharedData[0].dayLeft">{{ sharedData[0].dayLeft | ampm}} - {{sharedData[0].endDate | ampm}}</p>
     </div>  
 </div>

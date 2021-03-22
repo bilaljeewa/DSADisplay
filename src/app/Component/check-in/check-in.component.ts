@@ -67,11 +67,13 @@ export class CheckInComponent implements OnInit {
       // this.openSnackBar('Information Sent Successfully','')
       this.checkInform.reset();
       window.open('https://www.facethefacts.org.au/Info/NextSteps.aspx?EventKey='+this.MainKeyValue)
+    }else{
+      this.checkInform.markAllAsTouched()
     }
   }
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-      duration: 3000,
+      duration: 5000,
       panelClass: ['red-snackbar']
     });
   }

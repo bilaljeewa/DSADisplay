@@ -86,7 +86,7 @@ export class SettingsService extends ServiceBase {
     let base = this.getUrl('')
     let url = this.getBase('')
     url = url+'event.aspx?EventKey='+event
-    window.open(url)
+    window.open(url,"_self")
   }
   
   handleError(error: HttpErrorResponse) {

@@ -79,12 +79,12 @@ export class DateLocationComponent implements OnInit {
 
 
 
-  dateFormate(value){
-    var time = new Date(value);
-    let ampm =  time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+//   dateFormate(value){
+//     var time = new Date(value);
+//     let ampm =  time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
    
-return ampm
-  }
+// return ampm
+//   }
  
  
 

@@ -4,11 +4,15 @@
             <div class="modal-body" style="padding: 0!important;">
                 <button type="button" (click)="restStepper()" class="close close-btn-cross" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-size: 65px;">&times;</span>
                 </button>
+                <div *ngIf="greenSnack" class="green-snackbar">
+                    Your results have been emailed to the selected GP
+                </div>
                 <mat-horizontal-stepper #stepper class="">
                     <mat-step [stepControl]="firstFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="firstFormGroup" class="form_risk">
-                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135943635.png" class="imm" >
+                                0<img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135943635.jpg" class="imm" >
+                                <!-- <img src="../../../assets/RiskImage/indigenous-lady.jpg" class="imm" > -->
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                     <label class="text-white m-5">Your Demographic</label>
@@ -98,11 +102,12 @@
                     <mat-step [stepControl]="secondFormGroup" >
                         <div class="card_box position-relative">
                             <form [formGroup]="secondFormGroup" class="form_risk">
-                                <img src="https://www.facethefacts.org.au/images/Site_Info/Layer 0.png" class="imm11" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/Layer 0.jpg" class="imm11" >
+                                <!-- <img src="../../../assets/RiskImage/iStock-1081389092-male.jpg" class="imm11" > -->
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Your Demographic</label>
-                                <p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori Descent</p>
+                                <p>Q3A. Are you of Aboriginal, Torres Strait Islander, Pacific Islander or Maori descent</p>
                                 <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs" (change)="QA3a($event)" data-score="2" formControlName="aboriginal" type="radio" name="aboriginal" attr.id="{{contentID}}aboriginal1" value="Yes">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}aboriginal1">Yes</label>
@@ -118,7 +123,8 @@
                                 </div>
                                 <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born2" value="Asia">
-                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born2">Asia</label>
+                                <label class="text-white form-check-label font_results text-left" (click)="radioClick($event)" attr.for="{{contentID}}born2">Asia (including the Indian sub-continent) </label>
+                               
                                 </div>
                                 <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born3" value="Middle East">
@@ -130,7 +136,7 @@
                                 </div>
                                 <div class="form-check form-check-inline answer_check">
                                 <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="2" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born5" value="Southern European">
-                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born5">Southern European</label>
+                                <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}born5">Southern Europe</label>
                                 </div>
                                 <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs"  (change)="QA3b($event)" data-score="0" formControlName="bornOptions" type="radio" name="bornOptions" attr.id="{{contentID}}born6" value="Other">
@@ -189,11 +195,12 @@
                     <mat-step [stepControl]="thirdFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="thirdFormGroup" class="form_risk">
-                                <img src="https://www.facethefacts.org.au/images/Site_Info/Rectangle 1533.png" class="imm3" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/Rectangle 1533.jpg" class="imm3" >
+                                <!-- <img src="../../../assets/RiskImage/iStock-1081878264-female.jpg" class="imm3" > -->
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                     <label class="text-white m-5">Your Demographic</label>
-                                    <p>Q4. Have either your parents, or any of your brothers and sisters been diagnosed with diabetes (type 1 or 2)? </p>
+                                    <p>Q4. Have either your parents, or any of your brothers or sisters been diagnosed with diabetes (type 1 or 2)? </p>
                                     <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="3" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes1" value="Yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes1">Yes</label>
@@ -202,8 +209,9 @@
                                     <input class="form-check-input check-inputs" (change)="QA4($event)" data-score="0" formControlName="typeDiabetes" type="radio" name="typeDiabetes" attr.id="{{contentID}}typeDiabetes2" value="No">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}typeDiabetes2">No</label>
                                     </div>
+                                    <label class="text-white m-5" style="display: block;">Tell us a bit about your health and lifestyle</label>
                                     <p class="mt-5">
-                                        Q5. Have you ever been found to have High Blood Glucose (sugar) e.g. in a health examination, during an illness or during pregnancy?
+                                        Q5. Have you ever been found to have high blood glucose (sugar) e.g. in a health examination, during an illness or during pregnancy?
                                         </p>
                                     <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA5($event)" data-score="6" formControlName="highBP" type="radio" name="highBP" attr.id="{{contentID}}highBP1" value="Yes">
@@ -265,7 +273,8 @@
                     <mat-step [stepControl]="fourthFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="fourthFormGroup" class="form_risk">
-                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-476291300.png" class="imm1" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-476291300.jpg" class="imm921" >
+                                <!-- <img src="../../../assets/RiskImage/iStock-1135716959_bw.jpg" class="imm1" > -->
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Tell us a bit about your health and lifestyle</label>
@@ -338,7 +347,8 @@
                     <mat-step [stepControl]="fifthFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="fifthFormGroup" class="form_risk">
-                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1174449982-young-indian-girl.png" class="imm4" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1174449982-young-indian-girl.jpg" class="imm4" >
+                                <!-- <img src="../../../assets/RiskImage/iStock-1135943688_grey.jpg" class="imm4" > -->
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Tell us a bit about your health and lifestyle</label>
@@ -351,7 +361,7 @@
                                 <input class="form-check-input check-inputs" (change)="QA8($event)" data-score="1" formControlName="vegetable" type="radio" name="vegetable" attr.id="{{contentID}}vegetable2" value="Not Every Day">
                                 <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}vegetable2">Not Every Day</label>
                                 </div>
-                                <p class="mt-5">Q9. On average, would you do at least 2.5 hours of physical activity per week (for example, half an hour on 5 or more days)?</p>
+                                <p class="mt-5">Q9. On average, would you do at least 2.5 hours of physical activity per week - (e.g. half an hour a day on 5 or more days a week)?</p>
                                 <div class="form-check form-check-inline answer_check">
                                     <input class="form-check-input check-inputs" (change)="QA9($event)" data-score="0" formControlName="exercise" type="radio" name="exercise" attr.id="{{contentID}}exercise1" value="yes">
                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}exercise1">Yes</label>
@@ -411,7 +421,8 @@
                     <mat-step [stepControl]="sixthFormGroup">
                         <div class="card_box position-relative">
                             <form [formGroup]="sixthFormGroup" class="form_risk">
-                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135081673.png" class="imm1" >
+                                <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135081673.jpg" class="imm1" >
+                                <!-- <img src="../../../assets/RiskImage/iStock-158636081-male.jpg" class="imm1" > -->
                                 <div class="bg_gradient1"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Tell us a bit about your health and lifestyle</label>
@@ -432,10 +443,11 @@
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 102cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Less than 88cm</p>
                                                         <p class="waist-headings">CLOTHING SIZE</p>
-                                                        <p class="waist-value">8 / 10 / 12</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female'" class="waist-value">8 / 10 / 12</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male'" class="waist-value">S / M</p>
                                                     </div>
                                                 </div>
-                                                <div class="form-check form-check-inline mt-4">
+                                                <div class="form-check form-check-inline mt-4 answer_check">
                                                     <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="0" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist1" value="Range 1">
                                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}waist1">Range 1</label>
                                                 </div>
@@ -450,10 +462,11 @@
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Male' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 102-110cm</p>
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">Between 88-100cm</p>
                                                         <p class="waist-headings">CLOTHING SIZE</p>
-                                                        <p class="waist-value">14 / 16</p>
+                                                        <p class="waist-value" *ngIf="firstFormGroup.get('gender')?.value == 'Female'">14 / 16</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male'" class="waist-value">L / XL</p>
                                                     </div>
                                                 </div>
-                                                <div class="form-check form-check-inline mt-4">
+                                                <div class="form-check form-check-inline mt-4 answer_check">
                                                     <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="4" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist2" value="Range 2">
                                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}waist2">Range 2</label>
                                                 </div>	
@@ -470,10 +483,11 @@
                                                         <p *ngIf="firstFormGroup.get('gender')?.value == 'Female' && !(secondFormGroup.get('aboriginal')?.value == 'Yes' || secondFormGroup.get('bornOptions')?.value == 'Asia')" class="waist-value">More than 100cm</p>
                                                        
                                                         <p class="waist-headings">CLOTHING SIZE</p>
-                                                        <p class="waist-value">18 / 20 / 22 / 24</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Female'" class="waist-value">18 / 20 / 22 / 24</p>
+                                                        <p *ngIf="firstFormGroup.get('gender')?.value == 'Male'" class="waist-value">XXL / XXXL</p>
                                                     </div>
                                                 </div>
-                                                <div class="form-check form-check-inline mt-4">
+                                                <div class="form-check form-check-inline mt-4 answer_check">
                                                     <input class="form-check-input check-inputs" (change)="QA10($event)" data-score="7" formControlName="waist" type="radio" name="waist" attr.id="{{contentID}}waist3" value="Range 3">
                                                     <label class="text-white form-check-label font_results" (click)="radioClick($event)" attr.for="{{contentID}}waist3">Range 3</label>
                                                 </div>
@@ -543,6 +557,7 @@
                         <div class="card_box position-relative">
                             <form [formGroup]="finalFormGroup" class="form_risk">
                                 <img src="https://www.facethefacts.org.au/images/Site_Info/iStock-1135943688.png" class="imm" >
+                                <!-- <img src="../../../assets/RiskImage/iStock-537370222-male.jpg" class="imm" > -->
                                 <div class="bg_gradient"></div>
                                 <div class="text-center text-white card_text position-relative content-dsa">
                                 <label class="text-white m-5">Your Result</label>
@@ -555,53 +570,40 @@
             
                                          
                                         <div class="row fourm_field">
-                                            
                                              <div class="col-3 result-media">
                                                 <mat-form-field class="inner_result_media">
-                                            <mat-label>First Name*</mat-label>
-                                            <input matInput placeholder="First Name*" formControlName="fName">
-                                          </mat-form-field>
-                                                
-                                                
+                                                    <mat-label>First Name*</mat-label>
+                                                    <input matInput placeholder="First Name*" formControlName="fName">
+                                                </mat-form-field>
                                             </div>
                                             <div class="col-3 result-media">
-                                                
-                                                
-                                                  <mat-form-field class="inner_result_media">
+                                                <mat-form-field class="inner_result_media">
                                                     <mat-label>Last Name*</mat-label>
                                                     <input matInput placeholder="Last Name*" formControlName="lName">
-                                                  </mat-form-field>
+                                                </mat-form-field>
                                             </div>
                                             <div class="col-3 result-media ">
-                                                
                                                 <mat-form-field class="inner_result_media">
                                                     <mat-label>Email*</mat-label>
                                                     <input matInput placeholder="Email*" formControlName="email">
-                                                    
-                                                  </mat-form-field>
-                                                  <div class="error" *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.touched">
+                                                </mat-form-field>
+                                                <div class="error" *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.touched">
                                                     <p *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.errors?.required">Please enter Email</p>
                                                     <p *ngIf="finalFormGroup.get('email')?.errors && finalFormGroup.get('email')?.errors?.pattern">Enter Correct Email</p>
                                                 </div>
-                                                 
                                             </div>
                                              <div class="col-3 result-media ">
-                                                
                                                 <mat-form-field class="inner_result_media">
                                                     <mat-label>Contact Number*</mat-label>
                                                     <input matInput placeholder="Contact Number*" formControlName="phone">
-                                                  </mat-form-field>
-                                                
-                                                 
+                                                </mat-form-field>
                                             </div> 
-                                            
                                         </div>
                                         <div class="row">
                                             <div class="col text-left">
-                                                <mat-checkbox formControlName="termsCondition" class="example-margin accptcond"><span style="font-weight: 100;">I accept the <span class="terms_cond" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+                                                <mat-checkbox formControlName="termsCondition" class="example-margin accptcond"><span style="font-weight: 100;">I accept the <span class="terms_conds" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
                                                 <div class="error" *ngIf="finalFormGroup.get('termsCondition')?.errors && finalFormGroup.get('termsCondition')?.touched">
                                                     <p *ngIf="finalFormGroup.get('termsCondition')?.errors && finalFormGroup.get('termsCondition')?.errors?.required">Please tick terms & conditions</p>
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -639,15 +641,15 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-4 gp_result_media" *ngIf="sum >=12">
-                                                <div class="my-3 common_cursor" >
-                                                    <img (click)="getsupport(0)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 2.png">
+                                                <div class="my-3 " >
+                                                    <img class="common_cursor" (click)="getsupport(0)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 2.png">
                                                   </div>
                                                 Book a point for care test
                                                
                                             </div>
                                             <div *ngIf="sum >= 6" class="gp_result_media" [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12 && sum >= 6  }" >
-                                                <div class="my-3 common_cursor">
-                                                    <img (click)="gpResutl(showDrop)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 1.png">
+                                                <div class="my-3 ">
+                                                    <img class="common_cursor" (click)="gpResutl(showDrop)" src="https://www.facethefacts.org.au/images/Site_Info/Component 108 – 1.png">
                                                   </div>
                                                 Mail a GP my result
                                                
@@ -665,8 +667,8 @@
                                                 </div>
                                             </div>
                                             <div class="gp_result_media" [ngClass]="{'col-4': sum >= 12, 'col-6': sum < 12  && sum >= 6 , 'col-12' : sum < 6  }"  >
-                                                <div class="my-3 common_cursor">
-                                                    <img (click)="getsupport(1)"  src="https://www.facethefacts.org.au/images/Site_Info/B - Get support.png">
+                                                <div class="my-3 ">
+                                                    <img class="common_cursor" (click)="getsupport(1)"  src="https://www.facethefacts.org.au/images/Site_Info/B - Get support.png">
                                                   </div>
                                                 Get Support
                                                

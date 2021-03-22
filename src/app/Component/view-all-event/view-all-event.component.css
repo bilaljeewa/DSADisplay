@@ -75,6 +75,10 @@
   width: 0;
   height: 0;
 }
+.no_shadow{
+  box-shadow: none!important;
+  padding: 0 10px;
+}
 .example-full-width {
   width: 100%;
 }

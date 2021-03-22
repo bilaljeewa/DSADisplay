@@ -27,7 +27,6 @@ export class AppComponent {
 			if(value && value['Settings']){
 				this.settings=value['Settings'];
 				this.contentkeyItems = value['ContentItemKey']
-				console.log(this.contentkeyItems,">>>>>>>>>>content key item>>>>>>>>>>>>>>")
 				if(this.settings && this.settings.DSAType){
 					this.DSAType = this.settings.DSAType
 				}

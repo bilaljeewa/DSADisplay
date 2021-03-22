@@ -94,13 +94,13 @@
 }
 .imm {
     position: absolute;
-    top: 200px;
-    right: -600px;
+    top: 308px;
+    right: -666px;
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(1.5);
-    /* object-position: right; */
+    transform: translate(-50%,-50%) scale(2);
 }
+
 .imm1 {
     position: absolute;
     top: 200px;
@@ -123,24 +123,32 @@
     /* right: -600px; */
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(2.4);
+    transform: translate(-50%,-50%) scale(1.5);
     /* object-position: right; */
 }
 .imm3 {
     position: absolute;
     top: 300px;
-    right: -169px;
+    right: -590px;
+    max-width: 597px;
+    object-fit: cover;
+    transform: translate(-50%,-50%) scale(1.4);
+}
+.imm921 {
+    position: absolute;
+    top: 250px;
     max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.4);
 }
 .imm4 {
+    /* latest change */
     position: absolute;
     top: 350px;
-    right: -640px;
+    right: -575px;
     max-width: 597px;
     object-fit: cover;
-    transform: translate(-50%,-50%) scale(2.2);
+    transform: translate(-50%,-50%) scale(1.4);
 }
 .bg_gradient1 {
     position: absolute;
@@ -358,14 +366,17 @@
         padding: 20px!important;
         margin: 0 20px 20px 20px!important;
     }
+    .bar-chart{
+        font-size: 11px!important;
+    }
     .bar-chart-range{
-        font-size: 14px!important;
+        font-size: 11px!important;
     }
     .resutlTest{
         font-size: 20px!important;
     }
     .imm {
-        top: 250px!important;
+        top: 350px!important;
     }
     .imm11[_ngcontent-nym-c88] {
         position: absolute;
@@ -521,11 +532,26 @@
 .form_risk{
     height: calc(100vh - 18px);
     overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+.form_risk::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+  }
 .card_text{
     margin: 50px auto!important;
 }
-
+.green-snackbar {
+    background: #01885bd8!important;
+    z-index: 9999999999!important;
+    top: 20px;
+    position: fixed!important;
+    right: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
     
     
     

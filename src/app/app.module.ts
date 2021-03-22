@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SanitizeHtmlPipe, DaysLeft } from './pipe/common.pipe';
+import { SanitizeHtmlPipe, DaysLeft, AmPM } from './pipe/common.pipe';
 import { RiskTestComponent } from './Component/risk-test/risk-test.component';
 import { EventDetailComponent } from './Component/event-detail/event-detail.component';
 import { DateLocationComponent } from './Component/date-location/date-location.component';
@@ -21,6 +21,7 @@ import { FooterComponent } from './Component/footer/footer.component';
   declarations: [
     AppComponent,
     SanitizeHtmlPipe,
+    AmPM,
     DaysLeft,
     RiskTestComponent,
     EventDetailComponent,

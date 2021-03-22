@@ -1,7 +1,7 @@
 <div>
-    <div class="modal fade view-modal" id="viewAllEventModal" style="z-index: 9999!important;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade view-modal" id="viewAllEventModal" style="z-index: 11000!important;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialogs" role="document">
-			<div class="modal-content mt-5 pt-5 backgound-none event-heights">
+			<div class="modal-content mt-5 pt-5 backgound-none event-heights no_shadow">
 				<div class="modal-header border-none">
 					<h5 class="modal-title headings" id="exampleModalLabel">All event locations</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -12,8 +12,10 @@
 					<div class="row" >
 						<div class="col-6 my-3 pointer-cursor" (click)="sendTo(event.eventcode)" *ngFor="let event of sharedData">
 							
-							<div ><span class="city-bold">{{event.city}}</span>, {{event.address1}}</div>
-							<div >{{event.BeginDate | date: 'EEEE, MMMM d, y'}}, {{ dateFormate(event.BeginDate)}} - {{dateFormate(event.endDate)}}</div> 
+							<div ><span class="city-bold">{{event.city}}</span> </div>
+							<div>{{event.address1}}</div>
+							<div>{{event.BeginDate | date: 'EEEE, MMMM d, y'}}</div>
+							<div>{{event.BeginDate | ampm}} - {{event.endDate | ampm}}</div> 
 						</div>
 					</div>
 				</div>
@@ -22,7 +24,7 @@
     </div>
     <div class="modal fade view-modal" id="viewAllEventModals" style="z-index: 9999!important;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
 			<div class="modal-dialog modal-dialogs" role="document">
-				<div class="modal-content mt-5 pt-5 backgound-none">
+				<div class="modal-content mt-5 pt-5 backgound-none no_shadow">
 					<div class="modal-header border-none">
 						<h5 class="modal-title headings" id="exampleModalLabel1">Let's Talk</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -61,7 +63,10 @@
 						</div>
 						<div class="row my-4">
 							<div class="col text-left text-white">
-								<mat-checkbox formControlName="acceptCondtion" class="example-margin"><span class="text-white">I accept the <span class="terms_cond" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+								<mat-checkbox formControlName="acceptCondtion" class="example-margin"><span class="text-white">I accept the <span class="terms_conds" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+								<div class="error" *ngIf="letInform.get('acceptCondtion')?.errors && letInform.get('acceptCondtion')?.touched">
+									<p *ngIf="letInform.get('acceptCondtion')?.errors && letInform.get('acceptCondtion')?.errors?.required">Please tick terms & conditions</p>
+								</div>
 							</div>
 						</div>
 						<div class="row my-4">
@@ -75,9 +80,13 @@
     </div> 
     <div class="modal fade view-modal" id="viewAllEventModalss" style="z-index: 9999!important;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
 			<div class="modal-dialog modal-dialogs" role="document">
-				<div class="modal-content mt-5 pt-5 backgound-none">
+				<div class="modal-content mt-5 pt-5 backgound-none no_shadow">
 					<div class="modal-header border-none">
-						<h5 class="modal-title headings" id="exampleModalLabel1">Stay Informed</h5>
+						<div class="stayss">
+							<h5 class="modal-title headings" id="exampleModalLabel1">Stay Informed</h5>
+							<p>Subscribe to our e-newsletters today for all the latest news, information and events.</p>
+						</div>
+						
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true" style="font-size: 65px;color:#fff;">&times;</span>
 						</button>
@@ -107,14 +116,17 @@
 							</div>
 							
 						</div>
-						<div class="row my-4">
+						<!-- <div class="row my-4">
 							<div class="col">
 								<textarea class="input-box full-width text-boxDSA" formControlName="message" placeholder="How can we help you"> </textarea>
 							</div>
-						</div>
+						</div> -->
 						<div class="row my-4">
 						<div class="col text-left text-white">
-							<mat-checkbox formControlName="acceptCondtion" class="example-margin"><span class="text-white">I accept the <span class="terms_cond" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+							<mat-checkbox formControlName="acceptCondtion" class="example-margin"><span class="text-white">I accept the <span class="terms_conds" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+							<div class="error" *ngIf="letInform.get('acceptCondtion')?.errors && letInform.get('acceptCondtion')?.touched">
+								<p *ngIf="letInform.get('acceptCondtion')?.errors && letInform.get('acceptCondtion')?.errors?.required">Please tick terms & conditions</p>
+							</div>
 						</div>
 					</div>
 					<div class="row my-4">

@@ -26,3 +26,17 @@ export class DaysLeft implements PipeTransform {
     return diffDays ;
   }
 }
+
+@Pipe({
+  name: 'ampm'
+})
+export class AmPM implements PipeTransform {
+  
+  transform(value: any): any {
+   
+		var time = new Date(value);
+		let ampm =  time.toLocaleString('en-US', { hour: 'numeric',minute: 'numeric', hour12: true })
+	  
+	return ampm
+  }
+}

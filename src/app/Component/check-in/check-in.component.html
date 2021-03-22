@@ -56,8 +56,10 @@
     </div>
     <div class="row my-5">
       <div class="col text-left text-white">
-        <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"><span class="text-white accpted">I accept the <span class="terms_cond" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
-          <!-- <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"> <span class="text-white">I accept the terms and conditions</span></mat-checkbox> -->
+        <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"><span class="text-white accpted">I accept the <span class="terms_conds" (click)="openNew();do($event)">terms and conditions</span></span></mat-checkbox>
+        <div class="error" *ngIf="checkInform.get('acceptCondtion')?.errors && checkInform.get('acceptCondtion')?.touched">
+            <p *ngIf="checkInform.get('acceptCondtion')?.errors && checkInform.get('acceptCondtion')?.errors?.required">Please tick terms & conditions</p>
+        </div> <!-- <mat-checkbox formControlName="acceptCondtion" class="example-margin accptcondition"> <span class="text-white">I accept the terms and conditions</span></mat-checkbox> -->
       </div>
   </div>
   <div class="row my-5">

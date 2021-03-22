@@ -54,17 +54,18 @@ export class RiskTestComponent implements OnInit {
   GPDataResults=Array()
   testID: any;
   resultDataJSON: any;
+  greenSnack: boolean
   constructor( public _formBuilder: FormBuilder , private _snackBar: MatSnackBar,public contenItem: SettingsService) { }
  
   ngOnInit(): void {
     let url = window.location.search
-    console.log("url >>>>>>",url)
+   
     if(url && url.split && url.split("EventKey=")){
       let KeyEvents = url.split('EventKey=')
-      console.log("KeyEvents >>>>>>>>",KeyEvents)
+    
       let keys = KeyEvents[1]
       if(keys){
-        console.log("KeyEvents if >>>>>>>>",keys)
+      
         
         let keys2 = keys.split('&').length
         let keys3;
@@ -74,7 +75,7 @@ export class RiskTestComponent implements OnInit {
          }else{
            keys3 = keys
          }
-         console.log("KeyEvents final >>>>>>",keys3)
+       
         this.MainKeyValue= keys3
         }
     } 
@@ -86,7 +87,7 @@ export class RiskTestComponent implements OnInit {
 
         for (var i = 0; i < elements.length; i++) {
             elements[i].addEventListener('click',()=>{
-              console.log("hello >>>>>>> testing")
+            
               jQuery("#exampleModal12345").modal('show')
             // const elmd = document.querySelectorAll<HTMLElement>('.exampleModal1234')!;
            
@@ -115,7 +116,7 @@ export class RiskTestComponent implements OnInit {
          if(e.target !=  document.getElementsByClassName('dropdown')[0]) {
              const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
              let nextsb= elmd[elmd.length-1];
-             console.log(nextsb)
+            
              if(nextsb){
               nextsb.style.display='none'
              }
@@ -264,7 +265,6 @@ export class RiskTestComponent implements OnInit {
   doStuff() {
     let heigtht = document.getElementsByClassName('exampleModal1234') as HTMLCollectionOf<HTMLElement>
     this.newHeight = heigtht[heigtht.length-1].clientHeight
-    console.log(this.newHeight,">>>>>>",this.prevHeight)
     if(this.newHeight == this.prevHeight){
       heigtht[heigtht.length-1].style.position='absolute'
       heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
@@ -283,10 +283,10 @@ export class RiskTestComponent implements OnInit {
     }
   }
   finish(){
-    console.log("finish")
+   
     let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[6])
     buttons.click()
-    // this.resultStatus=true;
+   
   }
   do(event) {
 		event.preventDefault();
@@ -296,25 +296,25 @@ export class RiskTestComponent implements OnInit {
       this.testID= uuid()
       this.viewResultData=true;
       const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-      console.log(elm.parentElement)
+     
       const elemp = <HTMLElement>elm.parentElement;
-      console.log(elemp.style.minHeight)
+    
        elemp.style.height = '1000px';
       this.sum = this.sum+Number(this.Q1)+Number(this.Q2)+Number(this.Q3a)+Number(this.Q3b)+Number(this.Q4)+Number(this.Q5)+Number(this.Q6)+Number(this.Q7)+Number(this.Q8)+Number(this.Q9)+Number(this.Q10)
-      console.log(this.sum)
+    
       this.riskScore= this.sum
       if( this.sum <= 5 && this.sum >= 0){
-        console.log("Your Result Range  0-5 >>>>>>>>> ")
+      
         this.riskRangeLabel = "Low Risk"
         this.isRiskRange = 0
       }else if(this.sum >= 6 && this.sum <= 11){
-        console.log("Your Result Range  6-11 >>>>>>>>> ")
+      
         this.riskRangeLabel = "Intermediate Risk"
         this.isRiskRange = 1
         this.suggestionTag1 ="Discuss your score with your doctor as you are at risk of developing type 2 diabetes."
         this.suggestionTag2 = "Improving your lifestyle through healthy eating and regular physical activity can reduce your risk, or delay the onset of type 2 diabetes."
       }else if(this.sum >= 12){
-        console.log("Your Result Range  12 >>>>>>>>> ")
+      
         this.riskRangeLabel = "High Risk"
         this.isRiskRange = 2
         this.suggestionTag1= "You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition."
@@ -337,10 +337,7 @@ export class RiskTestComponent implements OnInit {
       }
       this.resultDataJSON =String.raw`{"q1":"{\"value\":\"`+this.firstFormGroup.get('gender')?.value+String.raw`\",\"score\":`+this.Q1+String.raw`}","q2":"{\"value\":\"`+this.firstFormGroup.get(`age`)?.value+String.raw`\",\"score\":`+this.Q2+String.raw`}","q3":"{\"value\":\"`+this.secondFormGroup.get(`aboriginal`)?.value+String.raw`\",\"score\":`+this.Q3a+String.raw`}","q3b":"{\"value\":\"`+this.secondFormGroup.get(`bornOptions`)?.value+String.raw`\",\"score\":`+this.Q3b+String.raw`}","q4":"{\"value\":\"`+this.thirdFormGroup.get(`typeDiabetes`)?.value+String.raw`\",\"score\":`+this.Q4+String.raw`}","q5":"{\"value\":\"`+this.thirdFormGroup.get(`highBP`)?.value+String.raw`\",\"score\":`+this.Q5+String.raw`}","q6":"{\"value\":\"`+this.fourthFormGroup.get(`hBP`)?.value+String.raw`\",\"score\":`+this.Q6+String.raw`}","q7":"{\"value\":\"`+this.fourthFormGroup.get(`tobacco`)?.value+String.raw`\",\"score\":`+this.Q7+String.raw`}","q8":"{\"value\":\"`+this.fifthFormGroup.get(`vegetable`)?.value+String.raw`\",\"score\":`+this.Q8+String.raw`}","q9":"{\"value\":\"`+this.fifthFormGroup.get(`exercise`)?.value+String.raw`\",\"score\":`+this.Q9+String.raw`}","q10":"{\"value\":\"`+this.sixthFormGroup.get(`waist`)?.value+String.raw`\",\"score\":`+this.Q10+String.raw`}","sendemail":"{\"value\":\"yes\",\"score\":0}","mobile":"{\"value\":\"`+this.finalFormGroup.get(`phone`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.finalFormGroup.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.finalFormGroup.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.finalFormGroup.get(`email`)?.value+String.raw`\",\"score\":0}","totalscore":"{\"value\":`+this.sum+String.raw`}","resultrange":"{\"value\":\"`+resultrange+String.raw`\"}","TestID":"{\"value\":\"`+this.testID+String.raw`\"}","Type":"{\"value\":\"AusRiskTest\"}","EventKey":"{\"value\":\"`+this.MainKeyValue+String.raw`\"}"}`
       this.contenItem.postGPdata(this.resultDataJSON,'FaceTheFacts').subscribe(resp=>{
-        console.log(resp)
-        if(resp){
-          console.log("success")
-        }
+       
       })
     }else{
       this.finalFormGroup.markAllAsTouched()
@@ -395,12 +392,10 @@ export class RiskTestComponent implements OnInit {
   }
   getsupportData(event){
     this.contenItem.getGIData('$/DSA/FTF/GP List',event.target.value).subscribe(resp=>{
-      console.log(resp)
       this.GPDataResults=[]
       let sendEmail: any;
       let descp: any;
       resp.forEach(ele=>{
-        console.log(ele.Properties.$values[2].Value)
         sendEmail= ele.Properties.$values[1].Value
         descp= ele.Properties.$values[2].Value
         this.GPDataResults.push({descp,sendEmail})
@@ -418,27 +413,23 @@ export class RiskTestComponent implements OnInit {
     this.finalFormGroup.get('sendEmail')?.setValue(this.GPDataResults[i].sendEmail)
   }
   sentToGP(){
-    this.openSnackBar('Information Sent Successfully','')
-    let jsondata= String.raw`{"TestId":"{\"value\":\"`+this.testID+String.raw`\"}","GPEmail":"{\"value\":\"`+this.finalFormGroup.get('sendEmail')?.value+String.raw`\"}","Type":"{\"value\":\"SendToGP\"}"}`
-    this.contenItem.postGPdata(jsondata,'FaceTheFactsGP').subscribe(resp=>{
-      if(resp){
-        console.log("success")
-        // this.openSnackBar('Information Sent Successfully','')
-        
-      }
-
-    })
-   
+    if(this.finalFormGroup.get('sendEmail')?.value){
+      this.greenSnack= true;
+      let jsondata= String.raw`{"TestId":"{\"value\":\"`+this.testID+String.raw`\"}","GPEmail":"{\"value\":\"`+this.finalFormGroup.get('sendEmail')?.value+String.raw`\"}","Type":"{\"value\":\"SendToGP\"}"}`
+      this.contenItem.postGPdata(jsondata,'FaceTheFactsGP').subscribe(resp=>{
+      })
+      setTimeout(() => {
+        this.greenSnack= false
+      }, 5000);
+      this.finalFormGroup.get('sendEmail')?.reset()
+      this.gpResutl(this.showDrop)
+    }
   }
   stepperPrev(event){
-    console.log(event.target.parentElement.nextElementSibling)
     event.target.parentElement.nextElementSibling.click();
-    // event.n
   }
   stepperNext(event){
-    console.log(event.target.parentElement.previousElementSibling)
     event.target.parentElement.previousElementSibling.click()
-
   }
   becomeMember(){
     window.open('https://www.diabetessa.com.au/Web/Get_Involved/Membership/Become_a_Member/Web/Get_Involved/Membership/Become_a_Member.aspx')
@@ -447,10 +438,6 @@ export class RiskTestComponent implements OnInit {
     if(document.getElementById('setpRestID')){
       document.getElementById('setpRestID')?.click()
     }
-
-
-
-
     this.Q1=0;
     this.Q2=0;
     this.Q3a=0;
@@ -474,69 +461,6 @@ export class RiskTestComponent implements OnInit {
       butn[i].children[0].setAttribute('disabled', 'disabled')
       butn[i].children[1].setAttribute('disabled', 'disabled')
     }
-    
-    // let elements = document.getElementsByClassName('disable-click')as HTMLCollectionOf<HTMLElement>;
-    // var status=jQuery('.disable-click')[0].checked;
-    // if(status == true){
-    //     elements[0].removeAttribute('disabled')
-    //     elements[0].click()
-    //     elements[0].setAttribute('disabled', 'disabled');
-    // }
-    // let elements1 = document.getElementsByClassName('disable-click1')as HTMLCollectionOf<HTMLElement>;
-    // console.log(elements1)
-    // for(let i =0 ; i <=1; i++){
-    //   var status=jQuery('.disable-click1')[i].checked;
-    //   if(status == true){
-        
-    //     elements1[i].removeAttribute('disabled')
-    //     elements1[i].click()
-    //     elements1[i].setAttribute('disabled', 'disabled');
-    //   }
-    // }
-    // let elements2 = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
-    // for(let i =0 ; i <=2; i++){
-    //       var status=jQuery('.disable-click2')[i].checked;
-    //       if(status == true){
-           
-    //         elements2[i].removeAttribute('disabled')
-    //         elements2[i].click()
-    //         elements2[i].setAttribute('disabled', 'disabled');
-    //       }
-    // }
-    // let elements3 = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
-    // console.log(elements3)
-    // for(let i =0 ; i <=3; i++){
-    //       var status=jQuery('.disable-click3')[i].checked;
-    //       if(status == true){
-           
-    //         elements3[i].removeAttribute('disabled')
-    //         elements3[i].click()
-    //         elements3[i].setAttribute('disabled', 'disabled');
-    //       }
-    //     }
-    // let elements4 = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
-
-    // for(let i =0 ; i <=4; i++){
-    //   var status=jQuery('.disable-click4')[i].checked;
-    //   if(status == true){
-        
-    //     elements4[i].removeAttribute('disabled')
-    //     elements4[i].click()
-    //     elements4[i].setAttribute('disabled', 'disabled');
-    //   }
-    // }
-    // let elements5 = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
-
-    // for(let i =0 ; i <=5; i++){
-    //   var status=jQuery('.disable-click5')[i].checked;
-    //   if(status == true){
-        
-    //     elements5[i].removeAttribute('disabled')
-    //     elements5[i].click()
-    //     elements5[i].setAttribute('disabled', 'disabled');
-    //   }
-    // }
-
   }
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
@@ -547,5 +471,4 @@ export class RiskTestComponent implements OnInit {
   openNew(){
     window.open('https://www.facethefacts.org.au/Info/terms_and_conditions.aspx')
   }
-
 }

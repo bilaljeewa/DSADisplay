@@ -51,6 +51,7 @@ export class FooterComponent implements OnInit {
 	}
   saveFooterEmail(){
     console.log(this.footerGroup)
+   
     if(this.footerGroup.status == 'VALID'){
       let jsonData = String.raw`{"youremail":"{\"value\":\"`+this.footerGroup.get(`pEmail`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.footerGroup.get(`email`)?.value+String.raw`\",\"score\":0}","Type":"{\"value\":\"SpreadTheWord\"}"}`
       this.settingsService.postGPdata(jsonData,'FaceTheFactsCheckIn').subscribe(resp=>{
@@ -65,7 +66,7 @@ export class FooterComponent implements OnInit {
   }
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-      duration: 3000,
+      duration: 5000,
       panelClass: ['red-snackbar']
     });
   }

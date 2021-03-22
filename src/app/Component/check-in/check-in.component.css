@@ -117,7 +117,7 @@
     max-width: 500px;
     margin: 0 auto;
     font-size: 12px;
-    padding: 200px 0;
+    padding: 100px 10px!important;
     z-index: 9999!important;
     position: relative;
 }
@@ -131,7 +131,7 @@
     width: 100%;
     text-align: center;
   }
-  .terms_cond{
+  .terms_conds{
     color: #fff!important;
     font-weight: 700!important;
   }
