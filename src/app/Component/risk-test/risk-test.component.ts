@@ -59,56 +59,28 @@ export class RiskTestComponent implements OnInit {
  
   ngOnInit(): void {
     let url = window.location.search
-   
     if(url && url.split && url.split("EventKey=")){
       let KeyEvents = url.split('EventKey=')
-    
       let keys = KeyEvents[1]
       if(keys){
-      
-        
         let keys2 = keys.split('&').length
         let keys3;
-       
-         if(keys2 > 1){
-           keys3 = keys.split('&')[0]
-         }else{
-           keys3 = keys
-         }
-       
-        this.MainKeyValue= keys3
+        if(keys2 > 1){
+          keys3 = keys.split('&')[0]
+        }else{
+          keys3 = keys
         }
-    } 
-    let test =document.querySelectorAll(".RiskTestClass")
+        this.MainKeyValue= keys3
+      }
+    }
     setTimeout(() => {
       var elements = document.getElementsByClassName("RiskTestClass");
-
-       
-
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].addEventListener('click',()=>{
-            
-              jQuery("#exampleModal12345").modal('show')
-            // const elmd = document.querySelectorAll<HTMLElement>('.exampleModal1234')!;
-           
-            // if(elmd && elmd[elmd.length - 1] ){
-              
-            //   elmd[elmd.length-1].style.display ='block';
-            // }else{
-              
-            // }
-
-              // const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-              // const elemp = <HTMLElement>elm.parentElement;
-              this.interval = setInterval(()=>{
-                //  this.doStuff()
-                }
-                 , 50); // 2000 ms = start after 2sec 
-              // elm.style.display = 'none';
-              // jQuery("#exampleModal1234").modal('show')
-            } );
-        }
-      }, 100);
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click',()=>{
+          jQuery("#exampleModal12345").modal('show')
+        });
+      }
+    }, 100);
     this.div2 = <HTMLElement>document.querySelector(".dsa-body-content")!;
     let clcikc= document.getElementsByClassName('risktestMain')! as HTMLCollectionOf<HTMLElement>
     for(let i =0; i<=clcikc.length-1;i++){
@@ -166,13 +138,6 @@ export class RiskTestComponent implements OnInit {
     
     this.firstFormGroup?.valueChanges.subscribe(value=>{
       if(this.firstFormGroup.status == 'VALID'){
-        // let elements = document.getElementsByClassName('disable-click')as HTMLCollectionOf<HTMLElement>;
-        // var status=jQuery('.disable-click')[0].checked;
-        // if(status == false){
-        //     elements[0].removeAttribute('disabled')
-        //     elements[0].click()
-        //     elements[0].setAttribute('disabled', 'disabled');
-        //   }
         let butn = document.getElementsByClassName('stepeNext')
          butn[0].children[0].removeAttribute('disabled')
          butn[0].children[1].removeAttribute('disabled')
@@ -180,16 +145,6 @@ export class RiskTestComponent implements OnInit {
     })
     this.secondFormGroup?.valueChanges.subscribe(value=>{
       if(this.secondFormGroup.status == 'VALID'){
-        // let elements = document.getElementsByClassName('disable-click1')as HTMLCollectionOf<HTMLElement>;
-        // for(let i =0 ; i <=1; i++){
-        //   var status=jQuery('.disable-click1')[i].checked;
-        //   if(status == false){
-           
-        //     elements[i].removeAttribute('disabled')
-        //     elements[i].click()
-        //     elements[i].setAttribute('disabled', 'disabled');
-        //   }
-        // }
         let butn = document.getElementsByClassName('stepeNext')
         butn[1].children[0].removeAttribute('disabled')
         butn[1].children[1].removeAttribute('disabled')
@@ -197,15 +152,6 @@ export class RiskTestComponent implements OnInit {
     })
     this.thirdFormGroup?.valueChanges.subscribe(value=>{
       if(this.thirdFormGroup.status == 'VALID'){
-        // let elements = document.getElementsByClassName('disable-click2')as HTMLCollectionOf<HTMLElement>;
-        // for(let i =0 ; i <=2; i++){
-        //   var status=jQuery('.disable-click2')[i].checked;
-        //   if(status == false){
-        //     elements[i].removeAttribute('disabled')
-        //     elements[i].click()
-        //     elements[i].setAttribute('disabled', 'disabled');
-        //   }
-        // }
         let butn = document.getElementsByClassName('stepeNext')
         butn[2].children[0].removeAttribute('disabled')
         butn[2].children[1].removeAttribute('disabled')
@@ -213,15 +159,6 @@ export class RiskTestComponent implements OnInit {
     })
     this.fourthFormGroup?.valueChanges.subscribe(value=>{
       if(this.fourthFormGroup.status == 'VALID'){
-        // let elements = document.getElementsByClassName('disable-click3')as HTMLCollectionOf<HTMLElement>;
-        // for(let i =0 ; i <=3; i++){
-        //   var status=jQuery('.disable-click3')[i].checked;
-        //   if(status == false){
-        //     elements[i].removeAttribute('disabled')
-        //     elements[i].click()
-        //     elements[i].setAttribute('disabled', 'disabled');
-        //   }
-        // }
         let butn = document.getElementsByClassName('stepeNext')
         butn[3].children[0].removeAttribute('disabled')
         butn[3].children[1].removeAttribute('disabled')
@@ -229,15 +166,6 @@ export class RiskTestComponent implements OnInit {
     })
     this.fifthFormGroup?.valueChanges.subscribe(value=>{
       if(this.fifthFormGroup.status == 'VALID'){
-        // let elements = document.getElementsByClassName('disable-click4')as HTMLCollectionOf<HTMLElement>;
-        // for(let i =0 ; i <=4; i++){
-        //   var status=jQuery('.disable-click4')[i].checked;
-        //   if(status == false){
-        //     elements[i].removeAttribute('disabled')
-        //     elements[i].click()
-        //     elements[i].setAttribute('disabled', 'disabled');
-        //   }
-        // }
         let butn = document.getElementsByClassName('stepeNext')
         butn[4].children[0].removeAttribute('disabled')
         butn[4].children[1].removeAttribute('disabled')
@@ -245,15 +173,6 @@ export class RiskTestComponent implements OnInit {
     })
     this.sixthFormGroup?.valueChanges.subscribe(value=>{
       if(this.sixthFormGroup.status == 'VALID'){
-        // let elements = document.getElementsByClassName('disable-click5')as HTMLCollectionOf<HTMLElement>;
-        // for(let i =0 ; i <=5; i++){
-        //   var status=jQuery('.disable-click5')[i].checked;
-        //   if(status == false){
-        //     elements[i].removeAttribute('disabled')
-        //     elements[i].click()
-        //     elements[i].setAttribute('disabled', 'disabled');
-        //   }
-        // }
         let butn = document.getElementsByClassName('stepeNext')
         butn[5].children[0].removeAttribute('disabled')
         butn[5].children[1].removeAttribute('disabled')
@@ -262,26 +181,7 @@ export class RiskTestComponent implements OnInit {
     
   }
 
-  doStuff() {
-    let heigtht = document.getElementsByClassName('exampleModal1234') as HTMLCollectionOf<HTMLElement>
-    this.newHeight = heigtht[heigtht.length-1].clientHeight
-    if(this.newHeight == this.prevHeight){
-      heigtht[heigtht.length-1].style.position='absolute'
-      heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
-      const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-      const elemp = <HTMLElement>elm.parentElement;
-      elemp.style.height =  heigtht[heigtht.length-1].clientHeight+"px"
-      this.div2.style.minHeight =  heigtht[heigtht.length-1].clientHeight+"px"
-    }else{
-      heigtht[heigtht.length-1].style.position='absolute'
-      heigtht[heigtht.length-1].style.top = -this.newHeight-116 + "px";
-      const elm = document.querySelector<HTMLElement>('.dsa-body-content')!;
-      const elemp = <HTMLElement>elm.parentElement;
-      elemp.style.height =  heigtht[heigtht.length-1].clientHeight+"px"
-      this.div2.style.minHeight =  heigtht[heigtht.length-1].clientHeight+"px"
-      this.prevHeight = this.newHeight
-    }
-  }
+ 
   finish(){
    
     let buttons = (<HTMLElement>document.getElementsByTagName('mat-step-header')[6])

@@ -31,23 +31,17 @@ export class CheckInComponent implements OnInit {
     }
   ngOnInit(): void {
     let url = window.location.search
-    console.log("url >>>>>>",url)
     if(url && url.split && url.split("EventKey=")){
       let KeyEvents = url.split('EventKey=')
-      console.log("KeyEvents >>>>>>>>",KeyEvents)
       let keys = KeyEvents[1]
       if(keys){
-        console.log("KeyEvents if >>>>>>>>",keys)
-        
         let keys2 = keys.split('&').length
         let keys3;
-       
          if(keys2 > 1){
            keys3 = keys.split('&')[0]
          }else{
            keys3 = keys
          }
-         console.log("KeyEvents final >>>>>>",keys3)
         this.MainKeyValue= keys3
         }
     }     
@@ -56,15 +50,10 @@ export class CheckInComponent implements OnInit {
 		event.preventDefault();
 	}
   saveCheckIn(){
-    console.log(this.checkInform)
     if(this.checkInform.status == 'VALID'){
       let jsonData = String.raw`{"EventKey":"{\"value\":\"`+this.MainKeyValue+String.raw`\",\"score\":0}","adults":"{\"value\":\"`+this.checkInform.get(`noOfAdults`)?.value+String.raw`\",\"score\":0}","children":"{\"value\":\"`+this.checkInform.get(`noOfChildren`)?.value+String.raw`\",\"score\":0}","mobile":"{\"value\":\"`+this.checkInform.get(`mobile`)?.value+String.raw`\",\"score\":0}","firstname":"{\"value\":\"`+this.checkInform.get(`fName`)?.value+String.raw`\",\"score\":0}","lastname":"{\"value\":\"`+this.checkInform.get(`lName`)?.value+String.raw`\",\"score\":0}","email":"{\"value\":\"`+this.checkInform.get(`email`)?.value+String.raw`\",\"score\":0}","Type":"{\"value\":\"CheckIn\"}"}`
       this.settingsService.postGPdata(jsonData,'FaceTheFactsCheckIn').subscribe(resp=>{
-        console.log(resp)
-        
-        
       })
-      // this.openSnackBar('Information Sent Successfully','')
       this.checkInform.reset();
       window.open('https://www.facethefacts.org.au/Info/NextSteps.aspx?EventKey='+this.MainKeyValue)
     }else{

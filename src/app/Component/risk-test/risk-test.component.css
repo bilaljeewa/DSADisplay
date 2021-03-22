@@ -14,8 +14,7 @@
     margin: 0 auto;
 } 
 .content-2{
-    /* background-image: linear-gradient( rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.73)), url(https://www.imisconsulting.com.au//iMIS0/images/Site_Info/iStock-1135943635.png); */
-   /* // height: calc(100vh - 20px); */
+   
     background-size: cover;
     border: 2px solid blue;
     width: 800px;
