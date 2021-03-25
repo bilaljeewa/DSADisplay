@@ -32,6 +32,7 @@ export class RiskTestComponent implements OnInit {
   div2: any;
   contentID: any;
   contentIDs: any;
+  gp: boolean;
   Q1:number=0;
   Q2:number=0;
   Q3a:number=0;
@@ -239,6 +240,7 @@ export class RiskTestComponent implements OnInit {
       this.contenItem.postGPdata(this.resultDataJSON,'FaceTheFacts').subscribe(resp=>{
        
       })
+      window.scrollTo(0, 500);
     }else{
       this.finalFormGroup.markAllAsTouched()
       return;
@@ -295,11 +297,20 @@ export class RiskTestComponent implements OnInit {
       this.GPDataResults=[]
       let sendEmail: any;
       let descp: any;
-      resp.forEach(ele=>{
-        sendEmail= ele.Properties.$values[1].Value
-        descp= ele.Properties.$values[2].Value
+      if(resp && resp.length > 0){
+        resp.forEach(ele=>{
+          sendEmail= ele.Properties.$values[1].Value
+          descp= ele.Properties.$values[2].Value
+          this.GPDataResults.push({descp,sendEmail})
+          this.gp=true;
+        })
+      }else{
+        sendEmail=''
+        descp='No result found'
         this.GPDataResults.push({descp,sendEmail})
-      })
+        this.gp=false;
+      }
+      
       const elmd = document.getElementsByClassName('dropdownMenuBtn')!as HTMLCollectionOf<HTMLElement>;
       let nextsb= elmd[elmd.length-1];
       if(nextsb){
@@ -308,9 +319,12 @@ export class RiskTestComponent implements OnInit {
     }) 
   }
   setValueGP(i){
-    this.GPDataResults[i].descp
-    this.finalFormGroup.get('gpResult')?.setValue(this.GPDataResults[i].descp)
-    this.finalFormGroup.get('sendEmail')?.setValue(this.GPDataResults[i].sendEmail)
+    if(this.gp){
+      this.GPDataResults[i].descp
+      this.finalFormGroup.get('gpResult')?.setValue(this.GPDataResults[i].descp)
+      this.finalFormGroup.get('sendEmail')?.setValue(this.GPDataResults[i].sendEmail)
+    }
+    
   }
   sentToGP(){
     if(this.finalFormGroup.get('sendEmail')?.value){

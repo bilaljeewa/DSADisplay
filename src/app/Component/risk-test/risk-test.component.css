@@ -1,9 +1,6 @@
-
-  
-  .mat-form-field {
+.mat-form-field {
     margin-top: 16px;
-  }
-
+}
 .content-1{
     background-image:  url(https://www.imisconsulting.com.au//iMIS0/images/Site_Info/iStock-1135943635.png);
    /* // height: calc(100vh - 20px); */
@@ -103,6 +100,7 @@
 .imm1 {
     position: absolute;
     top: 200px;
+    left: 0;
     max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.8);
@@ -119,6 +117,7 @@
 .imm11 {
     position: absolute;
     top: 260px;
+    left: 0;
     /* right: -600px; */
     max-width: 597px;
     object-fit: cover;
@@ -136,6 +135,7 @@
 .imm921 {
     position: absolute;
     top: 250px;
+    left: 0;
     max-width: 597px;
     object-fit: cover;
     transform: translate(-50%,-50%) scale(1.4);
@@ -334,6 +334,10 @@
     .answer_check {
       
         padding-left: 75px!important;
+    }
+    .answer_check2 {
+      
+        left: calc(50% - 50px)!important;
     }
     .form-check-inline {
         width: 100%;

@@ -64,6 +64,7 @@ export class EventSearchComponent implements OnInit {
   }
   filtercountry(name: string) {
     this.zipState=[]
+    // let noRecord=0
     this.eventData.filter(country => {
       let eventCODEValue = '';
       country['Properties']['$values'].forEach(element => {
@@ -77,11 +78,22 @@ export class EventSearchComponent implements OnInit {
             if(nextsb){
               nextsb.style.display='block'
             }
-            this.zipState.push({'eventCode':eventCODEValue,'Name': element.Value})
-          }
+            this.zipState.push({'eventCode':eventCODEValue ? eventCODEValue : '','Name': element.Value ? element.Value : 'No event found'})
         }
+      }
       });
     })
+    // console.log(this.zipState.length)
+    if(this.zipState.length == 0){
+      const elmd = document.getElementsByClassName('dropdownMenuBtnSCTs')!as HTMLCollectionOf<HTMLElement>;
+          let nextsb= elmd[elmd.length-1];
+            if(nextsb){
+              nextsb.style.display='block'
+            }
+      // console.log("inside if after")
+      this.zipState.push({'eventCode':'','Name': 'No event found'})
+      
+    }
   }
   sendTo(event){
     this.settingsService.getEventDetails(event)
