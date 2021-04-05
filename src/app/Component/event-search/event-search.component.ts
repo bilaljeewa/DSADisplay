@@ -18,6 +18,7 @@ export class EventSearchComponent implements OnInit {
   countryCtrl: FormControl;
   filteredCountry: Observable<any[]>;
   zipState=Array()
+  noData:boolean
   constructor( public settingsService: SettingsService,public dialog: MatDialog) { 
     this.countryCtrl = new FormControl();
     this.countryCtrl.valueChanges.subscribe(value=>{
@@ -79,6 +80,7 @@ export class EventSearchComponent implements OnInit {
               nextsb.style.display='block'
             }
             this.zipState.push({'eventCode':eventCODEValue ? eventCODEValue : '','Name': element.Value ? element.Value : 'No event found'})
+            this.noData=false
         }
       }
       });
@@ -91,12 +93,16 @@ export class EventSearchComponent implements OnInit {
               nextsb.style.display='block'
             }
       // console.log("inside if after")
-      this.zipState.push({'eventCode':'','Name': 'No event found'})
-      
+      this.zipState.push({'eventCode':'','Name': 'No record found'})
+      this.noData=true
     }
   }
   sendTo(event){
-    this.settingsService.getEventDetails(event)
+    console.log(this.noData)
+    if(!this.noData){
+      this.settingsService.getEventDetails(event)
+    }
+    
   }
   openViewModal(){
     setTimeout(() => {

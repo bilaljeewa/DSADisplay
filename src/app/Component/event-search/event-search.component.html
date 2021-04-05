@@ -8,7 +8,7 @@
       <div class="dropdown sep-event">
         <input type="text" [formControl]="countryCtrl"   placeholder="Search City or Town"  class="dropdownMenuButtonsSCT" data-toggle="dropdown" aria-expanded="false">
         <div class="dropdown-menu dropdownMenuBtnSCTs" aria-labelledby="dropdownMenuButtonsSCT">
-          <span class="dropdown-item list-result-data"  (click)="sendTo(country.eventCode)"  *ngFor="let country of zipState;let i =index">{{country.Name}}</span>
+          <span class="dropdown-item list-result-data" [attr.disabled]="noData"  (click)="sendTo(country.eventCode)"  *ngFor="let country of zipState;let i =index">{{country.Name}}</span>
         </div>
       </div>
     </form>

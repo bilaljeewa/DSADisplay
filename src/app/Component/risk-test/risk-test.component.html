@@ -616,7 +616,7 @@
                                         </div>
                                     </div>
                                     <div class=" mx-5 mb-5 p-5 details-box" *ngIf="viewResultData">
-                                        <p class="text-left m-0 resutlTest">You Have a <span [ngClass]="{'riskDiabetes': sum >= 12 }">{{riskRangeLabel}}</span>  of developing diabetes</p>
+                                        <p class="text-left m-0 resutlTest">You Have <span [ngClass]="{'riskDiabetes': sum >= 12 }">{{riskRangeLabel}}</span>  of developing diabetes</p>
                                         <div class="chart">
                                            
                                             <div  class=" bar-chart text-center"><span *ngIf="isRiskRange == 0">Your Score {{riskScore}}</span></div>

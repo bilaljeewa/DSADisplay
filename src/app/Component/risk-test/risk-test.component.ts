@@ -129,7 +129,7 @@ export class RiskTestComponent implements OnInit {
     this.finalFormGroup = this._formBuilder.group({
       fName: ['',Validators.required],
       lName: ['',Validators.required],
-      email: ['', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]],
+      email: ['', [Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/i)]],
       phone: ['',Validators.required],
       pagination:['6'],
       termsCondition: ['',Validators.required],
@@ -206,17 +206,17 @@ export class RiskTestComponent implements OnInit {
       this.riskScore= this.sum
       if( this.sum <= 5 && this.sum >= 0){
       
-        this.riskRangeLabel = "Low Risk"
+        this.riskRangeLabel = "a Low Risk"
         this.isRiskRange = 0
       }else if(this.sum >= 6 && this.sum <= 11){
       
-        this.riskRangeLabel = "Intermediate Risk"
+        this.riskRangeLabel = "an Intermediate Risk"
         this.isRiskRange = 1
         this.suggestionTag1 ="Discuss your score with your doctor as you are at risk of developing type 2 diabetes."
         this.suggestionTag2 = "Improving your lifestyle through healthy eating and regular physical activity can reduce your risk, or delay the onset of type 2 diabetes."
       }else if(this.sum >= 12){
       
-        this.riskRangeLabel = "High Risk"
+        this.riskRangeLabel = "a High Risk"
         this.isRiskRange = 2
         this.suggestionTag1= "You may have undiagnosed type 2 diabetes or be at a high risk of developing the condition."
         this.suggestionTag2 ="See your doctor about having a blood test. Act now to prevent type 2 diabetes."
